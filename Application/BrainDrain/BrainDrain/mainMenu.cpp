@@ -1,16 +1,16 @@
 #include "../BrainDrainLib/mainMenu.h"
 
 void mainMenu::windowInit() {
-    InitWindow(screenWidth, screenHeight, "BrainDrain");
+    InitWindow(init.screenWidth, init.screenHeight, "BrainDrain");
 
     SetTargetFPS(60);
 
-    texture = LoadTexture("../assets/demoButton.png");
+    texture = LoadTexture("../assets/demoButtonMainMenu.png");
 
     buttonSize = { (float)texture.width, (float)texture.height };
-    playButtonPos = { (screenWidth - buttonSize.x) / 2, (screenHeight - buttonSize.y) / 2 - 60 };
-    settingsButtonPos = { (screenWidth - buttonSize.x) / 2, (screenHeight - buttonSize.y) / 2 + 50 };
-    exitButtonPos = { (screenWidth - buttonSize.x) / 2, (screenHeight - buttonSize.y) / 2 + 160 };    
+    playButtonPos = { (init.screenWidth - buttonSize.x) / 2, (init.screenHeight - buttonSize.y) / 2 - 60 };
+    settingsButtonPos = { (init.screenWidth - buttonSize.x) / 2, (init.screenHeight - buttonSize.y) / 2 + 50 };
+    exitButtonPos = { (init.screenWidth - buttonSize.x) / 2, (init.screenHeight - buttonSize.y) / 2 + 160 };
 
     while (!WindowShouldClose()) {
 
@@ -37,16 +37,16 @@ void mainMenu::windowInit() {
         bool settingsHovered = CheckCollisionPointRec(mousePosition, { settingsButtonPos.x, settingsButtonPos.y, buttonSize.x, buttonSize.y });
         bool exitHovered = CheckCollisionPointRec(mousePosition, { exitButtonPos.x, exitButtonPos.y, buttonSize.x, buttonSize.y });
         
-        if (playHovered) DrawTexturePro(texture, { 0, 0, buttonSize.x, buttonSize.y }, { playButtonPos.x - (buttonSize.x * hoverScaleIncrease - buttonSize.x) / 2, playButtonPos.y - (buttonSize.y * hoverScaleIncrease - buttonSize.y) / 2, buttonSize.x * hoverScaleIncrease, buttonSize.y * hoverScaleIncrease }, { 0, 0 }, 0, RED);
+        if (playHovered) DrawTexturePro(texture, { 0, 0, buttonSize.x, buttonSize.y }, { playButtonPos.x - (buttonSize.x * init.hoverScaleIncrease - buttonSize.x) / 2, playButtonPos.y - (buttonSize.y * init.hoverScaleIncrease - buttonSize.y) / 2, buttonSize.x * init.hoverScaleIncrease, buttonSize.y * init.hoverScaleIncrease }, { 0, 0 }, 0, RED);
         else DrawTexture(texture, playButtonPos.x, playButtonPos.y, WHITE);
 
-        if (settingsHovered) DrawTexturePro(texture, { 0, 0, buttonSize.x, buttonSize.y }, { settingsButtonPos.x - (buttonSize.x * hoverScaleIncrease - buttonSize.x) / 2, settingsButtonPos.y - (buttonSize.y * hoverScaleIncrease - buttonSize.y) / 2, buttonSize.x * hoverScaleIncrease, buttonSize.y * hoverScaleIncrease }, { 0, 0 }, 0, RED);
+        if (settingsHovered) DrawTexturePro(texture, { 0, 0, buttonSize.x, buttonSize.y }, { settingsButtonPos.x - (buttonSize.x * init.hoverScaleIncrease - buttonSize.x) / 2, settingsButtonPos.y - (buttonSize.y * init.hoverScaleIncrease - buttonSize.y) / 2, buttonSize.x * init.hoverScaleIncrease, buttonSize.y * init.hoverScaleIncrease }, { 0, 0 }, 0, RED);
         else DrawTexture(texture, settingsButtonPos.x, settingsButtonPos.y, WHITE);
 
-        if (exitHovered) DrawTexturePro(texture, { 0, 0, buttonSize.x, buttonSize.y }, { exitButtonPos.x - (buttonSize.x * hoverScaleIncrease - buttonSize.x) / 2, exitButtonPos.y - (buttonSize.y * hoverScaleIncrease - buttonSize.y) / 2, buttonSize.x * hoverScaleIncrease, buttonSize.y * hoverScaleIncrease }, { 0, 0 }, 0, RED);
+        if (exitHovered) DrawTexturePro(texture, { 0, 0, buttonSize.x, buttonSize.y }, { exitButtonPos.x - (buttonSize.x * init.hoverScaleIncrease - buttonSize.x) / 2, exitButtonPos.y - (buttonSize.y * init.hoverScaleIncrease - buttonSize.y) / 2, buttonSize.x * init.hoverScaleIncrease, buttonSize.y * init.hoverScaleIncrease }, { 0, 0 }, 0, RED);
         else DrawTexture(texture, exitButtonPos.x, exitButtonPos.y, WHITE);
         
-        DrawText("Brain Drain", (screenWidth - MeasureText("Brain Drain", 40)) / 2, screenHeight / 8, 40, BLACK);
+        DrawText("Brain Drain", (init.screenWidth - MeasureText("Brain Drain", 40)) / 2, init.screenHeight / 8, 40, BLACK);
         DrawText("Play", playButtonPos.x + (buttonSize.x - MeasureText("Play", 30)) / 2, playButtonPos.y + (buttonSize.y - 30) / 2, 30, BLACK);
         DrawText("Settings", settingsButtonPos.x + (buttonSize.x - MeasureText("Settings", 30)) / 2, settingsButtonPos.y + (buttonSize.y - 30) / 2, 30, BLACK);
         DrawText("Exit", exitButtonPos.x + (buttonSize.x - MeasureText("Exit", 30)) / 2, exitButtonPos.y + (buttonSize.y - 30) / 2, 30, BLACK);
