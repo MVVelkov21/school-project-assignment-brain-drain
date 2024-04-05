@@ -18,7 +18,7 @@ void mainMenu::windowInit() {
             Vector2 mousePosition = GetMousePosition();
 
             if (CheckCollisionPointRec(mousePosition, { playButtonPos.x, playButtonPos.y, buttonSize.x, buttonSize.y })) {
-                printf("Play button clicked!\n");
+                printf("Play button clicked!\n");                
                 init.modeSelection();
             }
             else if (CheckCollisionPointRec(mousePosition, { settingsButtonPos.x, settingsButtonPos.y, buttonSize.x, buttonSize.y })) {

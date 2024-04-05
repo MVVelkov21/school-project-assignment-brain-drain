@@ -24,5 +24,8 @@
     <ClInclude Include="gameSelection.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="labyrinth.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

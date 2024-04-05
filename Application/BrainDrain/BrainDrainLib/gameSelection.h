@@ -1,14 +1,17 @@
 #pragma once
 #include "precompiledHeader.h"
+#include "labyrinth.h"
 
 class gameSelection {
 private:
 	Texture2D texture;
 
 	Vector2 buttonSize;
-	Vector2 playButtonPos;
-	Vector2 settingsButtonPos;
-	Vector2 exitButtonPos;
+	Vector2 bgButtonPos;
+	Vector2 mathButtonPos;
+	Vector2 chemButtonPos;
+
+	labyrinth level;
 
 public:
 	const int screenWidth = 800;
