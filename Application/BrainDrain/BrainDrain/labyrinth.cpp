@@ -17,31 +17,37 @@ vector<Rectangle> labyrinth::groupWhitePixelsIntoRectangles(Image image, int ori
 }
 
 void labyrinth::levelBuilder(int subject, int level) {
-    Texture2D background = LoadTexture("../assets/demoRoom.png");
+    string levelPath = "../assets/level/demoRoom";
+    levelPath += to_string(level) + ".png";
+    const char* finalLevelPath = levelPath.c_str();
+    Texture2D background = LoadTexture(finalLevelPath);
 
-    Texture2D playerStill = LoadTexture("../assets/demoPlayerStill.png");
-    Texture2D playerLeft = LoadTexture("../assets/demoPlayerLeft.png");
-    Texture2D playerRight = LoadTexture("../assets/demoPlayerRight.png");
-    Texture2D playerUp = LoadTexture("../assets/demoPlayerUp.png");
-    Texture2D playerDown = LoadTexture("../assets/demoPlayerDown.png");
+    Texture2D playerStill = LoadTexture("../assets/player/girl/girlPlayerStill.png");
+    Texture2D playerLeft = LoadTexture("../assets/player/girl/girlPlayerLeft.png");
+    Texture2D playerRight = LoadTexture("../assets/player/girl/girlPlayerRight.png");
+    Texture2D playerUp = LoadTexture("../assets/player/girl/girlPlayerUp.png");
+    Texture2D playerDown = LoadTexture("../assets/player/girl/girlPlayerDown.png");    
 
-    Image colImg = LoadImage("../assets/col_demoRoom.png");
+    Image colImg = LoadImage("../assets/collision/col_demoRoom.png");
     vector<Rectangle> wallRectangles = groupWhitePixelsIntoRectangles(colImg, colImg.width, colImg.height, background.width, background.height);
     UnloadImage(colImg);
 
     Vector2 playerPos = { 100.0f, 50.0f };
-    float playerSpeed = 3.0f;
+    float playerSpeed = 2.5f;
+    float playerScale = 0.015f;
     int playerDirection = 0;
 
     Camera2D camera = { 0 };
     camera.target = playerPos;
     camera.offset = { (float)GetScreenWidth() / 2, (float)GetScreenHeight() / 2 };
     camera.rotation = 0.0f;
-    camera.zoom = 3.0f;
+    camera.zoom = 4.0f;
 
     SetTargetFPS(60);
 
-    while (!WindowShouldClose()) {
+    while (!WindowShouldClose()) {        
+        Vector2 previousPlayerPos = playerPos;
+
         if (IsKeyDown(KEY_W)) {
             playerPos.y -= playerSpeed;
             playerDirection = 3;
@@ -62,30 +68,37 @@ void labyrinth::levelBuilder(int subject, int level) {
             playerDirection = 0;
         }
         
+        Rectangle playerRect = { playerPos.x, playerPos.y, playerStill.width * playerScale, playerStill.height * playerScale };
+        for (size_t i = 0; i < wallRectangles.size(); i++) {
+            if (CheckCollisionRecs(playerRect, wallRectangles[i])) {                
+                playerPos = previousPlayerPos;               
+            }
+        }
+
         camera.target = playerPos;
-                
+        
         BeginDrawing();
         ClearBackground(RAYWHITE);
 
         BeginMode2D(camera);
-
         DrawTexture(background, 0, 0, WHITE);
-
+        //DrawRectangle(playerPos.x, playerPos.y, playerStill.width * playerScale, playerStill.height * playerScale, RED);
+        
         switch (playerDirection) {
         case 1:
-            DrawTexture(playerLeft, playerPos.x, playerPos.y, WHITE);
+            DrawTextureEx(playerLeft, playerPos, 0.0f, playerScale, WHITE);
             break;
         case 2:
-            DrawTexture(playerRight, playerPos.x, playerPos.y, WHITE);
+            DrawTextureEx(playerRight, playerPos, 0.0f, playerScale, WHITE);
             break;
         case 3:
-            DrawTexture(playerUp, playerPos.x, playerPos.y, WHITE);
+            DrawTextureEx(playerUp, playerPos, 0.0f, playerScale, WHITE);
             break;
         case 4:
-            DrawTexture(playerDown, playerPos.x, playerPos.y, WHITE);
+            DrawTextureEx(playerDown, playerPos, 0.0f, playerScale, WHITE);
             break;
         default:
-            DrawTexture(playerStill, playerPos.x, playerPos.y, WHITE);
+            DrawTextureEx(playerStill, playerPos, 0.0f, playerScale, WHITE);
             break;
         }
 

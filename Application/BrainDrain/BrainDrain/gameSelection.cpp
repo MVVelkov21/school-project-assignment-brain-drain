@@ -1,7 +1,7 @@
 #include "../BrainDrainLib/gameSelection.h"
 
 void gameSelection::modeSelection() {
-    texture = LoadTexture("../assets/demoButtonSubjects.png");
+    texture = LoadTexture("../assets/button/demoButtonSubjects.png");
 
     buttonSize = { (float)texture.width, (float)texture.height };
     bgButtonPos = { (screenWidth - buttonSize.x) / 2 - 250, (screenHeight - buttonSize.y) / 2 };

@@ -5,7 +5,7 @@ void mainMenu::windowInit() {
 
     SetTargetFPS(60);
 
-    texture = LoadTexture("../assets/demoButtonMainMenu.png");
+    texture = LoadTexture("../assets/button/demoButtonMainMenu.png");
 
     buttonSize = { (float)texture.width, (float)texture.height };
     playButtonPos = { (init.screenWidth - buttonSize.x) / 2, (init.screenHeight - buttonSize.y) / 2 - 60 };
