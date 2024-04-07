@@ -1,4 +1,4 @@
-#include "../BrainDrainLib/labyrinth.h"
+﻿#include "../BrainDrainLib/labyrinth.h"
 
 vector<Rectangle> labyrinth::groupWhitePixelsIntoRectangles(Image image, int originalWidth, int originalHeight, int scaledWidth, int scaledHeight) {
     vector<Rectangle> rectangles;
@@ -16,26 +16,83 @@ vector<Rectangle> labyrinth::groupWhitePixelsIntoRectangles(Image image, int ori
     return rectangles;
 }
 
+vector<Rectangle> groupGreenPixelsIntoRectangles(Image image, int originalWidth, int originalHeight, int scaledWidth, int scaledHeight) {
+    vector<Rectangle> rectangles;
+
+    for (int x = 0; x < originalWidth; x++) {
+        for (int y = 0; y < originalHeight; y++) {
+            Color pixel = GetImageColor(image, x, y);
+            if (pixel.r == 0 && pixel.g == 255 && pixel.b == 0) {
+                Rectangle rect = { x * scaledWidth / originalWidth, y * scaledHeight / originalHeight, scaledWidth / originalWidth, scaledHeight / originalHeight };
+                rectangles.push_back(rect);
+            }
+        }
+    }
+
+    return rectangles;
+}
+
+vector<Vector2> labyrinth::getRedPixelPositions(Image image, int originalWidth, int originalHeight, int scaledWidth, int scaledHeight) {
+    vector<Vector2> redPixelPositions;
+
+    for (int x = 0; x < originalWidth; x++) {
+        for (int y = 0; y < originalHeight; y++) {
+            Color pixel = GetImageColor(image, x, y);
+            if (pixel.r == 255 && pixel.g == 0 && pixel.b == 0) {
+                Vector2 position = { x * scaledWidth / originalWidth, y * scaledHeight / originalHeight };
+                redPixelPositions.push_back(position);
+            }
+        }
+    }
+
+    return redPixelPositions;
+}
+
+Vector2 labyrinth::getYellowPixelPositions(Image image, int originalWidth, int originalHeight, int scaledWidth, int scaledHeight) {
+    Vector2 yellowPixelPositions;
+
+    for (int x = 0; x < originalWidth; x++) {
+        for (int y = 0; y < originalHeight; y++) {
+            Color pixel = GetImageColor(image, x, y);
+            if (pixel.r == 255 && pixel.g == 255 && pixel.b == 0) {
+                Vector2 position = { x * scaledWidth / originalWidth, y * scaledHeight / originalHeight };
+                yellowPixelPositions = position;
+                break;
+            }
+        }
+    }
+
+    return yellowPixelPositions;
+}
+
 void labyrinth::levelBuilder(int subject, int level) {
-    string levelPath = "../assets/level/demoRoom";
+    levelPath = "../assets/level/level";
     levelPath += to_string(level) + ".png";
-    const char* finalLevelPath = levelPath.c_str();
-    Texture2D background = LoadTexture(finalLevelPath);
+    finalLevelPath = levelPath.c_str();
+    background = LoadTexture(finalLevelPath);
 
-    Texture2D playerStill = LoadTexture("../assets/player/girl/girlPlayerStill.png");
-    Texture2D playerLeft = LoadTexture("../assets/player/girl/girlPlayerLeft.png");
-    Texture2D playerRight = LoadTexture("../assets/player/girl/girlPlayerRight.png");
-    Texture2D playerUp = LoadTexture("../assets/player/girl/girlPlayerUp.png");
-    Texture2D playerDown = LoadTexture("../assets/player/girl/girlPlayerDown.png");    
+    playerStill = LoadTexture("../assets/player/boyPlayerStill.png");
+    playerLeft = LoadTexture("../assets/player/boyPlayerLeft.png");
+    playerRight = LoadTexture("../assets/player/boyPlayerRight.png");
+    playerUp = LoadTexture("../assets/player/boyPlayerUp.png");
+    playerDown = LoadTexture("../assets/player/boyPlayerDown.png");    
 
-    Image colImg = LoadImage("../assets/collision/col_demoRoom.png");
-    vector<Rectangle> wallRectangles = groupWhitePixelsIntoRectangles(colImg, colImg.width, colImg.height, background.width, background.height);
+    colImg = LoadImage("../assets/collision/col_level0.png");
+    wallRectangles = groupWhitePixelsIntoRectangles(colImg, colImg.width, colImg.height, background.width, background.height);
+    exitRectangles = groupGreenPixelsIntoRectangles(colImg, colImg.width, colImg.height, background.width, background.height);
+    wordsPos = getRedPixelPositions(colImg, colImg.width, colImg.height, background.width, background.height);
+    playerPos = getYellowPixelPositions(colImg, colImg.width, colImg.height, background.width, background.height);
     UnloadImage(colImg);
 
-    Vector2 playerPos = { 100.0f, 50.0f };
-    float playerSpeed = 2.5f;
-    float playerScale = 0.015f;
-    int playerDirection = 0;
+    ifstream wordFile("../assets/words/missingWords.txt");
+    while (getline(wordFile, word)) {
+        words.push_back(word);
+    }
+    wordFile.close();
+
+    for (size_t i = 0; i < wordsPos.size(); i++) {
+        assignedWords.push_back(words[i % words.size()]);
+    }
 
     Camera2D camera = { 0 };
     camera.target = playerPos;
@@ -75,15 +132,36 @@ void labyrinth::levelBuilder(int subject, int level) {
             }
         }
 
+        for (size_t i = 0; i < exitRectangles.size(); i++) {
+            if (CheckCollisionRecs(playerRect, exitRectangles[i])) {
+                //func
+            }
+        }
+
+        for (size_t i = 0; i < wordsPos.size(); i++) {
+            Rectangle wordRect = { wordsPos[i].x - 20, wordsPos[i].y - 10, MeasureText(assignedWords[i].c_str(), 20), 30 };
+            if (CheckCollisionPointRec(playerPos, wordRect)) {                
+                if (find(pickedUpWords.begin(), pickedUpWords.end(), assignedWords[i]) == pickedUpWords.end()) {
+                    pickedUpWords.push_back(assignedWords[i]);                    
+                    assignedWords.erase(assignedWords.begin() + i);
+                    wordsPos.erase(wordsPos.begin() + i);
+                    break;
+                }
+            }
+        }
+
         camera.target = playerPos;
         
         BeginDrawing();
         ClearBackground(RAYWHITE);
 
         BeginMode2D(camera);
-        DrawTexture(background, 0, 0, WHITE);
+        DrawTexture(background, 0, 0, WHITE);        
         //DrawRectangle(playerPos.x, playerPos.y, playerStill.width * playerScale, playerStill.height * playerScale, RED);
-        
+        for (size_t i = 0; i < wordsPos.size(); i++) {
+            DrawText(assignedWords[i].c_str(), wordsPos[i].x - MeasureText(assignedWords[i].c_str(), 6) / 2, wordsPos[i].y - 3, 6, RED);
+        }
+
         switch (playerDirection) {
         case 1:
             DrawTextureEx(playerLeft, playerPos, 0.0f, playerScale, WHITE);
@@ -103,6 +181,11 @@ void labyrinth::levelBuilder(int subject, int level) {
         }
 
         EndMode2D();
+
+        for (size_t i = 0; i < pickedUpWords.size(); i++) {
+            DrawText(pickedUpWords[i].c_str(), 10, 10 + i * 20, 20, BLACK);
+        }
+
         EndDrawing();
     }
     UnloadTexture(background);

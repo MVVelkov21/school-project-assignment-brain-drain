@@ -9,11 +9,11 @@ void gameSelection::modeSelection() {
     chemButtonPos = { (screenWidth - buttonSize.x) / 2 + 250, (screenHeight - buttonSize.y) / 2 };
 
     while (!WindowShouldClose()) {        
-        if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+        if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON) && skipFrame == 1) {
             Vector2 mousePosition = GetMousePosition();
 
             if (CheckCollisionPointRec(mousePosition, { bgButtonPos.x, bgButtonPos.y, buttonSize.x, buttonSize.y })) {
-                printf("Bulgarian button clicked!\n");
+                printf("English button clicked!\n");
                 level.levelBuilder(0, 0);
             }
             else if (CheckCollisionPointRec(mousePosition, { mathButtonPos.x, mathButtonPos.y, buttonSize.x, buttonSize.y })) {
@@ -43,11 +43,13 @@ void gameSelection::modeSelection() {
         else DrawTexture(texture, chemButtonPos.x, chemButtonPos.y, WHITE);
 
         DrawText("Choose a subject", (screenWidth - MeasureText("Choose a subject", 40)) / 2, screenHeight / 8, 40, BLACK);
-        DrawText("Bulgarian", bgButtonPos.x + (buttonSize.x - MeasureText("Bulgarian", 30)) / 2, bgButtonPos.y + (buttonSize.y - 30) / 2, 30, BLACK);
+        DrawText("English", bgButtonPos.x + (buttonSize.x - MeasureText("English", 30)) / 2, bgButtonPos.y + (buttonSize.y - 30) / 2, 30, BLACK);
         DrawText("Mathematics", mathButtonPos.x + (buttonSize.x - MeasureText("Mathematics", 30)) / 2, mathButtonPos.y + (buttonSize.y - 30) / 2, 30, BLACK);
         DrawText("Chemistry", chemButtonPos.x + (buttonSize.x - MeasureText("Chemistry", 30)) / 2, chemButtonPos.y + (buttonSize.y - 30) / 2, 30, BLACK);
 
         EndDrawing();
+
+        skipFrame = 1;
     }
 
     UnloadTexture(texture);

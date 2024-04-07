@@ -5,6 +5,7 @@
 #include <string>
 #include <chrono>
 #include <thread>
+#include <fstream>
 #include "../raylib/include/raylib.h"
 
 using namespace std;
