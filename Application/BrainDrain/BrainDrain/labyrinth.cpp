@@ -49,7 +49,7 @@ vector<Vector2> labyrinth::getRedPixelPositions(Image image, int originalWidth, 
 }
 
 Vector2 labyrinth::getYellowPixelPositions(Image image, int originalWidth, int originalHeight, int scaledWidth, int scaledHeight) {
-    Vector2 yellowPixelPositions;
+    Vector2 yellowPixelPositions = { 0, 0 };
 
     for (int x = 0; x < originalWidth; x++) {
         for (int y = 0; y < originalHeight; y++) {
@@ -77,7 +77,7 @@ void labyrinth::levelBuilder(int subject, int level) {
     playerUp = LoadTexture("../assets/player/boyPlayerUp.png");
     playerDown = LoadTexture("../assets/player/boyPlayerDown.png");    
 
-    colImg = LoadImage("../assets/collision/col_level0.png");
+    colImg = LoadImage("../assets/collision/col_level1.png");
     wallRectangles = groupWhitePixelsIntoRectangles(colImg, colImg.width, colImg.height, background.width, background.height);
     exitRectangles = groupGreenPixelsIntoRectangles(colImg, colImg.width, colImg.height, background.width, background.height);
     wordsPos = getRedPixelPositions(colImg, colImg.width, colImg.height, background.width, background.height);
@@ -94,7 +94,15 @@ void labyrinth::levelBuilder(int subject, int level) {
         assignedWords.push_back(words[i % words.size()]);
     }
 
-    Camera2D camera = { 0 };
+    ifstream emptySentencesFile("../assets/words/emptySentences.txt");    
+    while (getline(emptySentencesFile, sentence)) {
+        emptySentences.push_back(sentence);
+    }
+    emptySentencesFile.close();
+
+    srand(time(NULL));
+    randSentence = emptySentences[rand() % min((int)(assignedWords.size()), (int)(emptySentences.size()))];
+    
     camera.target = playerPos;
     camera.offset = { (float)GetScreenWidth() / 2, (float)GetScreenHeight() / 2 };
     camera.rotation = 0.0f;
@@ -135,6 +143,7 @@ void labyrinth::levelBuilder(int subject, int level) {
         for (size_t i = 0; i < exitRectangles.size(); i++) {
             if (CheckCollisionRecs(playerRect, exitRectangles[i])) {
                 //func
+                printf("Finnish reached \n");
             }
         }
 
@@ -185,9 +194,16 @@ void labyrinth::levelBuilder(int subject, int level) {
         for (size_t i = 0; i < pickedUpWords.size(); i++) {
             DrawText(pickedUpWords[i].c_str(), 10, 10 + i * 20, 20, BLACK);
         }
+        DrawText(randSentence.c_str(), 400 - (MeasureText(randSentence.c_str(), 20) / 2), 10, 20, BLACK);
 
         EndDrawing();
     }
+    wallRectangles.clear();
+    exitRectangles.clear();
+    wordsPos.clear();
+    words.clear();   
+    assignedWords.clear();
+    pickedUpWords.clear();
     UnloadTexture(background);
     UnloadTexture(playerStill);
     UnloadTexture(playerLeft);
@@ -195,5 +211,3 @@ void labyrinth::levelBuilder(int subject, int level) {
     UnloadTexture(playerUp);
     UnloadTexture(playerDown);
 }
-
-

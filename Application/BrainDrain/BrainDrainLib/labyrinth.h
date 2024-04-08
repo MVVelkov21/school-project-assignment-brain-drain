@@ -24,13 +24,19 @@ private:
 	Vector2 playerPos;
 
 	float playerSpeed = 2.5f;
-	float playerScale = 0.015f;
+	float playerScale = 0.025f;
 	int playerDirection = 0;
 
 	vector<string> words;
 	string word;
 	vector<string> assignedWords;
 	vector<string> pickedUpWords;
+
+	string randSentence;
+	vector<string> emptySentences;
+	string sentence;
+
+	Camera2D camera = { 0 };
 public:
 	void levelBuilder(int subject, int level);
 };
