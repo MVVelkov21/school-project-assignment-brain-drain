@@ -22,7 +22,9 @@
     <ClInclude Include="gameSelection.h" />
     <ClInclude Include="labyrinth.h" />
     <ClInclude Include="mainMenu.h" />
+    <ClInclude Include="mapBuilder.h" />
     <ClInclude Include="precompiledHeader.h" />
+    <ClInclude Include="superMaths.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BrainDrain\BrainDrain.vcxproj">

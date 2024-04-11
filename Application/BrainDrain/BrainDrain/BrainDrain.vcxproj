@@ -134,6 +134,8 @@
     <ClCompile Include="labyrinth.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mainMenu.cpp" />
+    <ClCompile Include="mapBuilder.cpp" />
+    <ClCompile Include="superMaths.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

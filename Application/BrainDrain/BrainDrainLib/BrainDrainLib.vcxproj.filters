@@ -27,5 +27,11 @@
     <ClInclude Include="labyrinth.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="superMaths.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mapBuilder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

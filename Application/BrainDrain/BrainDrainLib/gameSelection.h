@@ -1,6 +1,7 @@
 #pragma once
 #include "precompiledHeader.h"
 #include "labyrinth.h"
+#include "superMaths.h"
 
 class gameSelection {
 private:

@@ -1,11 +1,10 @@
 #pragma once
 #include "precompiledHeader.h"
+#include "mapBuilder.h"
 
 class labyrinth {
 private:
-	vector<Rectangle> groupWhitePixelsIntoRectangles(Image image, int originalWidth, int originalHeight, int scaledWidth, int scaledHeight);
-	vector<Vector2> getRedPixelPositions(Image image, int originalWidth, int originalHeight, int scaledWidth, int scaledHeight);
-	Vector2 getYellowPixelPositions(Image image, int originalWidth, int originalHeight, int scaledWidth, int scaledHeight);
+	mapBuilder map;
 
 	string levelPath;
 	const char* finalLevelPath;

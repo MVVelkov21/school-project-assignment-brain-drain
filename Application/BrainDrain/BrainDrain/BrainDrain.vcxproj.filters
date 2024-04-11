@@ -27,5 +27,11 @@
     <ClCompile Include="labyrinth.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="superMaths.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mapBuilder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

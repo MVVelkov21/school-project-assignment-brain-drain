@@ -1,87 +1,22 @@
 ﻿#include "../BrainDrainLib/labyrinth.h"
 
-vector<Rectangle> labyrinth::groupWhitePixelsIntoRectangles(Image image, int originalWidth, int originalHeight, int scaledWidth, int scaledHeight) {
-    vector<Rectangle> rectangles;
-
-    for (int x = 0; x < originalWidth; x++) {
-        for (int y = 0; y < originalHeight; y++) {
-            Color pixel = GetImageColor(image, x, y);
-            if (pixel.r == 255 && pixel.g == 255 && pixel.b == 255) {
-                Rectangle rect = { x * scaledWidth / originalWidth, y * scaledHeight / originalHeight, scaledWidth / originalWidth, scaledHeight / originalHeight };
-                rectangles.push_back(rect);
-            }
-        }
-    }
-
-    return rectangles;
-}
-
-vector<Rectangle> groupGreenPixelsIntoRectangles(Image image, int originalWidth, int originalHeight, int scaledWidth, int scaledHeight) {
-    vector<Rectangle> rectangles;
-
-    for (int x = 0; x < originalWidth; x++) {
-        for (int y = 0; y < originalHeight; y++) {
-            Color pixel = GetImageColor(image, x, y);
-            if (pixel.r == 0 && pixel.g == 255 && pixel.b == 0) {
-                Rectangle rect = { x * scaledWidth / originalWidth, y * scaledHeight / originalHeight, scaledWidth / originalWidth, scaledHeight / originalHeight };
-                rectangles.push_back(rect);
-            }
-        }
-    }
-
-    return rectangles;
-}
-
-vector<Vector2> labyrinth::getRedPixelPositions(Image image, int originalWidth, int originalHeight, int scaledWidth, int scaledHeight) {
-    vector<Vector2> redPixelPositions;
-
-    for (int x = 0; x < originalWidth; x++) {
-        for (int y = 0; y < originalHeight; y++) {
-            Color pixel = GetImageColor(image, x, y);
-            if (pixel.r == 255 && pixel.g == 0 && pixel.b == 0) {
-                Vector2 position = { x * scaledWidth / originalWidth, y * scaledHeight / originalHeight };
-                redPixelPositions.push_back(position);
-            }
-        }
-    }
-
-    return redPixelPositions;
-}
-
-Vector2 labyrinth::getYellowPixelPositions(Image image, int originalWidth, int originalHeight, int scaledWidth, int scaledHeight) {
-    Vector2 yellowPixelPositions = { 0, 0 };
-
-    for (int x = 0; x < originalWidth; x++) {
-        for (int y = 0; y < originalHeight; y++) {
-            Color pixel = GetImageColor(image, x, y);
-            if (pixel.r == 255 && pixel.g == 255 && pixel.b == 0) {
-                Vector2 position = { x * scaledWidth / originalWidth, y * scaledHeight / originalHeight };
-                yellowPixelPositions = position;
-                break;
-            }
-        }
-    }
-
-    return yellowPixelPositions;
-}
-
 void labyrinth::levelBuilder(int subject, int level) {
     levelPath = "../assets/level/level";
     levelPath += to_string(level) + ".png";
     finalLevelPath = levelPath.c_str();
     background = LoadTexture(finalLevelPath);
 
-    playerStill = LoadTexture("../assets/player/boyPlayerStill.png");
-    playerLeft = LoadTexture("../assets/player/boyPlayerLeft.png");
-    playerRight = LoadTexture("../assets/player/boyPlayerRight.png");
+    playerStill = LoadTexture("../assets/player/boyPlayerDown.png");
+    playerLeft = LoadTexture("../assets/player/boyPlayerLeft (1).png");
+    playerRight = LoadTexture("../assets/player/boyPlayerRight (1).png");
     playerUp = LoadTexture("../assets/player/boyPlayerUp.png");
     playerDown = LoadTexture("../assets/player/boyPlayerDown.png");    
 
     colImg = LoadImage("../assets/collision/col_level1.png");
-    wallRectangles = groupWhitePixelsIntoRectangles(colImg, colImg.width, colImg.height, background.width, background.height);
-    exitRectangles = groupGreenPixelsIntoRectangles(colImg, colImg.width, colImg.height, background.width, background.height);
-    wordsPos = getRedPixelPositions(colImg, colImg.width, colImg.height, background.width, background.height);
-    playerPos = getYellowPixelPositions(colImg, colImg.width, colImg.height, background.width, background.height);
+    wallRectangles = map.groupWhitePixelsIntoRectangles(colImg, colImg.width, colImg.height, background.width, background.height);
+    exitRectangles = map.groupGreenPixelsIntoRectangles(colImg, colImg.width, colImg.height, background.width, background.height);
+    wordsPos = map.getRedPixelPositions(colImg, colImg.width, colImg.height, background.width, background.height);
+    playerPos = map.getYellowPixelPositions(colImg, colImg.width, colImg.height, background.width, background.height);
     UnloadImage(colImg);
 
     ifstream wordFile("../assets/words/missingWords.txt");
@@ -101,7 +36,8 @@ void labyrinth::levelBuilder(int subject, int level) {
     emptySentencesFile.close();
 
     srand(time(NULL));
-    randSentence = emptySentences[rand() % min((int)(assignedWords.size()), (int)(emptySentences.size()))];
+    int randLine = rand() % min((int)(assignedWords.size()), (int)(emptySentences.size()));
+    randSentence = emptySentences[randLine];
     
     camera.target = playerPos;
     camera.offset = { (float)GetScreenWidth() / 2, (float)GetScreenHeight() / 2 };
@@ -141,9 +77,33 @@ void labyrinth::levelBuilder(int subject, int level) {
         }
 
         for (size_t i = 0; i < exitRectangles.size(); i++) {
-            if (CheckCollisionRecs(playerRect, exitRectangles[i])) {
-                //func
-                printf("Finnish reached \n");
+            if (CheckCollisionRecs(playerRect, exitRectangles[i])) {                
+                if (!pickedUpWords.empty()) {
+                    bool wordChosen = false;
+                    int chosenWordIndex = -1;
+                    
+                    for (size_t j = 0; j < pickedUpWords.size(); j++) {
+                        Rectangle wordRect = { 10, 10 + j * 20, MeasureText(pickedUpWords[j].c_str(), 20), 20 };
+                        if (CheckCollisionPointRec(GetMousePosition(), wordRect) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+                            chosenWordIndex = (int)j;
+                            wordChosen = true;
+                            break;
+                        }
+                    }
+                    
+                    if (wordChosen) {
+                        std::string chosenWord = pickedUpWords[chosenWordIndex];                       
+                        if (chosenWord == words[randLine]) {
+                            printf("Correct word! You completed the sentence.\n"); break;
+                        }
+                        else {
+                            printf("Incorrect word.\n"); break;
+                        }
+                    }
+                }
+                else {
+                    printf("You haven't picked up any words.\n"); break;
+                }
             }
         }
 
