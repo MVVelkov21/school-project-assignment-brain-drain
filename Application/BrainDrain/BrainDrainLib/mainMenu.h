@@ -3,7 +3,9 @@
 #include "gameSelection.h"
 
 class mainMenu {
-	Texture2D texture;
+	Texture2D play;
+	Texture2D settings[2];
+	Texture2D exit;
 	Image icon;
 
 	Vector2 buttonSize;
