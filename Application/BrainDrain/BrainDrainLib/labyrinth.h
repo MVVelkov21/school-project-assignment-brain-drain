@@ -34,8 +34,13 @@ private:
 	string randSentence;
 	vector<string> emptySentences;
 	string sentence;
+	int remainingGuesses;
+	int wrongGuesses;
+	Texture2D X;
 
 	Camera2D camera = { 0 };
+
+	void printMessage(const char* msg);
 public:
 	void levelBuilder(int subject, int level);
 };

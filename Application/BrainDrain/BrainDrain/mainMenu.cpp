@@ -2,7 +2,8 @@
 
 void mainMenu::windowInit() {
     InitWindow(init.screenWidth, init.screenHeight, "BrainDrain");
-
+    icon = LoadImage("../assets/logo.png");
+    SetWindowIcon(icon);
     SetTargetFPS(60);
 
     texture = LoadTexture("../assets/button/demoButtonMainMenu.png");

@@ -4,6 +4,7 @@
 
 class mainMenu {
 	Texture2D texture;
+	Image icon;
 
 	Vector2 buttonSize;
 	Vector2 playButtonPos;

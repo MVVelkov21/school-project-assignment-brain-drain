@@ -1,6 +1,20 @@
 ﻿#include "../BrainDrainLib/labyrinth.h"
 
+void labyrinth::printMessage(const char* msg) {
+    while (!WindowShouldClose()) {
+        BeginDrawing();
+        ClearBackground(RAYWHITE);
+
+        DrawText(msg, 400 - (MeasureText(msg, 40) / 2), 175, 40, RED);
+        DrawText("Press ESC to go back.", 400 - (MeasureText("Press ESC to go back.", 20) / 2), 260, 20, BLACK);
+
+        EndDrawing();
+    }
+}
+
 void labyrinth::levelBuilder(int subject, int level) {
+    remainingGuesses = 3;
+    wrongGuesses = 0;
     levelPath = "../assets/level/level";
     levelPath += to_string(level) + ".png";
     finalLevelPath = levelPath.c_str();
@@ -18,6 +32,8 @@ void labyrinth::levelBuilder(int subject, int level) {
     wordsPos = map.getRedPixelPositions(colImg, colImg.width, colImg.height, background.width, background.height);
     playerPos = map.getYellowPixelPositions(colImg, colImg.width, colImg.height, background.width, background.height);
     UnloadImage(colImg);
+
+    X = LoadTexture("../assets/error.png");
 
     ifstream wordFile("../assets/words/missingWords.txt");
     while (getline(wordFile, word)) {
@@ -92,12 +108,23 @@ void labyrinth::levelBuilder(int subject, int level) {
                     }
                     
                     if (wordChosen) {
-                        std::string chosenWord = pickedUpWords[chosenWordIndex];                       
+                        string chosenWord = pickedUpWords[chosenWordIndex];                       
                         if (chosenWord == words[randLine]) {
-                            printf("Correct word! You completed the sentence.\n"); break;
+                            printf("You completed the sentence.\n");
+                            wrongGuesses = -1;
+                            printMessage("Congrats! You completed the sentence.");
+                            break;
                         }
                         else {
-                            printf("Incorrect word.\n"); break;
+                            printf("Incorrect word.\n");
+                            remainingGuesses--;
+                            wrongGuesses++;
+                            if (remainingGuesses == 0) {
+                                printf("You don't have more tries.\n"); 
+                                printMessage("You don't have more tries.");
+                                break;                                
+                            }                            
+                            break;
                         }
                     }
                 }
@@ -106,6 +133,7 @@ void labyrinth::levelBuilder(int subject, int level) {
                 }
             }
         }
+        if (remainingGuesses == 0 || wrongGuesses == -1)break;
 
         for (size_t i = 0; i < wordsPos.size(); i++) {
             Rectangle wordRect = { wordsPos[i].x - 20, wordsPos[i].y - 10, MeasureText(assignedWords[i].c_str(), 20), 30 };
@@ -154,6 +182,11 @@ void labyrinth::levelBuilder(int subject, int level) {
         for (size_t i = 0; i < pickedUpWords.size(); i++) {
             DrawText(pickedUpWords[i].c_str(), 10, 10 + i * 20, 20, BLACK);
         }
+
+        for (size_t i = 0; i < wrongGuesses; i++) {
+            DrawTexture(X, 790 - X.width - i * X.width, 440 - X.height, WHITE);
+        }
+
         DrawText(randSentence.c_str(), 400 - (MeasureText(randSentence.c_str(), 20) / 2), 10, 20, BLACK);
 
         EndDrawing();
@@ -164,6 +197,7 @@ void labyrinth::levelBuilder(int subject, int level) {
     words.clear();   
     assignedWords.clear();
     pickedUpWords.clear();
+    UnloadTexture(X);
     UnloadTexture(background);
     UnloadTexture(playerStill);
     UnloadTexture(playerLeft);

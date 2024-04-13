@@ -1,18 +1,18 @@
 #pragma once
 #include "precompiledHeader.h"
-#include "labyrinth.h"
 #include "superMaths.h"
+#include "labyrinth.h"
 
 class gameSelection {
 private:
+	labyrinth level;
+
 	Texture2D texture;
 
 	Vector2 buttonSize;
 	Vector2 bgButtonPos;
 	Vector2 mathButtonPos;
 	Vector2 chemButtonPos;
-
-	labyrinth level;
 
 	bool skipFrame = false;
 public:
