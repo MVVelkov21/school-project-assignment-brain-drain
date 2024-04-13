@@ -5,7 +5,8 @@
 
 class gameSelection {
 private:
-	labyrinth level;
+	labyrinth english;
+	superMaths maths;
 
 	Texture2D texture;
 

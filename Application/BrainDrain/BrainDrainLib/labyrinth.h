@@ -42,5 +42,5 @@ private:
 
 	void printMessage(const char* msg);
 public:
-	void levelBuilder(int subject, int level);
+	void levelBuilder(int level);
 };

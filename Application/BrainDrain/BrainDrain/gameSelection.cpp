@@ -14,11 +14,11 @@ void gameSelection::modeSelection() {
 
             if (CheckCollisionPointRec(mousePosition, { bgButtonPos.x, bgButtonPos.y, buttonSize.x, buttonSize.y })) {
                 printf("English button clicked!\n");
-                level.levelBuilder(0, 0);
+                english.levelBuilder(0);
             }
             else if (CheckCollisionPointRec(mousePosition, { mathButtonPos.x, mathButtonPos.y, buttonSize.x, buttonSize.y })) {
                 printf("Maths button clicked!\n");
-                //level.levelBuilder(1, 0);
+                maths.levelBuilder();
             }
             else if (CheckCollisionPointRec(mousePosition, { chemButtonPos.x, chemButtonPos.y, buttonSize.x, buttonSize.y })) {
                 printf("Chemistry button clicked!\n");

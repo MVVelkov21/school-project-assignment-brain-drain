@@ -12,7 +12,7 @@ void labyrinth::printMessage(const char* msg) {
     }
 }
 
-void labyrinth::levelBuilder(int subject, int level) {
+void labyrinth::levelBuilder(int level) {
     remainingGuesses = 3;
     wrongGuesses = 0;
     levelPath = "../assets/level/level";

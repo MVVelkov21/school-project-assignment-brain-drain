@@ -48,6 +48,22 @@ vector<Vector2> mapBuilder::getRedPixelPositions(Image image, int originalWidth,
     return redPixelPositions;
 }
 
+vector<Rectangle> mapBuilder::groupRedPixelsIntoRectangles(Image image, int originalWidth, int originalHeight, int scaledWidth, int scaledHeight) {
+    vector<Rectangle> rectangles;
+
+    for (int x = 0; x < originalWidth; x++) {
+        for (int y = 0; y < originalHeight; y++) {
+            Color pixel = GetImageColor(image, x, y);
+            if (pixel.r == 255 && pixel.g == 0 && pixel.b == 0) {
+                Rectangle rect = { x * scaledWidth / originalWidth, y * scaledHeight / originalHeight, scaledWidth / originalWidth, scaledHeight / originalHeight };
+                rectangles.push_back(rect);
+            }
+        }
+    }
+
+    return rectangles;
+}
+
 Vector2 mapBuilder::getYellowPixelPositions(Image image, int originalWidth, int originalHeight, int scaledWidth, int scaledHeight) {
     Vector2 yellowPixelPositions = { 0, 0 };
 
