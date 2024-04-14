@@ -130,6 +130,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="chemistry.cpp" />
     <ClCompile Include="gameSelection.cpp" />
     <ClCompile Include="labyrinth.cpp" />
     <ClCompile Include="main.cpp" />

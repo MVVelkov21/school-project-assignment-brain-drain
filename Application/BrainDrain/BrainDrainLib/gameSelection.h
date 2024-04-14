@@ -1,12 +1,14 @@
 #pragma once
 #include "precompiledHeader.h"
 #include "superMaths.h"
+#include "chemistry.h"
 #include "labyrinth.h"
 
 class gameSelection {
 private:
 	labyrinth english;
 	superMaths maths;
+	chemistry chem;
 
 	Texture2D texture;
 

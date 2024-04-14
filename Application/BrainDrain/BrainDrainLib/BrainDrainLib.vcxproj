@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="chemistry.h" />
     <ClInclude Include="gameSelection.h" />
     <ClInclude Include="labyrinth.h" />
     <ClInclude Include="mainMenu.h" />

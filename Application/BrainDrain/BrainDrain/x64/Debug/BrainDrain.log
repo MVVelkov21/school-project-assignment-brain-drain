@@ -1,2 +1,71 @@
-﻿  superMaths.cpp
-  BrainDrain.vcxproj -> C:\Users\admin\Documents\GitHub\school-project-assignment-brain-drain\Application\BrainDrain\x64\Debug\BrainDrain.exe
+﻿  chemistry.cpp
+  gameSelection.cpp
+F:\school-project-assignment-brain-drain\Application\BrainDrain\BrainDrain\gameSelection.cpp(37,61): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+F:\school-project-assignment-brain-drain\Application\BrainDrain\BrainDrain\gameSelection.cpp(37,46): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+F:\school-project-assignment-brain-drain\Application\BrainDrain\BrainDrain\gameSelection.cpp(40,65): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+F:\school-project-assignment-brain-drain\Application\BrainDrain\BrainDrain\gameSelection.cpp(40,48): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+F:\school-project-assignment-brain-drain\Application\BrainDrain\BrainDrain\gameSelection.cpp(43,65): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+F:\school-project-assignment-brain-drain\Application\BrainDrain\BrainDrain\gameSelection.cpp(43,48): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+F:\school-project-assignment-brain-drain\Application\BrainDrain\BrainDrain\gameSelection.cpp(46,108): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+F:\school-project-assignment-brain-drain\Application\BrainDrain\BrainDrain\gameSelection.cpp(46,43): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+F:\school-project-assignment-brain-drain\Application\BrainDrain\BrainDrain\gameSelection.cpp(47,120): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+F:\school-project-assignment-brain-drain\Application\BrainDrain\BrainDrain\gameSelection.cpp(47,49): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+F:\school-project-assignment-brain-drain\Application\BrainDrain\BrainDrain\gameSelection.cpp(48,116): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+F:\school-project-assignment-brain-drain\Application\BrainDrain\BrainDrain\gameSelection.cpp(48,47): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  labyrinth.cpp
+F:\school-project-assignment-brain-drain\Application\BrainDrain\BrainDrain\labyrinth.cpp(54,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+F:\school-project-assignment-brain-drain\Application\BrainDrain\BrainDrain\labyrinth.cpp(102,55): warning C4838: conversion from 'size_t' to 'float' requires a narrowing conversion
+F:\school-project-assignment-brain-drain\Application\BrainDrain\BrainDrain\labyrinth.cpp(102,55): warning C4244: 'initializing': conversion from 'size_t' to 'float', possible loss of data
+F:\school-project-assignment-brain-drain\Application\BrainDrain\BrainDrain\labyrinth.cpp(102,76): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+F:\school-project-assignment-brain-drain\Application\BrainDrain\BrainDrain\labyrinth.cpp(102,76): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+F:\school-project-assignment-brain-drain\Application\BrainDrain\BrainDrain\labyrinth.cpp(139,87): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+F:\school-project-assignment-brain-drain\Application\BrainDrain\BrainDrain\labyrinth.cpp(139,87): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+F:\school-project-assignment-brain-drain\Application\BrainDrain\BrainDrain\labyrinth.cpp(159,124): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+F:\school-project-assignment-brain-drain\Application\BrainDrain\BrainDrain\labyrinth.cpp(159,62): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+F:\school-project-assignment-brain-drain\Application\BrainDrain\BrainDrain\labyrinth.cpp(183,55): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+F:\school-project-assignment-brain-drain\Application\BrainDrain\BrainDrain\labyrinth.cpp(187,42): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  main.cpp
+  mainMenu.cpp
+F:\school-project-assignment-brain-drain\Application\BrainDrain\BrainDrain\mainMenu.cpp(45,62): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+F:\school-project-assignment-brain-drain\Application\BrainDrain\BrainDrain\mainMenu.cpp(45,45): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+F:\school-project-assignment-brain-drain\Application\BrainDrain\BrainDrain\mainMenu.cpp(48,77): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+F:\school-project-assignment-brain-drain\Application\BrainDrain\BrainDrain\mainMenu.cpp(48,56): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+F:\school-project-assignment-brain-drain\Application\BrainDrain\BrainDrain\mainMenu.cpp(51,62): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+F:\school-project-assignment-brain-drain\Application\BrainDrain\BrainDrain\mainMenu.cpp(51,45): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  mapBuilder.cpp
+F:\school-project-assignment-brain-drain\Application\BrainDrain\BrainDrain\mapBuilder.cpp(10,52): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+F:\school-project-assignment-brain-drain\Application\BrainDrain\BrainDrain\mapBuilder.cpp(10,52): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+F:\school-project-assignment-brain-drain\Application\BrainDrain\BrainDrain\mapBuilder.cpp(10,86): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+F:\school-project-assignment-brain-drain\Application\BrainDrain\BrainDrain\mapBuilder.cpp(10,86): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+F:\school-project-assignment-brain-drain\Application\BrainDrain\BrainDrain\mapBuilder.cpp(10,116): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+F:\school-project-assignment-brain-drain\Application\BrainDrain\BrainDrain\mapBuilder.cpp(10,116): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+F:\school-project-assignment-brain-drain\Application\BrainDrain\BrainDrain\mapBuilder.cpp(10,146): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+F:\school-project-assignment-brain-drain\Application\BrainDrain\BrainDrain\mapBuilder.cpp(10,146): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+F:\school-project-assignment-brain-drain\Application\BrainDrain\BrainDrain\mapBuilder.cpp(26,52): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+F:\school-project-assignment-brain-drain\Application\BrainDrain\BrainDrain\mapBuilder.cpp(26,52): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+F:\school-project-assignment-brain-drain\Application\BrainDrain\BrainDrain\mapBuilder.cpp(26,86): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+F:\school-project-assignment-brain-drain\Application\BrainDrain\BrainDrain\mapBuilder.cpp(26,86): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+F:\school-project-assignment-brain-drain\Application\BrainDrain\BrainDrain\mapBuilder.cpp(26,116): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+F:\school-project-assignment-brain-drain\Application\BrainDrain\BrainDrain\mapBuilder.cpp(26,116): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+F:\school-project-assignment-brain-drain\Application\BrainDrain\BrainDrain\mapBuilder.cpp(26,146): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+F:\school-project-assignment-brain-drain\Application\BrainDrain\BrainDrain\mapBuilder.cpp(26,146): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+F:\school-project-assignment-brain-drain\Application\BrainDrain\BrainDrain\mapBuilder.cpp(42,54): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+F:\school-project-assignment-brain-drain\Application\BrainDrain\BrainDrain\mapBuilder.cpp(42,54): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+F:\school-project-assignment-brain-drain\Application\BrainDrain\BrainDrain\mapBuilder.cpp(42,88): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+F:\school-project-assignment-brain-drain\Application\BrainDrain\BrainDrain\mapBuilder.cpp(42,88): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+F:\school-project-assignment-brain-drain\Application\BrainDrain\BrainDrain\mapBuilder.cpp(58,52): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+F:\school-project-assignment-brain-drain\Application\BrainDrain\BrainDrain\mapBuilder.cpp(58,52): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+F:\school-project-assignment-brain-drain\Application\BrainDrain\BrainDrain\mapBuilder.cpp(58,86): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+F:\school-project-assignment-brain-drain\Application\BrainDrain\BrainDrain\mapBuilder.cpp(58,86): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+F:\school-project-assignment-brain-drain\Application\BrainDrain\BrainDrain\mapBuilder.cpp(58,116): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+F:\school-project-assignment-brain-drain\Application\BrainDrain\BrainDrain\mapBuilder.cpp(58,116): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+F:\school-project-assignment-brain-drain\Application\BrainDrain\BrainDrain\mapBuilder.cpp(58,146): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+F:\school-project-assignment-brain-drain\Application\BrainDrain\BrainDrain\mapBuilder.cpp(58,146): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+F:\school-project-assignment-brain-drain\Application\BrainDrain\BrainDrain\mapBuilder.cpp(74,54): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+F:\school-project-assignment-brain-drain\Application\BrainDrain\BrainDrain\mapBuilder.cpp(74,54): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+F:\school-project-assignment-brain-drain\Application\BrainDrain\BrainDrain\mapBuilder.cpp(74,88): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+F:\school-project-assignment-brain-drain\Application\BrainDrain\BrainDrain\mapBuilder.cpp(74,88): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+  superMaths.cpp
+  Generating Code...
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+  BrainDrain.vcxproj -> F:\school-project-assignment-brain-drain\Application\BrainDrain\x64\Debug\BrainDrain.exe
