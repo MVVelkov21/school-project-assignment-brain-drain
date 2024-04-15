@@ -2,10 +2,12 @@
 
 void superMaths::levelBuilder() {
     background = LoadTexture("../assets/maze/superMath.png");
+    backgroundLeft = LoadTexture("../assets/maze/superMathBgLeft.png");
+    backgroundRight = LoadTexture("../assets/maze/superMathBgRight.png");
 
     playerStill = LoadTexture("../assets/player/boyPlayerDown.png");
-    playerLeft = LoadTexture("../assets/player/boyPlayerLeft (1).png");
-    playerRight = LoadTexture("../assets/player/boyPlayerRight (1).png");
+    playerLeft = LoadTexture("../assets/player/boyPlayerLeftSideAnimation.png");
+    playerRight = LoadTexture("../assets/player/boyPlayerRightSideAnimation.png");
     playerUp = LoadTexture("../assets/player/boyPlayerUp.png");
     playerDown = LoadTexture("../assets/player/boyPlayerDown.png");
 
@@ -89,7 +91,8 @@ void superMaths::levelBuilder() {
         ClearBackground(BLACK);
 
         BeginMode2D(camera);
-
+        DrawTexture(backgroundLeft, -backgroundLeft.width, 0, WHITE);
+        DrawTexture(backgroundRight, background.width, 0, WHITE);
         DrawTexture(background, 0, 0, WHITE);
 
         switch (playerDirection) {

@@ -7,6 +7,8 @@ private:
 	mapBuilder map;
 
 	Texture2D background;
+	Texture2D backgroundLeft;
+	Texture2D backgroundRight;
 	Texture2D playerStill;
 	Texture2D playerLeft;
 	Texture2D playerRight;
