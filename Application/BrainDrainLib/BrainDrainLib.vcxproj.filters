@@ -33,7 +33,7 @@
     <ClInclude Include="mapBuilder.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="chemistry.h">
+    <ClInclude Include="madScientists.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
