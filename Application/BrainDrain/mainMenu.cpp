@@ -11,6 +11,8 @@ void mainMenu::windowInit() {
     settings[0] = LoadTexture("../assets/mainMenu/settingsButton.png");
     settings[1] = LoadTexture("../assets/mainMenu/settingsHoverButton.png");
     exit = LoadTexture("../assets/mainMenu/exitButton.png");
+    bus = LoadTexture("../assets/mainMenu/bus.png");
+    school = LoadTexture("../assets/mainMenu/school.png");
 
     buttonSize = { (float)play.width, (float)play.height };
     playButtonPos = { (init.screenWidth - buttonSize.x) / 2, (init.screenHeight - buttonSize.y) / 2 - 60 };
@@ -43,6 +45,9 @@ void mainMenu::windowInit() {
         bool settingsHovered = CheckCollisionPointRec(mousePosition, { settingsButtonPos.x, settingsButtonPos.y, buttonSize.x, buttonSize.y });
         bool exitHovered = CheckCollisionPointRec(mousePosition, { exitButtonPos.x, exitButtonPos.y, buttonSize.x, buttonSize.y });
         
+        DrawTexture(bus, (GetScreenWidth() / 2) - 375, (GetScreenHeight() / 2) + 118, WHITE);
+        DrawTexture(school, (GetScreenWidth() / 2) + 150, (GetScreenHeight() / 2) - 15, WHITE);
+
         if (playHovered) DrawTexturePro(play, { 0, 0, buttonSize.x, buttonSize.y }, { playButtonPos.x - (buttonSize.x * init.hoverScaleIncrease - buttonSize.x) / 2, playButtonPos.y - (buttonSize.y * init.hoverScaleIncrease - buttonSize.y) / 2, buttonSize.x * init.hoverScaleIncrease, buttonSize.y * init.hoverScaleIncrease }, { 0, 0 }, 0, WHITE);
         else DrawTexture(play, playButtonPos.x, playButtonPos.y, RED);
 
@@ -52,7 +57,7 @@ void mainMenu::windowInit() {
         if (exitHovered) DrawTexturePro(exit, { 0, 0, buttonSize.x, buttonSize.y }, { exitButtonPos.x - (buttonSize.x * init.hoverScaleIncrease - buttonSize.x) / 2, exitButtonPos.y - (buttonSize.y * init.hoverScaleIncrease - buttonSize.y) / 2, buttonSize.x * init.hoverScaleIncrease, buttonSize.y * init.hoverScaleIncrease }, { 0, 0 }, 0, WHITE);
         else DrawTexture(exit, exitButtonPos.x, exitButtonPos.y, RED);
         
-        DrawText("Brain Drain", (init.screenWidth - MeasureText("Brain Drain", 40)) / 2, init.screenHeight / 8, 40, BLACK);
+        
 
         EndDrawing();
     }

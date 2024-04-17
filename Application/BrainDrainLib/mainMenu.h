@@ -7,6 +7,8 @@ class mainMenu {
 	Texture2D play;
 	Texture2D settings[2];
 	Texture2D exit;
+	Texture2D bus;
+	Texture2D school;
 	Image icon;
 
 	Vector2 buttonSize;
