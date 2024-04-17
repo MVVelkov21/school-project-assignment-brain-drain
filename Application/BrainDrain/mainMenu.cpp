@@ -48,16 +48,11 @@ void mainMenu::windowInit() {
         DrawTexture(bus, (GetScreenWidth() / 2) - 375, (GetScreenHeight() / 2) + 118, WHITE);
         DrawTexture(school, (GetScreenWidth() / 2) + 150, (GetScreenHeight() / 2) - 15, WHITE);
 
-        if (playHovered) DrawTexturePro(play, { 0, 0, buttonSize.x, buttonSize.y }, { playButtonPos.x - (buttonSize.x * init.hoverScaleIncrease - buttonSize.x) / 2, playButtonPos.y - (buttonSize.y * init.hoverScaleIncrease - buttonSize.y) / 2, buttonSize.x * init.hoverScaleIncrease, buttonSize.y * init.hoverScaleIncrease }, { 0, 0 }, 0, WHITE);
-        else DrawTexture(play, playButtonPos.x, playButtonPos.y, RED);
-
-        if (settingsHovered) DrawTexturePro(settings[0], {0, 0, buttonSize.x, buttonSize.y}, {settingsButtonPos.x - (buttonSize.x * init.hoverScaleIncrease - buttonSize.x) / 2, settingsButtonPos.y - (buttonSize.y * init.hoverScaleIncrease - buttonSize.y) / 2, buttonSize.x * init.hoverScaleIncrease, buttonSize.y * init.hoverScaleIncrease}, {0, 0}, 0, WHITE);
-        else DrawTexture(settings[1], settingsButtonPos.x, settingsButtonPos.y, RED);
-
-        if (exitHovered) DrawTexturePro(exit, { 0, 0, buttonSize.x, buttonSize.y }, { exitButtonPos.x - (buttonSize.x * init.hoverScaleIncrease - buttonSize.x) / 2, exitButtonPos.y - (buttonSize.y * init.hoverScaleIncrease - buttonSize.y) / 2, buttonSize.x * init.hoverScaleIncrease, buttonSize.y * init.hoverScaleIncrease }, { 0, 0 }, 0, WHITE);
-        else DrawTexture(exit, exitButtonPos.x, exitButtonPos.y, RED);
+        DrawTexture(settings[0], (GetScreenWidth() / 2) - 390, (GetScreenHeight() / 2) - 215, WHITE);
         
-        
+        DrawTexture(exit, (GetScreenWidth() / 2) + 290, (GetScreenHeight() / 2) - 215, WHITE);
+
+        DrawTexture(play, (GetScreenWidth() / 2) - 170, (GetScreenHeight() / 2) + 38, WHITE);
 
         EndDrawing();
     }
