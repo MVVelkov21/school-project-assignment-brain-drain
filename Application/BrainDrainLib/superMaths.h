@@ -10,10 +10,15 @@ private:
 	Texture2D backgroundLeft;
 	Texture2D backgroundRight;
 	Texture2D playerStill;
-	Texture2D playerLeft;
-	Texture2D playerRight;
+	Texture2D playerLeft[4];
+	Texture2D playerRight[4];
 	Texture2D playerUp;
 	Texture2D playerDown;
+
+	int frameCounter = 0;
+	int frameSpeed = 8;
+	int maxFrames = 3;
+	int currentFrame = 0;
 
 	Image colImg;
 	vector<Rectangle> walls;

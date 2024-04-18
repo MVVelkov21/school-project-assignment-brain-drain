@@ -12,23 +12,6 @@ void labyrinth::printMessage(const char* msg) {
     }
 }
 
-void labyrinth::moveAnimation(float& timer, int& frame, int maxFrames, float frameWidth, Texture2D texture, Vector2& pos) {
-    timer += GetFrameTime();
-
-    // Control the frame switch based on timer
-    if (timer >= 0.135f) {
-        timer = 0.0f;
-        frame += 1;
-    }
-
-    frame = frame % maxFrames;  // Ensure the frame stays within the range
-
-    Rectangle sourceRect = { frame * frameWidth, 0, frameWidth, (float)texture.height };
-
-    // Draw only the current frame from the sprite sheet
-    DrawTextureRec(texture, sourceRect, pos, WHITE);
-}
-
 void labyrinth::levelBuilder(int level) {
     remainingGuesses = 3;
     wrongGuesses = 0;
@@ -38,8 +21,12 @@ void labyrinth::levelBuilder(int level) {
     background = LoadTexture(finalLevelPath);
 
     playerStill = LoadTexture("../assets/player/boyPlayerDown.png");
-    playerLeft = LoadTexture("../assets/player/boyPlayerLeftSideAnimation.png");
-    playerRight = LoadTexture("../assets/player/boyPlayerRightSideAnimation.png");
+    for (int i = 0; i < 4; i++) {
+        string leftFilename = "../assets/player/boyPlayerLeft" + to_string(i) + ".png";
+        string rightFilename = "../assets/player/boyPlayerRight" + to_string(i) + ".png";
+        playerLeft[i] = LoadTexture(leftFilename.c_str());
+        playerRight[i] = LoadTexture(rightFilename.c_str());
+    }
     playerUp = LoadTexture("../assets/player/boyPlayerUp.png");
     playerDown = LoadTexture("../assets/player/boyPlayerDown.png");    
 
@@ -102,6 +89,19 @@ void labyrinth::levelBuilder(int level) {
         }
         else {
             playerDirection = 0;
+        }
+
+        if (IsKeyDown(KEY_A) || IsKeyDown(KEY_D)) {
+            frameCounter++;
+            if (frameCounter >= (60 / frameSpeed)) {
+                frameCounter = 0;
+                currentFrame++;
+                if (currentFrame > maxFrames) currentFrame = 0;
+            }
+        }
+        else {
+            frameCounter = 0;
+            currentFrame = 0;
         }
         
         Rectangle playerRect = { playerPos.x, playerPos.y, playerStill.width * playerScale, playerStill.height * playerScale };
@@ -168,26 +168,21 @@ void labyrinth::levelBuilder(int level) {
 
         camera.target = playerPos;
         
-        framePlayer = 0;
-        frameWidthPlayer = (float)(playerLeft.width / 4);
-        maxFramesPlayer = (int)(playerLeft.width / (int)frameWidthPlayer);
-        
         BeginDrawing();
         ClearBackground(RAYWHITE);
 
         BeginMode2D(camera);
-        DrawTexture(background, 0, 0, WHITE);        
-        //DrawRectangle(playerPos.x, playerPos.y, playerStill.width * playerScale, playerStill.height * playerScale, RED);
+        DrawTexture(background, 0, 0, WHITE);                
         for (size_t i = 0; i < wordsPos.size(); i++) {
             DrawText(assignedWords[i].c_str(), wordsPos[i].x - MeasureText(assignedWords[i].c_str(), 6) / 2, wordsPos[i].y - 3, 6, RED);
         }
 
         switch (playerDirection) {
         case 1:
-            moveAnimation(timer, framePlayer, maxFramesPlayer, frameWidthPlayer, playerLeft, playerPos);
+            DrawTextureEx(playerLeft[currentFrame], playerPos, 0.0f, playerScale, WHITE);
             break;
         case 2:
-            DrawTextureEx(playerRight, playerPos, 0.0f, playerScale, WHITE);
+            DrawTextureEx(playerRight[currentFrame], playerPos, 0.0f, playerScale, WHITE);
             break;
         case 3:
             DrawTextureEx(playerUp, playerPos, 0.0f, playerScale, WHITE);
@@ -223,8 +218,10 @@ void labyrinth::levelBuilder(int level) {
     UnloadTexture(X);
     UnloadTexture(background);
     UnloadTexture(playerStill);
-    UnloadTexture(playerLeft);
-    UnloadTexture(playerRight);
+    for (int i = 0; i < 4; i++) {
+        UnloadTexture(playerLeft[i]);
+        UnloadTexture(playerRight[i]);
+    }
     UnloadTexture(playerUp);
     UnloadTexture(playerDown);
 }

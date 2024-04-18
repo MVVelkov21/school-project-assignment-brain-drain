@@ -6,8 +6,12 @@ void superMaths::levelBuilder() {
     backgroundRight = LoadTexture("../assets/superMath/superMathBgRight.png");
 
     playerStill = LoadTexture("../assets/player/boyPlayerDown.png");
-    playerLeft = LoadTexture("../assets/player/boyPlayerLeftSideAnimation.png");
-    playerRight = LoadTexture("../assets/player/boyPlayerRightSideAnimation.png");
+    for (int i = 0; i < 4; i++) {
+        string leftFilename = "../assets/player/boyPlayerLeft" + to_string(i) + ".png";
+        string rightFilename = "../assets/player/boyPlayerRight" + to_string(i) + ".png";        
+        playerLeft[i] = LoadTexture(leftFilename.c_str());
+        playerRight[i] = LoadTexture(rightFilename.c_str());
+    }
     playerUp = LoadTexture("../assets/player/boyPlayerUp.png");
     playerDown = LoadTexture("../assets/player/boyPlayerDown.png");
 
@@ -45,6 +49,19 @@ void superMaths::levelBuilder() {
             playerDirection = 0;
         }
         
+        if (IsKeyDown(KEY_A) || IsKeyDown(KEY_D)) {
+            frameCounter++;
+            if (frameCounter >= (60 / frameSpeed)) {
+                frameCounter = 0;
+                currentFrame++;
+                if (currentFrame > maxFrames) currentFrame = 0;
+            }
+        }
+        else {
+            frameCounter = 0;
+            currentFrame = 0;
+        }
+
         if (!onGround) {
             playerVelocity.y += gravity;
         }
@@ -97,10 +114,10 @@ void superMaths::levelBuilder() {
 
         switch (playerDirection) {
         case 1:
-            DrawTextureEx(playerLeft, playerPos, 0.0f, playerScale, WHITE);
+            DrawTextureEx(playerLeft[currentFrame], playerPos, 0.0f, playerScale, WHITE);
             break;
         case 2:
-            DrawTextureEx(playerRight, playerPos, 0.0f, playerScale, WHITE);
+            DrawTextureEx(playerRight[currentFrame], playerPos, 0.0f, playerScale, WHITE);
             break;
         case 3:
             DrawTextureEx(playerUp, playerPos, 0.0f, playerScale, WHITE);
@@ -116,9 +133,13 @@ void superMaths::levelBuilder() {
         EndDrawing();
     }    
     UnloadTexture(background);
+    UnloadTexture(backgroundLeft);
+    UnloadTexture(backgroundRight);
     UnloadTexture(playerStill);
-    UnloadTexture(playerLeft);
-    UnloadTexture(playerRight);
+    for (int i = 0; i < 4; i++) {
+        UnloadTexture(playerLeft[i]);
+        UnloadTexture(playerRight[i]);
+    }
     UnloadTexture(playerUp);
     UnloadTexture(playerDown);
 }

@@ -11,15 +11,15 @@ private:
 
 	Texture2D background;
 	Texture2D playerStill;
-	Texture2D playerLeft;
-	Texture2D playerRight;
+	Texture2D playerLeft[4];
+	Texture2D playerRight[4];
 	Texture2D playerUp;
 	Texture2D playerDown;
 
-	float frameWidthPlayer;
-	int maxFramesPlayer;
-	int framePlayer = 0;
-	float timer = 0.0f;
+	int frameCounter = 0;
+	int frameSpeed = 8;
+	int maxFrames = 3;
+	int currentFrame = 0;
 
 	Image colImg;
 	vector<Rectangle> wallRectangles;
@@ -45,8 +45,7 @@ private:
 
 	Camera2D camera = { 0 };
 
-	void printMessage(const char* msg);
-	void moveAnimation(float& timer, int& frame, int maxFrames, float frameWidth, Texture2D texture, Vector2& pos);
+	void printMessage(const char* msg);	
 public:
 	void levelBuilder(int level);
 };

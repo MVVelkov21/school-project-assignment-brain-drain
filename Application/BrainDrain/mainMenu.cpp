@@ -42,8 +42,8 @@ void mainMenu::windowInit() {
 
         Vector2 mousePosition = GetMousePosition();
         bool playHovered = CheckCollisionPointRec(mousePosition, { playButtonPos.x, playButtonPos.y, playButtonSize.x, playButtonSize.y });
-        bool settingsHovered = CheckCollisionPointRec(mousePosition, { settingsButtonPos.x, settingsButtonPos.y, playButtonSize.x, playButtonSize.y });
-        bool exitHovered = CheckCollisionPointRec(mousePosition, { exitButtonPos.x, exitButtonPos.y, playButtonSize.x, playButtonSize.y });
+        bool settingsHovered = CheckCollisionPointRec(mousePosition, { settingsButtonPos.x, settingsButtonPos.y, smallButtonSize.x, smallButtonSize.y });
+        bool exitHovered = CheckCollisionPointRec(mousePosition, { exitButtonPos.x, exitButtonPos.y, smallButtonSize.x, smallButtonSize.y });
         
         DrawTexture(bus, (GetScreenWidth() / 2) - 375, (GetScreenHeight() / 2) + 118, WHITE);
         DrawTexture(school, (GetScreenWidth() / 2) + 150, (GetScreenHeight() / 2) - 15, WHITE);
