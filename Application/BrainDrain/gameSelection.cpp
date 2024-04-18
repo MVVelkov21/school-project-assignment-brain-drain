@@ -22,6 +22,7 @@ void gameSelection::modeSelection() {
             }
             else if (CheckCollisionPointRec(mousePosition, { chemButtonPos.x, chemButtonPos.y, buttonSize.x, buttonSize.y })) {
                 printf("Chemistry button clicked!\n");
+                chem.levelBuilder();
             }
         }
 
@@ -44,7 +45,7 @@ void gameSelection::modeSelection() {
 
         DrawText("Choose a subject", (screenWidth - MeasureText("Choose a subject", 40)) / 2, screenHeight / 8, 40, BLACK);
         DrawText("English", bgButtonPos.x + (buttonSize.x - MeasureText("English", 30)) / 2, bgButtonPos.y + (buttonSize.y - 30) / 2, 30, BLACK);
-        DrawText("Mathematics", mathButtonPos.x + (buttonSize.x - MeasureText("Mathematics", 30)) / 2, mathButtonPos.y + (buttonSize.y - 30) / 2, 30, BLACK);
+        DrawText("Mathematics", mathButtonPos.x + (buttonSize.x - MeasureText("Mathematics", 30)) / 2 + 10, mathButtonPos.y + (buttonSize.y - 30) / 2, 29, BLACK);
         DrawText("Chemistry", chemButtonPos.x + (buttonSize.x - MeasureText("Chemistry", 30)) / 2, chemButtonPos.y + (buttonSize.y - 30) / 2, 30, BLACK);
 
         EndDrawing();
