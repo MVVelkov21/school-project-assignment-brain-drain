@@ -12,6 +12,23 @@ void labyrinth::printMessage(const char* msg) {
     }
 }
 
+void labyrinth::moveAnimation(float& timer, int& frame, int maxFrames, float frameWidth, Texture2D texture, Vector2& pos) {
+    timer += GetFrameTime();
+
+    // Control the frame switch based on timer
+    if (timer >= 0.135f) {
+        timer = 0.0f;
+        frame += 1;
+    }
+
+    frame = frame % maxFrames;  // Ensure the frame stays within the range
+
+    Rectangle sourceRect = { frame * frameWidth, 0, frameWidth, (float)texture.height };
+
+    // Draw only the current frame from the sprite sheet
+    DrawTextureRec(texture, sourceRect, pos, WHITE);
+}
+
 void labyrinth::levelBuilder(int level) {
     remainingGuesses = 3;
     wrongGuesses = 0;
@@ -25,6 +42,8 @@ void labyrinth::levelBuilder(int level) {
     playerRight = LoadTexture("../assets/player/boyPlayerRightSideAnimation.png");
     playerUp = LoadTexture("../assets/player/boyPlayerUp.png");
     playerDown = LoadTexture("../assets/player/boyPlayerDown.png");    
+
+
 
     colImg = LoadImage("../assets/collision/col_level1.png");
     wallRectangles = map.groupWhitePixelsIntoRectangles(colImg, colImg.width, colImg.height, background.width, background.height);
@@ -149,6 +168,10 @@ void labyrinth::levelBuilder(int level) {
 
         camera.target = playerPos;
         
+        framePlayer = 0;
+        frameWidthPlayer = (float)(playerLeft.width / 4);
+        maxFramesPlayer = (int)(playerLeft.width / (int)frameWidthPlayer);
+        
         BeginDrawing();
         ClearBackground(RAYWHITE);
 
@@ -161,7 +184,7 @@ void labyrinth::levelBuilder(int level) {
 
         switch (playerDirection) {
         case 1:
-            DrawTextureEx(playerLeft, playerPos, 0.0f, playerScale, WHITE);
+            moveAnimation(timer, framePlayer, maxFramesPlayer, frameWidthPlayer, playerLeft, playerPos);
             break;
         case 2:
             DrawTextureEx(playerRight, playerPos, 0.0f, playerScale, WHITE);
