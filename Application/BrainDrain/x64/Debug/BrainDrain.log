@@ -1,24 +1,2 @@
-﻿  gameSelection.cpp
-F:\school-project-assignment-brain-drain\Application\BrainDrain\gameSelection.cpp(38,61): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-F:\school-project-assignment-brain-drain\Application\BrainDrain\gameSelection.cpp(38,46): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-F:\school-project-assignment-brain-drain\Application\BrainDrain\gameSelection.cpp(41,65): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-F:\school-project-assignment-brain-drain\Application\BrainDrain\gameSelection.cpp(41,48): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-F:\school-project-assignment-brain-drain\Application\BrainDrain\gameSelection.cpp(44,65): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-F:\school-project-assignment-brain-drain\Application\BrainDrain\gameSelection.cpp(44,48): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-F:\school-project-assignment-brain-drain\Application\BrainDrain\gameSelection.cpp(47,108): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-F:\school-project-assignment-brain-drain\Application\BrainDrain\gameSelection.cpp(47,43): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-F:\school-project-assignment-brain-drain\Application\BrainDrain\gameSelection.cpp(48,125): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-F:\school-project-assignment-brain-drain\Application\BrainDrain\gameSelection.cpp(48,103): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-F:\school-project-assignment-brain-drain\Application\BrainDrain\gameSelection.cpp(49,116): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-F:\school-project-assignment-brain-drain\Application\BrainDrain\gameSelection.cpp(49,47): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  madScientists.cpp
-  main.cpp
-  mainMenu.cpp
-F:\school-project-assignment-brain-drain\Application\BrainDrain\mainMenu.cpp(52,62): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-F:\school-project-assignment-brain-drain\Application\BrainDrain\mainMenu.cpp(52,45): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-F:\school-project-assignment-brain-drain\Application\BrainDrain\mainMenu.cpp(55,74): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-F:\school-project-assignment-brain-drain\Application\BrainDrain\mainMenu.cpp(55,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-F:\school-project-assignment-brain-drain\Application\BrainDrain\mainMenu.cpp(58,62): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-F:\school-project-assignment-brain-drain\Application\BrainDrain\mainMenu.cpp(58,45): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  Generating Code...
+﻿  madScientists.cpp
   BrainDrain.vcxproj -> F:\school-project-assignment-brain-drain\Application\x64\Debug\BrainDrain.exe
