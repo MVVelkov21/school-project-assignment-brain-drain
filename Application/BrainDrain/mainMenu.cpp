@@ -8,30 +8,30 @@ void mainMenu::windowInit() {
 
     background = LoadTexture("../assets/mainMenu/mainMenu.png");
     play = LoadTexture("../assets/mainMenu/playButton.png");
-    settings[0] = LoadTexture("../assets/mainMenu/settingsButton.png");
-    settings[1] = LoadTexture("../assets/mainMenu/settingsHoverButton.png");
+    settings = LoadTexture("../assets/mainMenu/settingsButton.png");    
     exit = LoadTexture("../assets/mainMenu/exitButton.png");
     bus = LoadTexture("../assets/mainMenu/bus.png");
     school = LoadTexture("../assets/mainMenu/school.png");
 
-    buttonSize = { (float)play.width, (float)play.height };
-    playButtonPos = { (init.screenWidth - buttonSize.x) / 2, (init.screenHeight - buttonSize.y) / 2 - 60 };
-    settingsButtonPos = { (init.screenWidth - buttonSize.x) / 2, (init.screenHeight - buttonSize.y) / 2 + 50 };
-    exitButtonPos = { (init.screenWidth - buttonSize.x) / 2, (init.screenHeight - buttonSize.y) / 2 + 160 };
+    playButtonSize = { (float)play.width, (float)play.height };
+    smallButtonSize = { (float)settings.width, (float)settings.height };
+    playButtonPos = { (init.screenWidth - playButtonSize.x) / 2, (init.screenHeight - playButtonSize.y) / 2 + 160 };
+    settingsButtonPos = { (float)init.screenWidth / 2 - 390, (float)init.screenHeight / 2 - 215 };
+    exitButtonPos = { (float)init.screenWidth / 2 + 290, (float)init.screenHeight / 2 - 215 };
 
     while (!WindowShouldClose()) {
 
         if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
             Vector2 mousePosition = GetMousePosition();
 
-            if (CheckCollisionPointRec(mousePosition, { playButtonPos.x, playButtonPos.y, buttonSize.x, buttonSize.y })) {
+            if (CheckCollisionPointRec(mousePosition, { playButtonPos.x, playButtonPos.y, playButtonSize.x, playButtonSize.y })) {
                 printf("Play button clicked!\n");                
                 init.modeSelection();
             }
-            else if (CheckCollisionPointRec(mousePosition, { settingsButtonPos.x, settingsButtonPos.y, buttonSize.x, buttonSize.y })) {
+            else if (CheckCollisionPointRec(mousePosition, { settingsButtonPos.x, settingsButtonPos.y, smallButtonSize.x, smallButtonSize.y })) {
                 printf("Settings button clicked!\n");
             }
-            else if (CheckCollisionPointRec(mousePosition, { exitButtonPos.x, exitButtonPos.y, buttonSize.x, buttonSize.y })) {
+            else if (CheckCollisionPointRec(mousePosition, { exitButtonPos.x, exitButtonPos.y, smallButtonSize.x, smallButtonSize.y })) {
                 break;
             }
         }
@@ -41,23 +41,26 @@ void mainMenu::windowInit() {
         DrawTexture(background, 0, 0, WHITE);
 
         Vector2 mousePosition = GetMousePosition();
-        bool playHovered = CheckCollisionPointRec(mousePosition, { playButtonPos.x, playButtonPos.y, buttonSize.x, buttonSize.y });
-        bool settingsHovered = CheckCollisionPointRec(mousePosition, { settingsButtonPos.x, settingsButtonPos.y, buttonSize.x, buttonSize.y });
-        bool exitHovered = CheckCollisionPointRec(mousePosition, { exitButtonPos.x, exitButtonPos.y, buttonSize.x, buttonSize.y });
+        bool playHovered = CheckCollisionPointRec(mousePosition, { playButtonPos.x, playButtonPos.y, playButtonSize.x, playButtonSize.y });
+        bool settingsHovered = CheckCollisionPointRec(mousePosition, { settingsButtonPos.x, settingsButtonPos.y, playButtonSize.x, playButtonSize.y });
+        bool exitHovered = CheckCollisionPointRec(mousePosition, { exitButtonPos.x, exitButtonPos.y, playButtonSize.x, playButtonSize.y });
         
         DrawTexture(bus, (GetScreenWidth() / 2) - 375, (GetScreenHeight() / 2) + 118, WHITE);
         DrawTexture(school, (GetScreenWidth() / 2) + 150, (GetScreenHeight() / 2) - 15, WHITE);
 
-        DrawTexture(settings[0], (GetScreenWidth() / 2) - 390, (GetScreenHeight() / 2) - 215, WHITE);
-        
-        DrawTexture(exit, (GetScreenWidth() / 2) + 290, (GetScreenHeight() / 2) - 215, WHITE);
+        if (playHovered) DrawTexturePro(play, { 0, 0, playButtonSize.x, playButtonSize.y }, { playButtonPos.x - (playButtonSize.x * init.hoverScaleIncrease - playButtonSize.x) / 2, playButtonPos.y - (playButtonSize.y * init.hoverScaleIncrease - playButtonSize.y) / 2, playButtonSize.x * init.hoverScaleIncrease, playButtonSize.y * init.hoverScaleIncrease }, { 0, 0 }, 0, WHITE);
+        else DrawTexture(play, playButtonPos.x, playButtonPos.y, WHITE);
 
-        DrawTexture(play, (GetScreenWidth() / 2) - 170, (GetScreenHeight() / 2) + 38, WHITE);
+        if (settingsHovered) DrawTexturePro(settings, { 0, 0, smallButtonSize.x, smallButtonSize.y }, { settingsButtonPos.x - (smallButtonSize.x * init.hoverScaleIncrease - smallButtonSize.x) / 2, settingsButtonPos.y - (smallButtonSize.y * init.hoverScaleIncrease - smallButtonSize.y) / 2, smallButtonSize.x * init.hoverScaleIncrease, smallButtonSize.y * init.hoverScaleIncrease }, { 0, 0 }, 0, WHITE);
+        else DrawTexture(settings, settingsButtonPos.x, settingsButtonPos.y, WHITE);
+
+        if (exitHovered) DrawTexturePro(exit, { 0, 0, smallButtonSize.x, smallButtonSize.y }, { exitButtonPos.x - (smallButtonSize.x * init.hoverScaleIncrease - smallButtonSize.x) / 2, exitButtonPos.y - (smallButtonSize.y * init.hoverScaleIncrease - smallButtonSize.y) / 2, smallButtonSize.x * init.hoverScaleIncrease, smallButtonSize.y * init.hoverScaleIncrease }, { 0, 0 }, 0, WHITE);
+        else DrawTexture(exit, exitButtonPos.x, exitButtonPos.y, WHITE);
 
         EndDrawing();
     }
 
-    for(int i = 0; i < 2; i++) UnloadTexture(settings[i]);
+    UnloadTexture(settings);
     UnloadTexture(exit);
     UnloadTexture(play);
     CloseWindow();

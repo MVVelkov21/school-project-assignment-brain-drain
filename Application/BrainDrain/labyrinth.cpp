@@ -21,8 +21,8 @@ void labyrinth::levelBuilder(int level) {
     background = LoadTexture(finalLevelPath);
 
     playerStill = LoadTexture("../assets/player/boyPlayerDown.png");
-    playerLeft = LoadTexture("../assets/player/boyPlayerLeft (1).png");
-    playerRight = LoadTexture("../assets/player/boyPlayerRight (1).png");
+    playerLeft = LoadTexture("../assets/player/boyPlayerLeftSideAnimation.png");
+    playerRight = LoadTexture("../assets/player/boyPlayerRightSideAnimation.png");
     playerUp = LoadTexture("../assets/player/boyPlayerUp.png");
     playerDown = LoadTexture("../assets/player/boyPlayerDown.png");    
 
@@ -45,7 +45,7 @@ void labyrinth::levelBuilder(int level) {
         assignedWords.push_back(words[i % words.size()]);
     }
 
-    ifstream emptySentencesFile("../assets/words/emptySentences.txt");    
+    ifstream emptySentencesFile("../assets/maze/words/emptySentences.txt");    
     while (getline(emptySentencesFile, sentence)) {
         emptySentences.push_back(sentence);
     }

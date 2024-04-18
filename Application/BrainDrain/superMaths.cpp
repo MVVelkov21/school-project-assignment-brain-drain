@@ -1,9 +1,9 @@
 #include "../BrainDrainLib/superMaths.h"
 
 void superMaths::levelBuilder() {
-    background = LoadTexture("../assets/maze/superMath.png");
-    backgroundLeft = LoadTexture("../assets/maze/superMathBgLeft.png");
-    backgroundRight = LoadTexture("../assets/maze/superMathBgRight.png");
+    background = LoadTexture("../assets/superMath/superMath.png");
+    backgroundLeft = LoadTexture("../assets/superMath/superMathBgLeft.png");
+    backgroundRight = LoadTexture("../assets/superMath/superMathBgRight.png");
 
     playerStill = LoadTexture("../assets/player/boyPlayerDown.png");
     playerLeft = LoadTexture("../assets/player/boyPlayerLeftSideAnimation.png");
