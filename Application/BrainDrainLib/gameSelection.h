@@ -11,6 +11,7 @@ private:
 	madScientists chem;
 
 	Texture2D texture;
+	Texture2D background;
 
 	Vector2 buttonSize;
 	Vector2 bgButtonPos;

@@ -68,7 +68,9 @@ void madScientists::levelBuilder() {
 
         BeginDrawing();
         ClearBackground(RAYWHITE);
+
         DrawTexture(background, 0, 0, WHITE);
+
         DrawRectangleRec(tubeHitBox, GREEN);
         DrawRectangleRec(Element1, BLUE);
         DrawRectangleRec(Element2, RED);
@@ -83,4 +85,5 @@ void madScientists::levelBuilder() {
 
         EndDrawing();
     }
+    UnloadTexture(background);
 }

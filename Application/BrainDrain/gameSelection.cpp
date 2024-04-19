@@ -2,6 +2,7 @@
 
 void gameSelection::modeSelection() {
     texture = LoadTexture("../assets/button/demoButtonSubjects.png");
+    background = LoadTexture("../assets/gameSelectionMenu/gameSelectionMenu.png");
 
     buttonSize = { (float)texture.width, (float)texture.height };
     bgButtonPos = { (screenWidth - buttonSize.x) / 2 - 250, (screenHeight - buttonSize.y) / 2 };
@@ -28,6 +29,7 @@ void gameSelection::modeSelection() {
 
         BeginDrawing();
         ClearBackground(RAYWHITE);
+        DrawTexture(background, 0, 0, WHITE);
 
         Vector2 mousePosition = GetMousePosition();
         bool playHovered = CheckCollisionPointRec(mousePosition, { bgButtonPos.x, bgButtonPos.y, buttonSize.x, buttonSize.y });
@@ -44,9 +46,6 @@ void gameSelection::modeSelection() {
         else DrawTexture(texture, chemButtonPos.x, chemButtonPos.y, WHITE);
 
         DrawText("Choose a subject", (screenWidth - MeasureText("Choose a subject", 40)) / 2, screenHeight / 8, 40, BLACK);
-        DrawText("English", bgButtonPos.x + (buttonSize.x - MeasureText("English", 30)) / 2, bgButtonPos.y + (buttonSize.y - 30) / 2, 30, BLACK);
-        DrawText("Mathematics", mathButtonPos.x + (buttonSize.x - MeasureText("Mathematics", 30)) / 2 + 10, mathButtonPos.y + (buttonSize.y - 30) / 2, 29, BLACK);
-        DrawText("Chemistry", chemButtonPos.x + (buttonSize.x - MeasureText("Chemistry", 30)) / 2, chemButtonPos.y + (buttonSize.y - 30) / 2, 30, BLACK);
 
         EndDrawing();
 
@@ -54,4 +53,5 @@ void gameSelection::modeSelection() {
     }
 
     UnloadTexture(texture);
+    UnloadTexture(background);
 }
