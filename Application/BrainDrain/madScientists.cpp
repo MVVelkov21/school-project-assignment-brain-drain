@@ -53,6 +53,7 @@ void madScientists::levelBuilder() {
     tubeHitBox = { 220, 267, 120, 120 };
     Element1 = { 170, 80, 80, 80};
     Element2 = { 260, 80, 80, 80 };
+    background = LoadTexture("../assets/madScientists/madScientists2.png");
     SetTargetFPS(60);
 
     while (!WindowShouldClose()) {
@@ -67,7 +68,7 @@ void madScientists::levelBuilder() {
 
         BeginDrawing();
         ClearBackground(RAYWHITE);
-
+        DrawTexture(background, 0, 0, WHITE);
         DrawRectangleRec(tubeHitBox, GREEN);
         DrawRectangleRec(Element1, BLUE);
         DrawRectangleRec(Element2, RED);

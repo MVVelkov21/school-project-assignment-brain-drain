@@ -6,6 +6,7 @@ class madScientists {
 		bool isDraggedEl1, isDraggedEl2;
 		int fillCounter;
 		Texture2D tube, tubeHalf, tubeFull;
+		Texture2D background;
 		Rectangle Element1, Element2, tubeHitBox;
 		Vector2 tubePos;
 	public: 
