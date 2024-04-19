@@ -15,9 +15,9 @@ void mainMenu::windowInit() {
 
     playButtonSize = { (float)play.width, (float)play.height };
     smallButtonSize = { (float)settings.width, (float)settings.height };
-    playButtonPos = { (init.screenWidth - playButtonSize.x) / 2, (init.screenHeight - playButtonSize.y) / 2 + 160 };
-    settingsButtonPos = { (float)init.screenWidth / 2 - 390, (float)init.screenHeight / 2 - 215 };
-    exitButtonPos = { (float)init.screenWidth / 2 + 290, (float)init.screenHeight / 2 - 215 };
+    playButtonPos = { (init.screenWidth - playButtonSize.x) / 2 , (init.screenHeight - playButtonSize.y) / 2 + 170 };
+    settingsButtonPos = { (float)init.screenWidth / 2 - 385, (float)init.screenHeight / 2 - 215 };
+    exitButtonPos = { (float)init.screenWidth / 2 + 285, (float)init.screenHeight / 2 - 215 };
 
     while (!WindowShouldClose()) {
 
