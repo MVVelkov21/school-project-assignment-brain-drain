@@ -2,7 +2,7 @@
 #include "precompiledHeader.h"
 #include "mapBuilder.h"
 
-class labyrinth {
+class riddleRoute {
 private:
 	mapBuilder map;
 

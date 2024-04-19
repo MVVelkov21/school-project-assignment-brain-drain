@@ -1,3 +1,13 @@
-﻿  madScientists.cpp
-LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+﻿  riddleRoute.cpp
+C:\Users\Стилиян\Documents\school-project-assignment-brain-drain\Application\BrainDrain\riddleRoute.cpp(60,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Стилиян\Documents\school-project-assignment-brain-drain\Application\BrainDrain\riddleRoute.cpp(121,55): warning C4838: conversion from 'size_t' to 'float' requires a narrowing conversion
+C:\Users\Стилиян\Documents\school-project-assignment-brain-drain\Application\BrainDrain\riddleRoute.cpp(121,55): warning C4244: 'initializing': conversion from 'size_t' to 'float', possible loss of data
+C:\Users\Стилиян\Documents\school-project-assignment-brain-drain\Application\BrainDrain\riddleRoute.cpp(121,76): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+C:\Users\Стилиян\Documents\school-project-assignment-brain-drain\Application\BrainDrain\riddleRoute.cpp(121,76): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\Стилиян\Documents\school-project-assignment-brain-drain\Application\BrainDrain\riddleRoute.cpp(158,87): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+C:\Users\Стилиян\Documents\school-project-assignment-brain-drain\Application\BrainDrain\riddleRoute.cpp(158,87): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\Стилиян\Documents\school-project-assignment-brain-drain\Application\BrainDrain\riddleRoute.cpp(177,124): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Стилиян\Documents\school-project-assignment-brain-drain\Application\BrainDrain\riddleRoute.cpp(177,62): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Стилиян\Documents\school-project-assignment-brain-drain\Application\BrainDrain\riddleRoute.cpp(201,55): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Стилиян\Documents\school-project-assignment-brain-drain\Application\BrainDrain\riddleRoute.cpp(205,42): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
   BrainDrain.vcxproj -> C:\Users\Стилиян\Documents\school-project-assignment-brain-drain\Application\x64\Debug\BrainDrain.exe

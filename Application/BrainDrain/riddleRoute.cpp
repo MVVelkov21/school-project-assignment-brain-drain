@@ -1,6 +1,6 @@
-﻿#include "../BrainDrainLib/labyrinth.h"
+﻿#include "../BrainDrainLib/riddleRoute.h"
 
-void labyrinth::printMessage(const char* msg) {
+void riddleRoute::printMessage(const char* msg) {
     while (!WindowShouldClose()) {
         BeginDrawing();
         ClearBackground(RAYWHITE);
@@ -12,10 +12,10 @@ void labyrinth::printMessage(const char* msg) {
     }
 }
 
-void labyrinth::levelBuilder(int level) {
+void riddleRoute::levelBuilder(int level) {
     remainingGuesses = 3;
     wrongGuesses = 0;
-    levelPath = "../assets/maze/level";
+    levelPath = "../assets/riddleRoute/level";
     levelPath += to_string(level) + ".png";
     finalLevelPath = levelPath.c_str();
     background = LoadTexture(finalLevelPath);
@@ -41,7 +41,7 @@ void labyrinth::levelBuilder(int level) {
 
     X = LoadTexture("../assets/error.png");
 
-    ifstream wordFile("../assets/maze/words/missingWords.txt");
+    ifstream wordFile("../assets/riddleRoute/words/missingWords.txt");
     while (getline(wordFile, word)) {
         words.push_back(word);
     }
@@ -51,7 +51,7 @@ void labyrinth::levelBuilder(int level) {
         assignedWords.push_back(words[i % words.size()]);
     }
 
-    ifstream emptySentencesFile("../assets/maze/words/emptySentences.txt");    
+    ifstream emptySentencesFile("../assets/riddleRoute/words/emptySentences.txt");    
     while (getline(emptySentencesFile, sentence)) {
         emptySentences.push_back(sentence);
     }

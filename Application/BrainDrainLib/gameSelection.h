@@ -2,11 +2,11 @@
 #include "precompiledHeader.h"
 #include "superMaths.h"
 #include "madScientists.h"
-#include "labyrinth.h"
+#include "riddleRoute.h"
 
 class gameSelection {
 private:
-	labyrinth english;
+	riddleRoute english;
 	superMaths maths;
 	madScientists chem;
 
