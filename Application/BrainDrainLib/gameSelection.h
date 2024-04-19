@@ -10,15 +10,18 @@ private:
 	superMaths maths;
 	madScientists chem;
 
-	Texture2D texture;
 	Texture2D background;
 
 	Vector2 buttonSize;
-	Vector2 bgButtonPos;
+	Vector2 enButtonPos;
 	Vector2 mathButtonPos;
 	Vector2 chemButtonPos;
 
-	bool skipFrame = false;
+	Rectangle enButtonRect;
+	Rectangle mathButtonRect;
+	Rectangle chemButtonRect;
+
+	int skipFrame = 0;
 public:
 	const int screenWidth = 800;
 	const int screenHeight = 450;

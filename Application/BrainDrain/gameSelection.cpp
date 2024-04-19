@@ -1,25 +1,28 @@
 #include "../BrainDrainLib/gameSelection.h"
 
 void gameSelection::modeSelection() {
-    texture = LoadTexture("../assets/button/demoButtonSubjects.png");
     background = LoadTexture("../assets/gameSelectionMenu/gameSelectionMenu.png");
 
-    buttonSize = { (float)texture.width, (float)texture.height };
-    bgButtonPos = { (screenWidth - buttonSize.x) / 2 - 250, (screenHeight - buttonSize.y) / 2 };
-    mathButtonPos = { (screenWidth - buttonSize.x) / 2, (screenHeight - buttonSize.y) / 2 };
-    chemButtonPos = { (screenWidth - buttonSize.x) / 2 + 250, (screenHeight - buttonSize.y) / 2 };
+    buttonSize = { 162, 216 };
+    enButtonPos = { 38, 180};
+    mathButtonPos = { enButtonPos.x + buttonSize.x + 47, enButtonPos.y };
+    chemButtonPos = { enButtonPos.x + (buttonSize.x + 47) * 2, enButtonPos.y };
+
+    enButtonRect = { enButtonPos.x, enButtonPos.y, buttonSize.x, buttonSize.y };
+    mathButtonRect = { mathButtonPos.x, mathButtonPos.y, buttonSize.x, buttonSize.y };
+    chemButtonRect = { chemButtonPos.x, chemButtonPos.y, buttonSize.x, buttonSize.y };
 
     while (!WindowShouldClose()) {        
-        if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON) && skipFrame == 1) {
+        if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON) && skipFrame == 2) {
             Vector2 mousePosition = GetMousePosition();
 
-            if (CheckCollisionPointRec(mousePosition, { bgButtonPos.x, bgButtonPos.y, buttonSize.x, buttonSize.y })) {
+            if (CheckCollisionPointRec(mousePosition, { enButtonPos.x, enButtonPos.y, buttonSize.x, buttonSize.y })) {
                 printf("English button clicked!\n");
                 english.levelBuilder(0);
             }
             else if (CheckCollisionPointRec(mousePosition, { mathButtonPos.x, mathButtonPos.y, buttonSize.x, buttonSize.y })) {
                 printf("Maths button clicked!\n");
-                maths.levelBuilder();
+                maths.levelBuilder();               
             }
             else if (CheckCollisionPointRec(mousePosition, { chemButtonPos.x, chemButtonPos.y, buttonSize.x, buttonSize.y })) {
                 printf("Chemistry button clicked!\n");
@@ -31,27 +34,30 @@ void gameSelection::modeSelection() {
         ClearBackground(RAYWHITE);
         DrawTexture(background, 0, 0, WHITE);
 
-        Vector2 mousePosition = GetMousePosition();
-        bool playHovered = CheckCollisionPointRec(mousePosition, { bgButtonPos.x, bgButtonPos.y, buttonSize.x, buttonSize.y });
-        bool settingsHovered = CheckCollisionPointRec(mousePosition, { mathButtonPos.x, mathButtonPos.y, buttonSize.x, buttonSize.y });
-        bool exitHovered = CheckCollisionPointRec(mousePosition, { chemButtonPos.x, chemButtonPos.y, buttonSize.x, buttonSize.y });
+        /*Vector2 mousePosition = GetMousePosition();
+        bool enHovered = CheckCollisionPointRec(mousePosition, { enButtonPos.x, enButtonPos.y, buttonSize.x, buttonSize.y });
+        bool mathHovered = CheckCollisionPointRec(mousePosition, { mathButtonPos.x, mathButtonPos.y, buttonSize.x, buttonSize.y });
+        bool chemHovered = CheckCollisionPointRec(mousePosition, { chemButtonPos.x, chemButtonPos.y, buttonSize.x, buttonSize.y });*/
 
-        if (playHovered) DrawTexturePro(texture, { 0, 0, buttonSize.x, buttonSize.y }, { bgButtonPos.x - (buttonSize.x * hoverScaleIncrease - buttonSize.x) / 2, bgButtonPos.y - (buttonSize.y * hoverScaleIncrease - buttonSize.y) / 2, buttonSize.x * hoverScaleIncrease, buttonSize.y * hoverScaleIncrease }, { 0, 0 }, 0, RED);
-        else DrawTexture(texture, bgButtonPos.x, bgButtonPos.y, WHITE);
+        /*if (enHovered) DrawRectangleRec(enButtonRect, RED);
+        else DrawRectangleLines(enButtonRect.x, enButtonRect.y, enButtonRect.width, enButtonRect.height, WHITE);*/
+        DrawText("English", enButtonPos.x + buttonSize.x / 2 - MeasureText("English", 20) / 2, enButtonPos.y + buttonSize.y / 2 + 20, 20, BLACK);
 
-        if (settingsHovered) DrawTexturePro(texture, { 0, 0, buttonSize.x, buttonSize.y }, { mathButtonPos.x - (buttonSize.x * hoverScaleIncrease - buttonSize.x) / 2, mathButtonPos.y - (buttonSize.y * hoverScaleIncrease - buttonSize.y) / 2, buttonSize.x * hoverScaleIncrease, buttonSize.y * hoverScaleIncrease }, { 0, 0 }, 0, RED);
-        else DrawTexture(texture, mathButtonPos.x, mathButtonPos.y, WHITE);
+        /*if (mathHovered) DrawRectangleRec(mathButtonRect, RED);
+        else DrawRectangleLines(mathButtonRect.x, mathButtonRect.y, mathButtonRect.width, mathButtonRect.height, WHITE);*/
+        DrawText("Mathematics", mathButtonPos.x + buttonSize.x / 2 - MeasureText("Mathematics", 20) / 2, mathButtonPos.y + buttonSize.y / 2 + 20, 20, BLACK);
 
-        if (exitHovered) DrawTexturePro(texture, { 0, 0, buttonSize.x, buttonSize.y }, { chemButtonPos.x - (buttonSize.x * hoverScaleIncrease - buttonSize.x) / 2, chemButtonPos.y - (buttonSize.y * hoverScaleIncrease - buttonSize.y) / 2, buttonSize.x * hoverScaleIncrease, buttonSize.y * hoverScaleIncrease }, { 0, 0 }, 0, RED);
-        else DrawTexture(texture, chemButtonPos.x, chemButtonPos.y, WHITE);
+        /*if (chemHovered) DrawRectangleRec(chemButtonRect, RED);
+        else DrawRectangleLines(chemButtonRect.x, chemButtonRect.y, chemButtonRect.width, chemButtonRect.height, WHITE);*/
+        DrawText("Chemistry", chemButtonPos.x + buttonSize.x / 2 - MeasureText("Chemistry", 20) / 2, chemButtonPos.y + buttonSize.y / 2 + 20, 20, BLACK);
 
-        DrawText("Choose a subject", (screenWidth - MeasureText("Choose a subject", 40)) / 2, screenHeight / 8, 40, BLACK);
+        DrawText("Choose a subject", (screenWidth - MeasureText("Choose a subject", 40)) / 2, screenHeight / 4, 40, BLACK);
 
         EndDrawing();
 
-        skipFrame = 1;
+        skipFrame++;
+        if (skipFrame >= 2) skipFrame = 2;
     }
-
-    UnloadTexture(texture);
+    skipFrame = 0;
     UnloadTexture(background);
 }

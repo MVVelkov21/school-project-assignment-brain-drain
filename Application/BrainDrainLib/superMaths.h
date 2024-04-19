@@ -4,6 +4,18 @@
 
 class superMaths {
 private:
+	const int ADDITION = 0;
+	const int SUBTRACTION = 1;
+	const int MULTIPLICATION = 2;
+	const int DIVISION = 3;
+	int mathSymbolCount[4] = { 0,0,0,0 };
+	string symbol[4]{
+		{"ADDITION"},
+		{"SUBTRACTION"},
+		{"MULTIPLICATION"},
+		{"DIVISION"},
+	};
+
 	mapBuilder map;
 
 	Texture2D background;
@@ -33,8 +45,7 @@ private:
 	const float gravity = 0.2f;
 	const float jumpForce = 10.0f;
 	bool isJumping = false;
-	bool onGround = false;
-
+	bool onGround = false;	
 	Camera2D camera = { 0 };
 
 public:
