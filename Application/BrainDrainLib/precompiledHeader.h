@@ -6,6 +6,8 @@
 #include <chrono>
 #include <thread>
 #include <fstream>
+#include <algorithm>
+#include <random>
 #include "../raylib/include/raylib.h"
 
 using namespace std;

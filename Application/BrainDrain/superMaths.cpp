@@ -1,5 +1,61 @@
 #include "../BrainDrainLib/superMaths.h"
 
+void superMaths::loadProblemsAndSymbols(string& problemFile, string& symbolFile) {   
+    ifstream problemStream(problemFile);
+    ifstream symbolStream(symbolFile);
+    
+    vector<string> problems;
+    string line;
+    while (getline(problemStream, line)) {
+        problems.push_back(line);
+    }
+    problemStream.close();
+   
+    vector<vector<string>> symbolsByProblem;
+    vector<string> symbols;
+    while (getline(symbolStream, line)) {
+        symbols.push_back(line);
+        if (symbols.size() == 3) {
+            symbolsByProblem.push_back(symbols);
+            symbols.clear();
+        }
+    }
+    symbolStream.close();
+    
+    while (!WindowShouldClose()) {
+        
+        srand(time(nullptr));
+        int randomIndex = rand() % problems.size();
+        string selectedProblem = problems[randomIndex];
+        vector<string> selectedSymbols = symbolsByProblem[randomIndex];
+
+        problemUnsolved = false;
+        
+        while (!problemUnsolved) {            
+            BeginDrawing();
+            ClearBackground(RAYWHITE);
+            DrawText("Solve the equation", 400 - MeasureText("Solve the equation", 30) / 2, 100, 30, RED);
+            DrawText(selectedProblem.c_str(), 400 - MeasureText(selectedProblem.c_str(), 20) / 2, 200, 20, BLACK);
+            EndDrawing();
+           
+            string playerInput;
+            cout << "Enter the symbols in order (e.g., '+-*'): ";
+            cin >> playerInput;
+            if (playerInput == "exit") break;
+            
+            if (playerInput == selectedSymbols[0] + selectedSymbols[1] + selectedSymbols[2]) {
+                cout << "Congratulations! You solved the problem!" << endl;   
+                break;
+            }
+            else {
+                cout << "Incorrect. Please try again." << endl;
+                problemUnsolved = true;
+            }
+        }
+        if (!problemUnsolved) break;
+    }   
+}
+
 void superMaths::levelBuilder() {
     background = LoadTexture("../assets/superMath/superMath.png");
     backgroundLeft = LoadTexture("../assets/superMath/superMathBgLeft.png");
@@ -20,6 +76,7 @@ void superMaths::levelBuilder() {
     exit = map.groupGreenPixelsIntoRectangles(colImg, colImg.width, colImg.height, background.width, background.height);
     boxes = map.groupRedPixelsIntoRectangles(colImg, colImg.width, colImg.height, background.width, background.height);
     playerPos = map.getYellowPixelPositions(colImg, colImg.width, colImg.height, background.width, background.height);
+    Vector2 startingPos = playerPos;
     UnloadImage(colImg);    
 
     camera.target = { (float)background.width / 2, (float)background.height / 2 };
@@ -29,7 +86,7 @@ void superMaths::levelBuilder() {
 
     while (!WindowShouldClose()) {
         Vector2 previousPlayerPos = playerPos;
-
+        problemUnsolved = 1;
 
         if (IsKeyDown(KEY_SPACE) && onGround) {
             playerVelocity.y = -jumpForce;
@@ -141,7 +198,16 @@ void superMaths::levelBuilder() {
                 }
             }
         }
-
+        for (size_t i = 0; i < exit.size(); i++) {
+            if (CheckCollisionRecs({ playerPos.x, playerPos.y, playerStill.width * playerScale, playerStill.height * playerScale }, exit[i])) {
+                string problems = "../assets/superMath/math problems/problems.txt";
+                string symbols = "../assets/superMath/math problems/symbols.txt";
+                loadProblemsAndSymbols(problems, symbols);
+                playerPos = startingPos;
+                if(!problemUnsolved) break;
+            }
+        }        
+        if (!problemUnsolved) break;
         BeginDrawing();
         ClearBackground(BLACK);
 
@@ -153,8 +219,7 @@ void superMaths::levelBuilder() {
             DrawText(symbol[i].c_str(), 10, 50 + i * 50, 50, BLACK);
             string count = to_string(mathSymbolCount[i]);
             DrawText(count.c_str(), MeasureText(symbol[i].c_str(), 50) + 30, 50 + i * 50, 50, RED);
-        }
-
+        }        
         switch (playerDirection) {
         case 1:
             DrawTextureEx(playerLeft[currentFrame], playerPos, 0.0f, playerScale, WHITE);

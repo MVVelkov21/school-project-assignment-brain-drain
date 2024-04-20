@@ -1,0 +1,4 @@
+[empty] 2 [empty] 12 [empty] 8 = -32
+[empty] 2 [empty] 12 [empty] 8 = -94
+[empty] 12 [empty] 12 [empty] 2.5 = 18
+1 [empty] 8 [empty] 5 [empty] 3 = 7 

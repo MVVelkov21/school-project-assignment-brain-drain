@@ -15,6 +15,7 @@ private:
 		{"MULTIPLICATION"},
 		{"DIVISION"},
 	};
+	bool problemUnsolved = 1;
 
 	mapBuilder map;
 
@@ -48,6 +49,8 @@ private:
 	bool onGround = false;	
 	Camera2D camera = { 0 };
 
+
+	void loadProblemsAndSymbols(std::string& problemFile, std::string& symbolFile);
 public:
 	void levelBuilder();
 };
