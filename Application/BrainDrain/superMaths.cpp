@@ -68,57 +68,50 @@ void superMaths::levelBuilder() {
         
         playerPos.x += playerVelocity.x;
         playerPos.y += playerVelocity.y;
-        
-        bool collidedWithBoxX = false;
+                
         for (size_t i = 0; i < boxes.size(); i++) {
             if (CheckCollisionRecs({ playerPos.x, previousPlayerPos.y, playerStill.width * playerScale, playerStill.height * playerScale }, boxes[i])) {
                 playerPos.x = previousPlayerPos.x;
-                collidedWithBoxX = true;
                 break;
             }
         }
-
-        bool collidedWithBoxY = false;
+        
         for (size_t i = 0; i < boxes.size(); i++) {
             if (CheckCollisionRecs({ previousPlayerPos.x, playerPos.y, playerStill.width * playerScale, playerStill.height * playerScale }, boxes[i])) {
                 playerPos.y = previousPlayerPos.y;
                 if (playerVelocity.y > 0) {
                     onGround = true;
                     playerVelocity.y = 0;
-                }
-
-                if (playerVelocity.y < 0 && IsKeyDown(KEY_SPACE)) {
-                    srand(time(NULL));
-                    int randomIndex = rand() % 4;
-                    mathSymbolCount[randomIndex]++;                    
-                }
-
-                collidedWithBoxY = true;
+                }                
                 break;
             }
         }
-
-        bool collidedWithWallAbove = false;
+        
+        if (playerVelocity.y < 0) {
+            Rectangle playerAboveRect = { playerPos.x, playerPos.y - 1, playerStill.width * playerScale, 1 };
+            for (size_t i = 0; i < boxes.size(); i++) {
+                if (CheckCollisionRecs(playerAboveRect, boxes[i])) {
+                    playerVelocity.y = 0;                    
+                    srand(time(NULL));
+                    int randomIndex = rand() % 4;
+                    mathSymbolCount[randomIndex]++;
+                    break;
+                }
+            }
+        }        
+        
         if (playerVelocity.y < 0) {
             for (size_t i = 0; i < walls.size(); i++) {
                 if (CheckCollisionRecs({ playerPos.x, playerPos.y, playerStill.width * playerScale, playerStill.height * playerScale }, walls[i])) {
-                    playerVelocity.y = 0;
-                    collidedWithWallAbove = true;
+                    playerVelocity.y = 0;                    
                     break;
                 }
             }
         }
 
-        if (collidedWithWallAbove && IsKeyDown(KEY_SPACE)) {
-            onGround = true;
-        }
-
-
-        bool collidedWithWallX = false;
         for (size_t i = 0; i < walls.size(); i++) {
             if (CheckCollisionRecs({ playerPos.x, previousPlayerPos.y, playerStill.width * playerScale, playerStill.height * playerScale }, walls[i])) {
                 playerPos.x = previousPlayerPos.x;
-                collidedWithWallX = true;
                 break;
             }
         }
@@ -157,9 +150,9 @@ void superMaths::levelBuilder() {
         DrawTexture(backgroundRight, background.width, 0, WHITE);
         DrawTexture(background, 0, 0, WHITE);
         for (size_t i = 0; i < 4; i++) {           
-            DrawText(symbol[i].c_str(), 10, 50 + i * 20, 20, BLACK);
+            DrawText(symbol[i].c_str(), 10, 50 + i * 50, 50, BLACK);
             string count = to_string(mathSymbolCount[i]);
-            DrawText(count.c_str(), MeasureText(symbol[i].c_str(), 20) + 10, 50 + i * 20, 20, BLACK);
+            DrawText(count.c_str(), MeasureText(symbol[i].c_str(), 50) + 30, 50 + i * 50, 50, RED);
         }
 
         switch (playerDirection) {

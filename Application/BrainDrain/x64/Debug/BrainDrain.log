@@ -1,5 +1,5 @@
 ﻿  superMaths.cpp
-C:\Users\admin\Documents\GitHub\school-project-assignment-brain-drain\Application\BrainDrain\superMaths.cpp(91,31): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\admin\Documents\GitHub\school-project-assignment-brain-drain\Application\BrainDrain\superMaths.cpp(160,67): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\admin\Documents\GitHub\school-project-assignment-brain-drain\Application\BrainDrain\superMaths.cpp(162,100): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\admin\Documents\GitHub\school-project-assignment-brain-drain\Application\BrainDrain\superMaths.cpp(95,31): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\admin\Documents\GitHub\school-project-assignment-brain-drain\Application\BrainDrain\superMaths.cpp(153,67): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\admin\Documents\GitHub\school-project-assignment-brain-drain\Application\BrainDrain\superMaths.cpp(155,98): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
   BrainDrain.vcxproj -> C:\Users\admin\Documents\GitHub\school-project-assignment-brain-drain\Application\x64\Debug\BrainDrain.exe
