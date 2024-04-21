@@ -40,29 +40,40 @@ void madScientists::fillTube(Rectangle& el1, Rectangle& final, bool& drag1, int&
 
 
 void madScientists::levelBuilder() {
-    isDraggedEl1 = false, isDraggedEl2 = false;
+    background = LoadTexture("../assets/madScientists/madScientists2.png");
     tube = LoadTexture("../assets/madScientists/testTube.png");
     tubeHalf = LoadTexture("../assets/madScientists/tubeStage2.png");
     tubeFull = LoadTexture("../assets/madScientists/tubeStage3.png");
     H = LoadTexture("../assets/madScientists/H.png");
     C = LoadTexture("../assets/madScientists/C.png");
-    x1 = 170, y1 = 80, x2 = 280, y2 = 80;
+    N = LoadTexture("../assets/madScientists/N.png");
+    O = LoadTexture("../assets/madScientists/O.png");
+    x1 = 170, y1 = 80, x2 = 280, y2 = 80, x3 = 390, y3 = 80, x4 = 500, y4 = 80;
+    isDraggedEl1 = false, isDraggedEl2 = false, isDraggedEl3 = false, isDraggedEl4 = false;
     fillCounter = 0;
     tubePos = { 200, 250 };
     tubeHitBox = { 220, 267, 120, 120 };
     Element1 = { x1, y1, 80, 80};
     Element2 = { x2, y2, 80, 80 };
-    background = LoadTexture("../assets/madScientists/madScientists2.png");
+    Element3 = { x3, y3, 80, 80 };
+    Element4 = { x4, y4, 80, 80 };
+
     SetTargetFPS(60);
 
     while (!WindowShouldClose()) {
 
         resetElement(Element1, tubeHitBox, isDraggedEl1, x1, y1, 170, 80);
         resetElement(Element2, tubeHitBox, isDraggedEl2, x2, y2, 280, 80);
+        resetElement(Element3, tubeHitBox, isDraggedEl3, x3, y3, 390, 80);
+        resetElement(Element4, tubeHitBox, isDraggedEl4, x4, y4, 500, 80);
         fillTube(Element1, tubeHitBox, isDraggedEl1, fillCounter, 170, 80);
         fillTube(Element2, tubeHitBox, isDraggedEl2, fillCounter, 280, 80);
+        fillTube(Element3, tubeHitBox, isDraggedEl3, fillCounter, 390, 80);
+        fillTube(Element4, tubeHitBox, isDraggedEl4, fillCounter, 500, 80);
         dragDrop(Element1, isDraggedEl1, x1, y1);
         dragDrop(Element2, isDraggedEl2, x2, y2);
+        dragDrop(Element3, isDraggedEl3, x3, y3);
+        dragDrop(Element4, isDraggedEl4, x4, y4);
 
         if (fillCounter > 2) {
             fillCounter = 2;
@@ -74,11 +85,17 @@ void madScientists::levelBuilder() {
         DrawTexture(background, 0, 0, WHITE);
 
         DrawRectangleRec(tubeHitBox, GREEN);
+
         DrawRectangleRec(Element1, BLUE);
         DrawRectangleRec(Element2, RED);
+        DrawRectangleRec(Element3, YELLOW);
+        DrawRectangleRec(Element4, PINK);
 
         DrawTexture(H, x1, y1, RAYWHITE);
         DrawTexture(C, x2, y2, RAYWHITE);
+        DrawTexture(N, x3, y3, RAYWHITE);
+        DrawTexture(O, x4, y4, RAYWHITE);
+
         if (fillCounter == 0)
             DrawTextureV(tube, tubePos, RAYWHITE);
         else if (fillCounter == 1) {

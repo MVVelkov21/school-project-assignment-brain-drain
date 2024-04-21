@@ -3,12 +3,12 @@
 
 class madScientists {
 	private:
-		bool isDraggedEl1, isDraggedEl2;
+		bool isDraggedEl1, isDraggedEl2, isDraggedEl3, isDraggedEl4;
 		int fillCounter;
-		float x1, y1, x2, y2;
+		float x1, y1, x2, y2, x3, y3, x4, y4;
 		Texture2D tube, tubeHalf, tubeFull;
-		Texture2D background, H, C;
-		Rectangle Element1, Element2, tubeHitBox;
+		Texture2D background, H, C, N, O;
+		Rectangle Element1, Element2, Element3, Element4, tubeHitBox;
 		Vector2 tubePos;
 	public: 
 		void levelBuilder();
