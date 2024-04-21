@@ -36,5 +36,8 @@
     <ClInclude Include="riddleRoute.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="playerSelection.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

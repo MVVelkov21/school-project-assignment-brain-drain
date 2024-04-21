@@ -1,6 +1,7 @@
 #pragma once
 #include "precompiledHeader.h"
 #include "gameSelection.h"
+#include "playerSelection.h"
 
 class mainMenu {
 	Texture2D background;

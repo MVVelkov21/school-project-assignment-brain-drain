@@ -132,6 +132,7 @@
   <ItemGroup>
     <ClCompile Include="madScientists.cpp" />
     <ClCompile Include="gameSelection.cpp" />
+    <ClCompile Include="playerSelection.cpp" />
     <ClCompile Include="riddleRoute.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mainMenu.cpp" />

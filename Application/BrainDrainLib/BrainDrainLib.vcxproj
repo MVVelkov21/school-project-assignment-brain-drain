@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClInclude Include="madScientists.h" />
     <ClInclude Include="gameSelection.h" />
+    <ClInclude Include="playerSelection.h" />
     <ClInclude Include="riddleRoute.h" />
     <ClInclude Include="mainMenu.h" />
     <ClInclude Include="mapBuilder.h" />

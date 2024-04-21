@@ -3,36 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\\u0421\u0442\u0438\u043B\u0438\u044F\u043D\\Documents\\school-project-assignment-brain-drain\\Application\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2B4ACA31-3DF2-4AE9-ADDC-0C63043E6C64}|BrainDrain\\BrainDrain.vcxproj|C:\\Users\\\u0421\u0442\u0438\u043B\u0438\u044F\u043D\\Documents\\school-project-assignment-brain-drain\\Application\\BrainDrain\\mainMenu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{2B4ACA31-3DF2-4AE9-ADDC-0C63043E6C64}|BrainDrain\\BrainDrain.vcxproj|solutionrelative:BrainDrain\\mainMenu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{2B4ACA31-3DF2-4AE9-ADDC-0C63043E6C64}|BrainDrain\\BrainDrain.vcxproj|C:\\Users\\\u0421\u0442\u0438\u043B\u0438\u044F\u043D\\Documents\\school-project-assignment-brain-drain\\Application\\BrainDrain\\playerSelection.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2B4ACA31-3DF2-4AE9-ADDC-0C63043E6C64}|BrainDrain\\BrainDrain.vcxproj|solutionrelative:BrainDrain\\playerSelection.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0C43C54C-34D9-4312-BFE5-D25978C5650D}|BrainDrainLib\\BrainDrainLib.vcxproj|C:\\Users\\\u0421\u0442\u0438\u043B\u0438\u044F\u043D\\Documents\\school-project-assignment-brain-drain\\Application\\BRAINDRAINLIB\\MAINMENU.H||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{0C43C54C-34D9-4312-BFE5-D25978C5650D}|BrainDrainLib\\BrainDrainLib.vcxproj|solutionrelative:BRAINDRAINLIB\\MAINMENU.H||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2B4ACA31-3DF2-4AE9-ADDC-0C63043E6C64}|BrainDrain\\BrainDrain.vcxproj|C:\\Users\\\u0421\u0442\u0438\u043B\u0438\u044F\u043D\\Documents\\school-project-assignment-brain-drain\\Application\\BrainDrain\\gameSelection.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{2B4ACA31-3DF2-4AE9-ADDC-0C63043E6C64}|BrainDrain\\BrainDrain.vcxproj|solutionrelative:BrainDrain\\gameSelection.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2B4ACA31-3DF2-4AE9-ADDC-0C63043E6C64}|BrainDrain\\BrainDrain.vcxproj|C:\\Users\\\u0421\u0442\u0438\u043B\u0438\u044F\u043D\\Documents\\school-project-assignment-brain-drain\\Application\\BrainDrain\\madScientists.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{2B4ACA31-3DF2-4AE9-ADDC-0C63043E6C64}|BrainDrain\\BrainDrain.vcxproj|solutionrelative:BrainDrain\\madScientists.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0C43C54C-34D9-4312-BFE5-D25978C5650D}|BrainDrainLib\\BrainDrainLib.vcxproj|C:\\Users\\\u0421\u0442\u0438\u043B\u0438\u044F\u043D\\Documents\\school-project-assignment-brain-drain\\Application\\BrainDrainLib\\gameSelection.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{0C43C54C-34D9-4312-BFE5-D25978C5650D}|BrainDrainLib\\BrainDrainLib.vcxproj|solutionrelative:BrainDrainLib\\gameSelection.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2B4ACA31-3DF2-4AE9-ADDC-0C63043E6C64}|BrainDrain\\BrainDrain.vcxproj|C:\\Users\\\u0421\u0442\u0438\u043B\u0438\u044F\u043D\\Documents\\school-project-assignment-brain-drain\\Application\\BrainDrain\\riddleRoute.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{2B4ACA31-3DF2-4AE9-ADDC-0C63043E6C64}|BrainDrain\\BrainDrain.vcxproj|solutionrelative:BrainDrain\\riddleRoute.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0C43C54C-34D9-4312-BFE5-D25978C5650D}|BrainDrainLib\\BrainDrainLib.vcxproj|C:\\Users\\\u0421\u0442\u0438\u043B\u0438\u044F\u043D\\Documents\\school-project-assignment-brain-drain\\Application\\BrainDrainLib\\riddleRoute.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{0C43C54C-34D9-4312-BFE5-D25978C5650D}|BrainDrainLib\\BrainDrainLib.vcxproj|solutionrelative:BrainDrainLib\\riddleRoute.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0C43C54C-34D9-4312-BFE5-D25978C5650D}|BrainDrainLib\\BrainDrainLib.vcxproj|C:\\Users\\\u0421\u0442\u0438\u043B\u0438\u044F\u043D\\Documents\\school-project-assignment-brain-drain\\Application\\BrainDrainLib\\madScientists.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{0C43C54C-34D9-4312-BFE5-D25978C5650D}|BrainDrainLib\\BrainDrainLib.vcxproj|solutionrelative:BrainDrainLib\\madScientists.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{0C43C54C-34D9-4312-BFE5-D25978C5650D}|BrainDrainLib\\BrainDrainLib.vcxproj|C:\\Users\\\u0421\u0442\u0438\u043B\u0438\u044F\u043D\\Documents\\school-project-assignment-brain-drain\\Application\\BrainDrainLib\\playerSelection.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0C43C54C-34D9-4312-BFE5-D25978C5650D}|BrainDrainLib\\BrainDrainLib.vcxproj|solutionrelative:BrainDrainLib\\playerSelection.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,106 +18,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "gameSelection.cpp",
-              "DocumentMoniker": "C:\\Users\\\u0421\u0442\u0438\u043B\u0438\u044F\u043D\\Documents\\school-project-assignment-brain-drain\\Application\\BrainDrain\\gameSelection.cpp",
-              "RelativeDocumentMoniker": "BrainDrain\\gameSelection.cpp",
-              "ToolTip": "C:\\Users\\\u0421\u0442\u0438\u043B\u0438\u044F\u043D\\Documents\\school-project-assignment-brain-drain\\Application\\BrainDrain\\gameSelection.cpp",
-              "RelativeToolTip": "BrainDrain\\gameSelection.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADcAAAAVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-04-19T19:25:43.437Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "riddleRoute.cpp",
-              "DocumentMoniker": "C:\\Users\\\u0421\u0442\u0438\u043B\u0438\u044F\u043D\\Documents\\school-project-assignment-brain-drain\\Application\\BrainDrain\\riddleRoute.cpp",
-              "RelativeDocumentMoniker": "BrainDrain\\riddleRoute.cpp",
-              "ToolTip": "C:\\Users\\\u0421\u0442\u0438\u043B\u0438\u044F\u043D\\Documents\\school-project-assignment-brain-drain\\Application\\BrainDrain\\riddleRoute.cpp",
-              "RelativeToolTip": "BrainDrain\\riddleRoute.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAABXAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-04-19T14:55:17.477Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "riddleRoute.h",
-              "DocumentMoniker": "C:\\Users\\\u0421\u0442\u0438\u043B\u0438\u044F\u043D\\Documents\\school-project-assignment-brain-drain\\Application\\BrainDrainLib\\riddleRoute.h",
-              "RelativeDocumentMoniker": "BrainDrainLib\\riddleRoute.h",
-              "ToolTip": "C:\\Users\\\u0421\u0442\u0438\u043B\u0438\u044F\u043D\\Documents\\school-project-assignment-brain-drain\\Application\\BrainDrainLib\\riddleRoute.h",
-              "RelativeToolTip": "BrainDrainLib\\riddleRoute.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAARAAAA",
+              "DocumentIndex": 1,
+              "Title": "playerSelection.h",
+              "DocumentMoniker": "C:\\Users\\\u0421\u0442\u0438\u043B\u0438\u044F\u043D\\Documents\\school-project-assignment-brain-drain\\Application\\BrainDrainLib\\playerSelection.h",
+              "RelativeDocumentMoniker": "BrainDrainLib\\playerSelection.h",
+              "ToolTip": "C:\\Users\\\u0421\u0442\u0438\u043B\u0438\u044F\u043D\\Documents\\school-project-assignment-brain-drain\\Application\\BrainDrainLib\\playerSelection.h",
+              "RelativeToolTip": "BrainDrainLib\\playerSelection.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-04-19T14:56:33.022Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "gameSelection.h",
-              "DocumentMoniker": "C:\\Users\\\u0421\u0442\u0438\u043B\u0438\u044F\u043D\\Documents\\school-project-assignment-brain-drain\\Application\\BrainDrainLib\\gameSelection.h",
-              "RelativeDocumentMoniker": "BrainDrainLib\\gameSelection.h",
-              "ToolTip": "C:\\Users\\\u0421\u0442\u0438\u043B\u0438\u044F\u043D\\Documents\\school-project-assignment-brain-drain\\Application\\BrainDrainLib\\gameSelection.h",
-              "RelativeToolTip": "BrainDrainLib\\gameSelection.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-04-19T14:56:28.729Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "madScientists.h",
-              "DocumentMoniker": "C:\\Users\\\u0421\u0442\u0438\u043B\u0438\u044F\u043D\\Documents\\school-project-assignment-brain-drain\\Application\\BrainDrainLib\\madScientists.h",
-              "RelativeDocumentMoniker": "BrainDrainLib\\madScientists.h",
-              "ToolTip": "C:\\Users\\\u0421\u0442\u0438\u043B\u0438\u044F\u043D\\Documents\\school-project-assignment-brain-drain\\Application\\BrainDrainLib\\madScientists.h",
-              "RelativeToolTip": "BrainDrainLib\\madScientists.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAXAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-04-18T10:16:14.312Z"
+              "WhenOpened": "2024-04-21T12:10:13.124Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "mainMenu.cpp",
-              "DocumentMoniker": "C:\\Users\\\u0421\u0442\u0438\u043B\u0438\u044F\u043D\\Documents\\school-project-assignment-brain-drain\\Application\\BrainDrain\\mainMenu.cpp",
-              "RelativeDocumentMoniker": "BrainDrain\\mainMenu.cpp",
-              "ToolTip": "C:\\Users\\\u0421\u0442\u0438\u043B\u0438\u044F\u043D\\Documents\\school-project-assignment-brain-drain\\Application\\BrainDrain\\mainMenu.cpp",
-              "RelativeToolTip": "BrainDrain\\mainMenu.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAAA1AAAA",
+              "Title": "playerSelection.cpp",
+              "DocumentMoniker": "C:\\Users\\\u0421\u0442\u0438\u043B\u0438\u044F\u043D\\Documents\\school-project-assignment-brain-drain\\Application\\BrainDrain\\playerSelection.cpp",
+              "RelativeDocumentMoniker": "BrainDrain\\playerSelection.cpp",
+              "ToolTip": "C:\\Users\\\u0421\u0442\u0438\u043B\u0438\u044F\u043D\\Documents\\school-project-assignment-brain-drain\\Application\\BrainDrain\\playerSelection.cpp",
+              "RelativeToolTip": "BrainDrain\\playerSelection.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-04-17T15:42:03.112Z",
+              "WhenOpened": "2024-04-21T12:10:10.793Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "mainMenu.h",
-              "DocumentMoniker": "C:\\Users\\\u0421\u0442\u0438\u043B\u0438\u044F\u043D\\Documents\\school-project-assignment-brain-drain\\Application\\BrainDrainLib\\mainMenu.h",
-              "RelativeDocumentMoniker": "BrainDrainLib\\mainMenu.h",
-              "ToolTip": "C:\\Users\\\u0421\u0442\u0438\u043B\u0438\u044F\u043D\\Documents\\school-project-assignment-brain-drain\\Application\\BrainDrainLib\\mainMenu.h",
-              "RelativeToolTip": "BrainDrainLib\\mainMenu.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-04-14T09:49:34.841Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "madScientists.cpp",
-              "DocumentMoniker": "C:\\Users\\\u0421\u0442\u0438\u043B\u0438\u044F\u043D\\Documents\\school-project-assignment-brain-drain\\Application\\BrainDrain\\madScientists.cpp",
-              "RelativeDocumentMoniker": "BrainDrain\\madScientists.cpp",
-              "ToolTip": "C:\\Users\\\u0421\u0442\u0438\u043B\u0438\u044F\u043D\\Documents\\school-project-assignment-brain-drain\\Application\\BrainDrain\\madScientists.cpp",
-              "RelativeToolTip": "BrainDrain\\madScientists.cpp",
-              "ViewState": "AQIAAC0AAAAAAAAAAAAAAEYAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-04-17T15:42:08.08Z"
             }
           ]
         }

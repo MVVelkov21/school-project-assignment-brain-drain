@@ -1,4 +1,5 @@
 #include "../BrainDrainLib/mainMenu.h"
+#include "../BrainDrainLib/playerSelection.h"
 
 void mainMenu::windowInit() {
     InitWindow(init.screenWidth, init.screenHeight, "BrainDrain");
@@ -30,6 +31,7 @@ void mainMenu::windowInit() {
             }
             else if (CheckCollisionPointRec(mousePosition, { settingsButtonPos.x, settingsButtonPos.y, smallButtonSize.x, smallButtonSize.y })) {
                 printf("Settings button clicked!\n");
+                levelBuilder();
             }
             else if (CheckCollisionPointRec(mousePosition, { exitButtonPos.x, exitButtonPos.y, smallButtonSize.x, smallButtonSize.y })) {
                 break;
