@@ -7,9 +7,9 @@ void mainMenu::windowInit() {
     SetTargetFPS(60);
 
     background = LoadTexture("../assets/mainMenu/mainMenu.png");
-    play = LoadTexture("../assets/mainMenu/playButton.png");
-    settings = LoadTexture("../assets/mainMenu/settingsButton.png");    
-    exit = LoadTexture("../assets/mainMenu/exitButton.png");
+    play = LoadTexture("../assets/buttons/playButton.png");
+    settings = LoadTexture("../assets/buttons/settingsButton.png");    
+    exit = LoadTexture("../assets/buttons/exitButton.png");
     bus = LoadTexture("../assets/mainMenu/bus.png");
     school = LoadTexture("../assets/mainMenu/school.png");
 

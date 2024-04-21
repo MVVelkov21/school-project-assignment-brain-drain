@@ -1,6 +1,8 @@
-﻿  superMaths.cpp
-C:\Users\admin\Documents\GitHub\school-project-assignment-brain-drain\Application\BrainDrain\superMaths.cpp(32,29): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\admin\Documents\GitHub\school-project-assignment-brain-drain\Application\BrainDrain\superMaths.cpp(158,31): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\admin\Documents\GitHub\school-project-assignment-brain-drain\Application\BrainDrain\superMaths.cpp(225,67): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\admin\Documents\GitHub\school-project-assignment-brain-drain\Application\BrainDrain\superMaths.cpp(227,98): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-  BrainDrain.vcxproj -> C:\Users\admin\Documents\GitHub\school-project-assignment-brain-drain\Application\x64\Debug\BrainDrain.exe
+﻿  mainMenu.cpp
+C:\Users\Стилиян\Documents\school-project-assignment-brain-drain\Application\BrainDrain\mainMenu.cpp(52,62): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Стилиян\Documents\school-project-assignment-brain-drain\Application\BrainDrain\mainMenu.cpp(52,45): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Стилиян\Documents\school-project-assignment-brain-drain\Application\BrainDrain\mainMenu.cpp(55,74): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Стилиян\Documents\school-project-assignment-brain-drain\Application\BrainDrain\mainMenu.cpp(55,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Стилиян\Documents\school-project-assignment-brain-drain\Application\BrainDrain\mainMenu.cpp(58,62): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Стилиян\Documents\school-project-assignment-brain-drain\Application\BrainDrain\mainMenu.cpp(58,45): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  BrainDrain.vcxproj -> C:\Users\Стилиян\Documents\school-project-assignment-brain-drain\Application\x64\Debug\BrainDrain.exe
