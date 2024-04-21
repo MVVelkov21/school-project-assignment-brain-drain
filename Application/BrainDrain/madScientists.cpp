@@ -30,16 +30,11 @@ void madScientists::resetElement(Rectangle& el1, Rectangle& final, bool& drag1, 
     }
 }
 
-void madScientists::fillTube(Rectangle& el1, Rectangle& el2, Rectangle& final, bool& drag1, bool& drag2, int& c) {
+void madScientists::fillTube(Rectangle& el1, Rectangle& final, bool& drag1, int& c, int cordTX, int cordTY) {
     if (CheckCollisionRecs(el1, final) && drag1 == false) {
         c++;
-        el1.x = 170;
-        el1.y = 80;
-    }
-    if (CheckCollisionRecs(el2, final) && drag2 == false) {
-        c++;
-        el2.x = 260;
-        el2.y = 80;
+        el1.x = cordTX;
+        el1.y = cordTY;
     }
 }
 
@@ -64,11 +59,9 @@ void madScientists::levelBuilder() {
 
         resetElement(Element1, tubeHitBox, isDraggedEl1, x1, y1, 170, 80);
         resetElement(Element2, tubeHitBox, isDraggedEl2, x2, y2, 280, 80);
-        fillTube(Element1, Element2, tubeHitBox, isDraggedEl1, isDraggedEl2, fillCounter);
+        fillTube(Element1, tubeHitBox, isDraggedEl1, fillCounter, 170, 80);
+        fillTube(Element2, tubeHitBox, isDraggedEl2, fillCounter, 280, 80);
         dragDrop(Element1, isDraggedEl1, x1, y1);
-        if (isDraggedEl1) {
-            isDraggedEl2 = false;
-        }
         dragDrop(Element2, isDraggedEl2, x2, y2);
 
         if (fillCounter > 2) {
