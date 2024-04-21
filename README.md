@@ -1,6 +1,15 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/j7IzDSQi)
 <h1 align="center">🧠 BRAIN DRAIN 🧠</h1>
 
+<p align = "center">
+    <img alt="GitHub milestones" src="https://img.shields.io/github/milestones/all/codingburgas/school-project-assignment-brain-drain?style=for-the-badge">
+    <img alt="GitHub top language" src ="https://img.shields.io/github/languages/top/codingburgas/school-project-assignment-brain-drain?style=for-the-badge">
+    <img alt="GitHub contributors" src="https://img.shields.io/github/contributors/codingburgas/school-project-assignment-brain-drain?style=for-the-badge">
+    <img alt="Github languages count" src="https://img.shields.io/github/languages/count/codingburgas/school-project-assignment-brain-drain?style=for-the-badge">
+    <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/codingburgas/school-project-assignment-brain-drain?style=for-the-badge">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/codingburgas/school-project-assignment-brain-drain?style=for-the-badge">
+</p>
+
 <img align="right" src="./assets/logo/logoTransparent.png">
 <br>
 
@@ -8,13 +17,13 @@
   <p>Hello, we are Brain Drain!</p>
 <br>
 
-<h2 align="left"> Languages and Libraries 🚀</h2>
+<h2 align="left">🚀 Languages and Libraries </h2>
 <p align="left">
 <a href="https://www.cplusplus.com/"><img src="https://img.icons8.com/color/48/000000/c-plus-plus-logo.png" alt="C++"></a>
 <a href="https://www.raylib.com/"><img src ="https://upload.wikimedia.org/wikipedia/commons/f/f4/Raylib_logo.png" alt="Raylib" heigh=48px width=48px></a>
 </p>
 
-<h2 align="left">Used Tools 🔧</h2>
+<h2 align="left">🔧 Used Tools </h2>
 <p align="left">
    <a href="https://www.microsoft.com/en-ww/microsoft-365/word"><img src="https://img.icons8.com/fluency/48/000000/microsoft-word-2019.png" alt="MS Word logo" width=50px></a>
    <a href="https://www.microsoft.com/en-us/microsoft-365/powerpoint"><img src="https://img.icons8.com/fluency/48/000000/microsoft-powerpoint-2019.png" alt="MS PowerPoint logo" width=50px>
@@ -34,7 +43,7 @@
     <li>Test Plan</li>
   </ul>  
 
-<h2 align="left">Team Members 👨🏻‍💻</h2>
+<h2 align="left">👨🏻‍💻 Team Members </h2>
 <table >
   <tr>
     <td align="center">Name</td>
@@ -81,8 +90,13 @@
 </table>
 <br>
 
- 
-  
+ <h2 align="left">🔑 Access</h2>
+
+ <p> Open cmd and clone our repo by typing</p>
+
+```
+git clone https://github.com/codingburgas/school-project-assignment-brain-drain.git
+```
 
 
 
