@@ -110,6 +110,7 @@ void madScientists::levelBuilder() {
             DrawText("Reset", 440, 280, 32, BLACK);
             if (CheckCollisionPointRec(GetMousePosition(), ResetButton) && IsMouseButtonPressed(MOUSE_BUTTON_LEFT)) {
                 fillCounter = 0;
+                el1Tube = false, el2Tube = false, el3Tube = false, el4Tube = false;
             }
             if (el1Tube && el4Tube) {
                 DrawText("H2O", 200, 250, 24, BLACK); //Wasser
@@ -133,4 +134,11 @@ void madScientists::levelBuilder() {
         EndDrawing();
     }
     UnloadTexture(background);
+    UnloadTexture(tube);
+    UnloadTexture(tubeHalf);
+    UnloadTexture(tubeFull);
+    UnloadTexture(H);
+    UnloadTexture(S);
+    UnloadTexture(O);
+    UnloadTexture(C);
 }
