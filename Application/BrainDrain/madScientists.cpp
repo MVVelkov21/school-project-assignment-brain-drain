@@ -59,6 +59,7 @@ void madScientists::levelBuilder() {
     Element2 = { x2, y2, 80, 80 };
     Element3 = { x3, y3, 80, 80 };
     Element4 = { x4, y4, 80, 80 };
+    ResetButton = { 400, 250, 160, 80 };
 
     SetTargetFPS(60);
 
@@ -105,6 +106,11 @@ void madScientists::levelBuilder() {
         }
         else if (fillCounter == 2) {
             DrawTextureV(tubeFull, tubePos, RAYWHITE);
+            DrawRectangleRec(ResetButton, RED);
+            DrawText("Reset", 440, 280, 32, BLACK);
+            if (CheckCollisionPointRec(GetMousePosition(), ResetButton) && IsMouseButtonPressed(MOUSE_BUTTON_LEFT)) {
+                fillCounter = 0;
+            }
             if (el1Tube && el4Tube) {
                 DrawText("H2O", 200, 250, 24, BLACK); //Wasser
             }
@@ -121,7 +127,7 @@ void madScientists::levelBuilder() {
                 DrawText("SO2", 200, 250, 24, BLACK); //Sulfur dioxide
             }
             else {
-                DrawText("BOOM", 200, 250, 24, BLACK);
+                DrawText("BOOM", 200, 250, 24, BLACK); //Explode
             }
         }
         EndDrawing();
