@@ -21,10 +21,10 @@ void madScientists::dragDrop(Rectangle& rect, bool& isDragged, float& CordX, flo
     }
 }
 
-void madScientists::resetElement(Rectangle& el1, Rectangle& final, bool& drag1, float& CordX, float& CordY) {
+void madScientists::resetElement(Rectangle& el1, Rectangle& final, bool& drag1, float& CordX, float& CordY, int cordTX, int cordTY) {
     if (!(CheckCollisionRecs(el1, final)) && drag1 == false) {
-        el1.x = 170;
-        el1.y = 80;
+        el1.x = cordTX;
+        el1.y = cordTY;
         CordX = el1.x;
         CordY = el1.y;
     }
@@ -51,7 +51,7 @@ void madScientists::levelBuilder() {
     tubeFull = LoadTexture("../assets/madScientists/tubeStage3.png");
     H = LoadTexture("../assets/madScientists/H.png");
     C = LoadTexture("../assets/madScientists/C.png");
-    x1 = 170, y1 = 80, x2 = 350, y2 = 80;
+    x1 = 170, y1 = 80, x2 = 280, y2 = 80;
     fillCounter = 0;
     tubePos = { 200, 250 };
     tubeHitBox = { 220, 267, 120, 120 };
@@ -62,8 +62,8 @@ void madScientists::levelBuilder() {
 
     while (!WindowShouldClose()) {
 
-        resetElement(Element1, tubeHitBox, isDraggedEl1, x1, y1);
-        resetElement(Element2, tubeHitBox, isDraggedEl2, x2, y2);
+        resetElement(Element1, tubeHitBox, isDraggedEl1, x1, y1, 170, 80);
+        resetElement(Element2, tubeHitBox, isDraggedEl2, x2, y2, 280, 80);
         fillTube(Element1, Element2, tubeHitBox, isDraggedEl1, isDraggedEl2, fillCounter);
         dragDrop(Element1, isDraggedEl1, x1, y1);
         if (isDraggedEl1) {
@@ -79,9 +79,11 @@ void madScientists::levelBuilder() {
         ClearBackground(RAYWHITE);
 
         DrawTexture(background, 0, 0, WHITE);
+
         DrawRectangleRec(tubeHitBox, GREEN);
         DrawRectangleRec(Element1, BLUE);
         DrawRectangleRec(Element2, RED);
+
         DrawTexture(H, x1, y1, RAYWHITE);
         DrawTexture(C, x2, y2, RAYWHITE);
         if (fillCounter == 0)

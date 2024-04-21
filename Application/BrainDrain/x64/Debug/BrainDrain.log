@@ -1,7 +1,26 @@
-﻿  madScientists.cpp
-F:\school-project-assignment-brain-drain\Application\BrainDrain\madScientists.cpp(85,28): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-F:\school-project-assignment-brain-drain\Application\BrainDrain\madScientists.cpp(85,24): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-F:\school-project-assignment-brain-drain\Application\BrainDrain\madScientists.cpp(86,28): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-F:\school-project-assignment-brain-drain\Application\BrainDrain\madScientists.cpp(86,24): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+﻿  gameSelection.cpp
+F:\school-project-assignment-brain-drain\Application\BrainDrain\gameSelection.cpp(44,129): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+F:\school-project-assignment-brain-drain\Application\BrainDrain\gameSelection.cpp(44,62): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+F:\school-project-assignment-brain-drain\Application\BrainDrain\gameSelection.cpp(48,129): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+F:\school-project-assignment-brain-drain\Application\BrainDrain\gameSelection.cpp(48,62): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+F:\school-project-assignment-brain-drain\Application\BrainDrain\gameSelection.cpp(52,137): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+F:\school-project-assignment-brain-drain\Application\BrainDrain\gameSelection.cpp(52,66): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+F:\school-project-assignment-brain-drain\Application\BrainDrain\gameSelection.cpp(54,108): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+  madScientists.cpp
+F:\school-project-assignment-brain-drain\Application\BrainDrain\madScientists.cpp(26,17): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+F:\school-project-assignment-brain-drain\Application\BrainDrain\madScientists.cpp(27,17): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+F:\school-project-assignment-brain-drain\Application\BrainDrain\madScientists.cpp(87,28): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+F:\school-project-assignment-brain-drain\Application\BrainDrain\madScientists.cpp(87,24): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+F:\school-project-assignment-brain-drain\Application\BrainDrain\madScientists.cpp(88,28): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+F:\school-project-assignment-brain-drain\Application\BrainDrain\madScientists.cpp(88,24): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  main.cpp
+  mainMenu.cpp
+F:\school-project-assignment-brain-drain\Application\BrainDrain\mainMenu.cpp(54,62): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+F:\school-project-assignment-brain-drain\Application\BrainDrain\mainMenu.cpp(54,45): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+F:\school-project-assignment-brain-drain\Application\BrainDrain\mainMenu.cpp(57,74): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+F:\school-project-assignment-brain-drain\Application\BrainDrain\mainMenu.cpp(57,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+F:\school-project-assignment-brain-drain\Application\BrainDrain\mainMenu.cpp(60,62): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+F:\school-project-assignment-brain-drain\Application\BrainDrain\mainMenu.cpp(60,45): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Generating Code...
 LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
   BrainDrain.vcxproj -> F:\school-project-assignment-brain-drain\Application\x64\Debug\BrainDrain.exe

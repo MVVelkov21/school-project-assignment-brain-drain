@@ -13,6 +13,6 @@ class madScientists {
 	public: 
 		void levelBuilder();
 		void dragDrop(Rectangle& rect, bool& isDragged, float& CordX, float& CordY);
-		void resetElement(Rectangle& el1, Rectangle & final, bool& drag1, float& CordX, float& CordY);
+		void resetElement(Rectangle& el1, Rectangle & final, bool& drag1, float& CordX, float& CordY, int cordTX, int cordTY);
 		void fillTube(Rectangle& el1, Rectangle& el2, Rectangle & final, bool& drag1, bool& drag2, int& c);
 };
