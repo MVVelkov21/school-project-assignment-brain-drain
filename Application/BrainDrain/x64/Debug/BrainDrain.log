@@ -1,2 +1,8 @@
-﻿  playerSelection.cpp
-  BrainDrain.vcxproj -> C:\Users\Стилиян\Documents\school-project-assignment-brain-drain\Application\x64\Debug\BrainDrain.exe
+﻿  mainMenu.cpp
+C:\Users\Jackie's Lenovo\Documents\school-project-assignment-brain-drain\Application\BrainDrain\mainMenu.cpp(54,62): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jackie's Lenovo\Documents\school-project-assignment-brain-drain\Application\BrainDrain\mainMenu.cpp(54,45): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jackie's Lenovo\Documents\school-project-assignment-brain-drain\Application\BrainDrain\mainMenu.cpp(57,74): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jackie's Lenovo\Documents\school-project-assignment-brain-drain\Application\BrainDrain\mainMenu.cpp(57,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jackie's Lenovo\Documents\school-project-assignment-brain-drain\Application\BrainDrain\mainMenu.cpp(60,62): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jackie's Lenovo\Documents\school-project-assignment-brain-drain\Application\BrainDrain\mainMenu.cpp(60,45): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  BrainDrain.vcxproj -> C:\Users\Jackie's Lenovo\Documents\school-project-assignment-brain-drain\Application\x64\Debug\BrainDrain.exe

@@ -3,7 +3,7 @@
 
 void mainMenu::windowInit() {
     InitWindow(init.screenWidth, init.screenHeight, "BrainDrain");
-    icon = LoadImage("../assets/logo.png");
+    icon = LoadImage("../assets/logo/logoTransparent.png");
     SetWindowIcon(icon);
     SetTargetFPS(60);
 

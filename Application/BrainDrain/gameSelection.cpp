@@ -4,7 +4,7 @@ void gameSelection::modeSelection() {
     background = LoadTexture("../assets/gameSelectionMenu/gameSelectionMenu.png");
 
     buttonSize = { 162, 216 };
-    enButtonPos = { 38, 180};
+    enButtonPos = { 38, 225};
     mathButtonPos = { enButtonPos.x + buttonSize.x + 47, enButtonPos.y };
     chemButtonPos = { enButtonPos.x + (buttonSize.x + 47) * 2, enButtonPos.y };
 
@@ -45,13 +45,13 @@ void gameSelection::modeSelection() {
 
         /*if (mathHovered) DrawRectangleRec(mathButtonRect, RED);
         else DrawRectangleLines(mathButtonRect.x, mathButtonRect.y, mathButtonRect.width, mathButtonRect.height, WHITE);*/
-        DrawText("Mathematics", mathButtonPos.x + buttonSize.x / 2 - MeasureText("Mathematics", 20) / 2, mathButtonPos.y + buttonSize.y / 2 + 20, 20, BLACK);
+        DrawText("Maths", mathButtonPos.x + buttonSize.x / 2 - MeasureText("Maths", 20) / 2, mathButtonPos.y + buttonSize.y / 2 + 20, 20, BLACK);
 
         /*if (chemHovered) DrawRectangleRec(chemButtonRect, RED);
         else DrawRectangleLines(chemButtonRect.x, chemButtonRect.y, chemButtonRect.width, chemButtonRect.height, WHITE);*/
-        DrawText("Chemistry", chemButtonPos.x + buttonSize.x / 2 - MeasureText("Chemistry", 20) / 2, chemButtonPos.y + buttonSize.y / 2 + 20, 20, BLACK);
+        DrawText("Chemistry", chemButtonPos.x + buttonSize.x / 2 - MeasureText("Chemistry", 18) / 2, chemButtonPos.y + buttonSize.y / 2 + 20, 19, BLACK);
 
-        DrawText("Choose a subject", (screenWidth - MeasureText("Choose a subject", 40)) / 2, screenHeight / 4, 40, BLACK);
+        DrawText("Choose a subject", (screenWidth - MeasureText("Choose a subject", 40)) / 2, screenHeight / 3.5, 40, BLACK);
 
         EndDrawing();
 
