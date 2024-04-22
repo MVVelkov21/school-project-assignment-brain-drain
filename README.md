@@ -38,8 +38,8 @@
   <ul>
     <li>Documentation</li>
     <li><a href="https://codingburgas-my.sharepoint.com/:p:/g/personal/zvyankova22_codingburgas_bg/ERIYdUSAkFJDkf2GQv517ZsBHCTdaYc3guTktkmcXXsnAA?e=Y6Vcp6">Presentation</a></li>
-    <li><a href="https://codingburgas-my.sharepoint.com/:w:/g/personal/asivanov22_codingburgas_bg/ESDROzfisTlFmCKDooubimMB19TzstGR6z6rgoJ1HIsFcQ?e=pEAXOa">QA Table</a></li>    
-    <li>Test Plan</li>
+    <li><a href="https://codingburgas-my.sharepoint.com/:x:/g/personal/asivanov22_codingburgas_bg/EaYEUb8nnsNGsn6hvsbbqa8BxcVAJBRbveSbizNg9hdD3w?e=Naqsqd">QA Table</a></li>    
+    <li><a href="https://codingburgas-my.sharepoint.com/:w:/g/personal/asivanov22_codingburgas_bg/ESDROzfisTlFmCKDooubimMB19TzstGR6z6rgoJ1HIsFcQ?e=pEAXOa">Test Plan</a></li>
   </ul>  
 
 <h2 align="left">👨🏻‍💻 Team Members </h2>
