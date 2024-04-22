@@ -25,3 +25,15 @@ void reworkedModeSelection()
         break;
     }
 }
+
+void reworkedDragDrop(bool& isDragged, bool isMouseButtonPressed, bool isMouseOver)
+{
+    if (isMouseButtonPressed && isMouseOver)
+    {
+        isDragged = true;
+    }
+    else
+    {
+        isDragged = false;
+    }
+}
