@@ -49,17 +49,18 @@ void madScientists::levelBuilder() {
     C = LoadTexture("../assets/madScientists/C.png");
     S = LoadTexture("../assets/madScientists/S.png");
     O = LoadTexture("../assets/madScientists/O.png");
+
     x1 = 350, y1 = 50, x2 = 450, y2 = 50, x3 = 545, y3 = 50, x4 = 642, y4 = 50;
     isDraggedEl1 = false, isDraggedEl2 = false, isDraggedEl3 = false, isDraggedEl4 = false;
     el1Tube = false, el2Tube = false, el3Tube = false, el4Tube = false;
     fillCounter = 0;
-    tubePos = { 200, 250 };
-    tubeHitBox = { 220, 267, 120, 120 };
+    tubePos = { 450, 205 };
+    tubeHitBox = { 470, 220, 120, 120 };
     Element1 = { x1, y1, 80, 80};
     Element2 = { x2, y2, 80, 80 };
     Element3 = { x3, y3, 80, 80 };
     Element4 = { x4, y4, 80, 80 };
-    ResetButton = { 400, 250, 160, 80 };
+    ResetButton = { 340, 340, 120, 80 };
 
     SetTargetFPS(60);
 
@@ -87,9 +88,6 @@ void madScientists::levelBuilder() {
 
         DrawTexture(background, 0, 0, WHITE);
 
-        DrawRectangleRec(tubeHitBox, GREEN);
-
-
         DrawTexture(H, x1, y1, RAYWHITE);
         DrawTexture(C, x2, y2, RAYWHITE);
         DrawTexture(S, x3, y3, RAYWHITE);
@@ -103,24 +101,30 @@ void madScientists::levelBuilder() {
         else if (fillCounter == 2) {
             DrawTextureV(tubeFull, tubePos, RAYWHITE);
             DrawRectangleRec(ResetButton, RED);
-            DrawText("Reset", 440, 280, 32, BLACK);
+            DrawText("Reset", 355, 360, 32, BLACK);
             if (el1Tube && el4Tube) {
-                DrawText("H2O", 200, 250, 24, BLACK); //Wasser
+                DrawText("H2O", 495, 200, 24, BLACK); //Water
+                isDraggedEl1 = false, isDraggedEl2 = false, isDraggedEl3 = false, isDraggedEl4 = false;
             }
             else if (el1Tube && el2Tube) {
-                DrawText("CH4", 200, 250, 24, BLACK); //Methane
+                DrawText("CH4", 495, 200, 24, BLACK); //Methane
+                isDraggedEl1 = false, isDraggedEl2 = false, isDraggedEl3 = false, isDraggedEl4 = false;
             }
             else if (el1Tube && el3Tube) {
-                DrawText("H2S", 200, 250, 24, BLACK); //Hydrogen sulfide
+                DrawText("H2S", 495, 200, 24, BLACK); //Hydrogen sulfide
+                isDraggedEl1 = false, isDraggedEl2 = false, isDraggedEl3 = false, isDraggedEl4 = false;
             }
             else if (el2Tube && el4Tube) {
-                DrawText("CO2", 200, 250, 24, BLACK); //Carbon dioxide
+                DrawText("CO2", 495, 200, 24, BLACK); //Carbon dioxide
+                isDraggedEl1 = false, isDraggedEl2 = false, isDraggedEl3 = false, isDraggedEl4 = false;
             }
             else if (el3Tube && el4Tube) {
-                DrawText("SO2", 200, 250, 24, BLACK); //Sulfur dioxide
+                DrawText("SO2", 495, 200, 24, BLACK); //Sulfur dioxide
+                isDraggedEl1 = false, isDraggedEl2 = false, isDraggedEl3 = false, isDraggedEl4 = false;
             }
             else {
-                DrawText("BOOM", 200, 250, 24, BLACK); //Explode
+                DrawText("BOOM", 495, 200, 24, BLACK); //Explode
+                isDraggedEl1 = false, isDraggedEl2 = false, isDraggedEl3 = false, isDraggedEl4 = false;
             }
             if (CheckCollisionPointRec(GetMousePosition(), ResetButton) && IsMouseButtonPressed(MOUSE_BUTTON_LEFT)) {
                 fillCounter = 0;
