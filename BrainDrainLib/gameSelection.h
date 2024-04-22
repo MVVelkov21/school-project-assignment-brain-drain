@@ -9,7 +9,6 @@ private:
 	riddleRoute english;
 	superMaths maths;
 	madScientists chem;
-	Font font;
 	Texture2D background;
 
 	Vector2 buttonSize;
@@ -24,7 +23,7 @@ private:
 	int skipFrame = 0;
 public:
 	const float screenWidth = 800;
-	const float	 screenHeight = 450;
+	const float	screenHeight = 450;
 	const float hoverScaleIncrease = 1.1f;
 
 	void modeSelection();
