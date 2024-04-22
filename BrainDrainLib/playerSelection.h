@@ -1,6 +1,13 @@
 #pragma once
 #include "precompiledHeader.h"
 
-void levelBuilder();
-const int screenWidth = 800;
-const int screenHeight = 450;
+class playerSelection {
+private:
+    Texture2D background;
+    Texture2D girl;
+    Texture2D boy;
+
+    int choice = -1;
+public:
+	void characterSelect();
+};

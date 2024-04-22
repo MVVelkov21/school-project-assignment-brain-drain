@@ -18,6 +18,7 @@ class mainMenu {
 	Vector2 settingsButtonPos;
 	Vector2 exitButtonPos;
 
+	playerSelection select;
 	gameSelection init;
 public:
 	void windowInit();

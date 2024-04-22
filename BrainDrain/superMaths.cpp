@@ -1,18 +1,14 @@
 #include "../BrainDrainLib/superMaths.h"
 
-void superMaths::loadProblemsAndSymbols(string& problemFile, string& symbolFile) {   
+void superMaths::loadProblemsAndSymbols(string& problemFile, string& symbolFile) {
     ifstream problemStream(problemFile);
-    ifstream symbolStream(symbolFile);
-    
-    vector<string> problems;
-    string line;
+    ifstream symbolStream(symbolFile);    
+
     while (getline(problemStream, line)) {
         problems.push_back(line);
     }
     problemStream.close();
-   
-    vector<vector<string>> symbolsByProblem;
-    vector<string> symbols;
+
     while (getline(symbolStream, line)) {
         symbols.push_back(line);
         if (symbols.size() == 3) {
@@ -21,42 +17,99 @@ void superMaths::loadProblemsAndSymbols(string& problemFile, string& symbolFile)
         }
     }
     symbolStream.close();
-    
+
     while (!WindowShouldClose()) {
-        
         srand(time(nullptr));
         int randomIndex = rand() % problems.size();
         string selectedProblem = problems[randomIndex];
         vector<string> selectedSymbols = symbolsByProblem[randomIndex];
 
-        problemUnsolved = false;
-        
-        while (!problemUnsolved) {            
+        problemUnsolved = 0;
+        while (problemUnsolved == 0) {
             BeginDrawing();
             ClearBackground(RAYWHITE);
             DrawText("Solve the equation", 400 - MeasureText("Solve the equation", 30) / 2, 100, 30, RED);
-            DrawText(selectedProblem.c_str(), 400 - MeasureText(selectedProblem.c_str(), 20) / 2, 200, 20, BLACK);
-            EndDrawing();
-           
-            string playerInput;
-            cout << "Enter the symbols in order (e.g., '+-*'): ";
-            cin >> playerInput;
-            if (playerInput == "exit") break;
-            
-            if (playerInput == selectedSymbols[0] + selectedSymbols[1] + selectedSymbols[2]) {
-                cout << "Congratulations! You solved the problem!" << endl;   
-                break;
+            DrawText(selectedProblem.c_str(), 400 - MeasureText(selectedProblem.c_str(), 20) / 2, 170, 20, BLACK);
+            DrawText("1.", 100 - MeasureText("1.", 20), 250, 20, BLACK);
+            DrawText("2.", 300 - MeasureText("2.", 20), 250, 20, BLACK);
+            DrawText("3.", 500 - MeasureText("3.", 20), 250, 20, BLACK);
+            DrawText("4.", 700 - MeasureText("4.", 20), 250, 20, BLACK);
+            DrawText("+", 100 - MeasureText("+", 35), 280, 50, BLACK);
+            DrawText("-", 300 - MeasureText("-", 35), 280, 50, BLACK);
+            DrawText("*", 500 - MeasureText("*", 35), 280, 50, BLACK);
+            DrawText("/", 700 - MeasureText("/", 35), 280, 50, BLACK);
+            for (size_t i = 0; i < 4; i++) {
+                DrawText(symbol[i].c_str(), 10, 20 + i * 20, 20, BLACK);
+                string count = to_string(mathSymbolCount[i]);
+                DrawText(count.c_str(), MeasureText(symbol[i].c_str(), 20) + 20, 20 + i * 20, 20, RED);
             }
-            else {
-                cout << "Incorrect. Please try again." << endl;
-                problemUnsolved = true;
+            DrawText("YOUR ANSWER:", (GetScreenWidth() - MeasureText("YOUR ANSWER:", 30)) / 2, 340, 30, RED);
+            for (size_t i = 0; i < playerInput.size(); i++) {
+                DrawText(playerInput.substr(i, 1).c_str(), (GetScreenWidth() - (MeasureText(playerInput.substr(i, 1).c_str(), 20) + 60)) / 2.0f + i * 20, 380, 20, BLACK);
+            }
+            EndDrawing();
+            if (IsKeyPressed(KEY_ESCAPE)) {
+                problemUnsolved = 2;
+                break; 
+            }
+            if (playerInput.length() < 3) {
+                if (IsKeyPressed(KEY_ONE)) {
+                    if (mathSymbolCount[0] > 0) {
+                        playerInput.push_back('+');
+                        mathSymbolCount[0]--;
+                    }
+                    else {
+                        cout << "No more additions left!!" << endl;
+                    }
+                }
+                else if (IsKeyPressed(KEY_TWO)) {
+                    if (mathSymbolCount[1] > 0) {
+                        playerInput.push_back('-');
+                        mathSymbolCount[1]--;
+                    }
+                    else {
+                        cout << "No more subtractions left!!" << endl;
+                    }
+                }
+                else if (IsKeyPressed(KEY_THREE)) {
+                    if (mathSymbolCount[2] > 0) {
+                        playerInput.push_back('*');
+                        mathSymbolCount[2]--;
+                    }
+                    else {
+                        cout << "No more multiplications left!!" << endl;
+                    }
+                }
+                else if (IsKeyPressed(KEY_FOUR)) {
+                    if (mathSymbolCount[3] > 0) {
+                        playerInput.push_back('/');
+                        mathSymbolCount[3]--;
+                    }
+                    else {
+                        cout << "No more divisions left!!" << endl;
+                    }
+                }
+            }
+            if (IsKeyPressed(KEY_ENTER)) {
+                if (playerInput == selectedSymbols[0] + selectedSymbols[1] + selectedSymbols[2] && mathSymbolCount[0] > 0 && mathSymbolCount[1] > 0 && mathSymbolCount[2] > 0 && mathSymbolCount[3] > 0) {
+                    cout << "Congratulations! You solved the problem!" << endl;
+                    break;
+                }
+                else {                    
+                    cout << "Incorrect. Please try again." << endl;
+                    playerInput = "";
+                    problemUnsolved = 1;
+                }
             }
         }
-        if (!problemUnsolved) break;
-    }   
+        if (problemUnsolved == 0 || problemUnsolved == 2) break;
+    }
 }
 
 void superMaths::levelBuilder() {
+    for (int i = 0; i < 4; i++) mathSymbolCount[i] = 0;
+    problemUnsolved = 1;
+
     background = LoadTexture("../assets/superMath/superMath.png");
     backgroundLeft = LoadTexture("../assets/superMath/superMathBgLeft.png");
     backgroundRight = LoadTexture("../assets/superMath/superMathBgRight.png");
@@ -78,7 +131,7 @@ void superMaths::levelBuilder() {
     playerPos = map.getYellowPixelPositions(colImg, colImg.width, colImg.height, background.width, background.height);
     Vector2 startingPos = playerPos;
     UnloadImage(colImg);    
-
+    
     camera.target = { (float)background.width / 2, (float)background.height / 2 };
     camera.offset = { (float)GetScreenWidth() / 2, (float)GetScreenHeight() / 2 };
     camera.rotation = 0.0f;
@@ -204,10 +257,10 @@ void superMaths::levelBuilder() {
                 string symbols = "../assets/superMath/math problems/symbols.txt";
                 loadProblemsAndSymbols(problems, symbols);
                 playerPos = startingPos;
-                if(!problemUnsolved) break;
+                if(problemUnsolved == 0) break;
             }
         }        
-        if (!problemUnsolved) break;
+        if (problemUnsolved == 0) break;
         BeginDrawing();
         ClearBackground(BLACK);
 

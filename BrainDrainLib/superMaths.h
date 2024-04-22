@@ -4,18 +4,20 @@
 
 class superMaths {
 private:
-	const int ADDITION = 0;
-	const int SUBTRACTION = 1;
-	const int MULTIPLICATION = 2;
-	const int DIVISION = 3;
-	int mathSymbolCount[4] = { 0,0,0,0 };
+	vector<string> problems;
+	string line;
+	vector<vector<string>> symbolsByProblem;
+	vector<string> symbols;
+	string playerInput = "";
+
+	int mathSymbolCount[4] = { 0,0,0,0 };	
 	string symbol[4]{
 		{"ADDITION"},
 		{"SUBTRACTION"},
 		{"MULTIPLICATION"},
 		{"DIVISION"},
 	};
-	bool problemUnsolved = 1;
+	int problemUnsolved = 1;
 
 	mapBuilder map;
 
