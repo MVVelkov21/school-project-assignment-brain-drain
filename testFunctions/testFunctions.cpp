@@ -30,4 +30,17 @@ namespace testFunctions
 
         }
     };
+    TEST_CLASS(TestReworkedModeSelection)
+    {
+    public:
+
+
+        TEST_METHOD(ReworkedModeSelectionTest)
+        {
+
+            reworkedModeSelection();
+
+
+        }
+    };
 }
