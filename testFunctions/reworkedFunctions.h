@@ -37,3 +37,16 @@ void reworkedDragDrop(bool& isDragged, bool isMouseButtonPressed, bool isMouseOv
         isDragged = false;
     }
 }
+
+void reworkedResetElement(bool& isCollision1, bool& isCollision2, bool& isDragged1, bool& isDragged2, int& el1X, int& el1Y, int& el2X, int& el2Y) {
+    if (!isCollision1 && !isDragged1)
+    {
+        el1X = 170;
+        el1Y = 80;
+    }
+    if (!isCollision2 && !isDragged2)
+    {
+        el2X = 260;
+        el2Y = 80;
+    }
+}
