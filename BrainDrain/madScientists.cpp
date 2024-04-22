@@ -39,12 +39,17 @@ void madScientists::fillTube(Rectangle& el1, Rectangle& final, bool& drag1, bool
     }
 }
 
-
+void madScientists::finish(const char* name) {
+    DrawText(name, 500, 200, 24, BLACK); //Water
+    isDraggedEl1 = false, isDraggedEl2 = false, isDraggedEl3 = false, isDraggedEl4 = false;
+    DrawTexture(board, 75, 20, RAYWHITE);
+}
 void madScientists::levelBuilder() {
     background = LoadTexture("../assets/madScientists/madScientists2.png");
     tube = LoadTexture("../assets/madScientists/testTube.png");
     tubeHalf = LoadTexture("../assets/madScientists/tubeStage2.png");
     tubeFull = LoadTexture("../assets/madScientists/tubeStage3.png");
+    board = LoadTexture("../assets/madScientists/lesson.png");
     H = LoadTexture("../assets/madScientists/H.png");
     C = LoadTexture("../assets/madScientists/C.png");
     S = LoadTexture("../assets/madScientists/S.png");
@@ -103,28 +108,22 @@ void madScientists::levelBuilder() {
             DrawRectangleRec(ResetButton, RED);
             DrawText("Reset", 355, 360, 32, BLACK);
             if (el1Tube && el4Tube) {
-                DrawText("H2O", 495, 200, 24, BLACK); //Water
-                isDraggedEl1 = false, isDraggedEl2 = false, isDraggedEl3 = false, isDraggedEl4 = false;
+                finish("H2O");
             }
             else if (el1Tube && el2Tube) {
-                DrawText("CH4", 495, 200, 24, BLACK); //Methane
-                isDraggedEl1 = false, isDraggedEl2 = false, isDraggedEl3 = false, isDraggedEl4 = false;
+                finish("CH4");
             }
             else if (el1Tube && el3Tube) {
-                DrawText("H2S", 495, 200, 24, BLACK); //Hydrogen sulfide
-                isDraggedEl1 = false, isDraggedEl2 = false, isDraggedEl3 = false, isDraggedEl4 = false;
+                finish("H2S");
             }
             else if (el2Tube && el4Tube) {
-                DrawText("CO2", 495, 200, 24, BLACK); //Carbon dioxide
-                isDraggedEl1 = false, isDraggedEl2 = false, isDraggedEl3 = false, isDraggedEl4 = false;
+                finish("CO2");
             }
             else if (el3Tube && el4Tube) {
-                DrawText("SO2", 495, 200, 24, BLACK); //Sulfur dioxide
-                isDraggedEl1 = false, isDraggedEl2 = false, isDraggedEl3 = false, isDraggedEl4 = false;
+                finish("SO2");
             }
             else {
-                DrawText("BOOM", 495, 200, 24, BLACK); //Explode
-                isDraggedEl1 = false, isDraggedEl2 = false, isDraggedEl3 = false, isDraggedEl4 = false;
+                finish("BOOM");
             }
             if (CheckCollisionPointRec(GetMousePosition(), ResetButton) && IsMouseButtonPressed(MOUSE_BUTTON_LEFT)) {
                 fillCounter = 0;
