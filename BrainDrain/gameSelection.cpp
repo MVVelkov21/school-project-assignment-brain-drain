@@ -34,22 +34,12 @@ void gameSelection::modeSelection() {
         ClearBackground(RAYWHITE);
         DrawTexture(background, 0, 0, WHITE);
 
-        /*Vector2 mousePosition = GetMousePosition();
-        bool enHovered = CheckCollisionPointRec(mousePosition, { enButtonPos.x, enButtonPos.y, buttonSize.x, buttonSize.y });
-        bool mathHovered = CheckCollisionPointRec(mousePosition, { mathButtonPos.x, mathButtonPos.y, buttonSize.x, buttonSize.y });
-        bool chemHovered = CheckCollisionPointRec(mousePosition, { chemButtonPos.x, chemButtonPos.y, buttonSize.x, buttonSize.y });*/
-
-        /*if (enHovered) DrawRectangleRec(enButtonRect, RED);
-        else DrawRectangleLines(enButtonRect.x, enButtonRect.y, enButtonRect.width, enButtonRect.height, WHITE);*/
+    
         DrawText("English", enButtonPos.x + buttonSize.x / 2 - MeasureText("English", 20) / 2, enButtonPos.y + buttonSize.y / 2 + 20 , 20,  BLACK);
 
-        /*if (mathHovered) DrawRectangleRec(mathButtonRect, RED);
-        else DrawRectangleLines(mathButtonRect.x, mathButtonRect.y, mathButtonRect.width, mathButtonRect.height, WHITE);*/
         DrawText("Maths", mathButtonPos.x + buttonSize.x / 2 - MeasureText("Maths", 20) / 2, mathButtonPos.y + buttonSize.y / 2 + 20, 20, BLACK);
 
-        /*if (chemHovered) DrawRectangleRec(chemButtonRect, RED);
-        else DrawRectangleLines(chemButtonRect.x, chemButtonRect.y, chemButtonRect.width, chemButtonRect.height, WHITE);*/
-        DrawText( "Chemistry",  chemButtonPos.x + buttonSize.x / 2 - MeasureText("Chemistry", 18) / 2, chemButtonPos.y + buttonSize.y / 2 + 20 , 17, BLACK);
+        DrawText( "Chemistry",  chemButtonPos.x + buttonSize.x / 2 - MeasureText("Chemistry", 18) / 2, chemButtonPos.y + buttonSize.y / 2 + 20 , 19, BLACK);
 
         DrawText("Choose a subject", (screenWidth - MeasureText("Choose a subject", 40)) / 2, screenHeight / 3.5 , 40, BLACK);
 
