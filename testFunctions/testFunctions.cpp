@@ -76,5 +76,18 @@ namespace testFunctions
             Assert::AreEqual(300, el2X); 
             Assert::AreEqual(150, el2Y); 
         }
+        TEST_METHOD(reworkedFillTubeTest)
+        {
+            
+            bool isCollision1 = true; 
+            bool isCollision2 = false;
+            bool isDragged1 = false;
+            bool isDragged2 = true; 
+            int counter = 0; 
+
+            reworkedFillTube(isCollision1, isCollision2, isDragged1, isDragged2, counter);
+
+            Assert::AreEqual(1, counter); 
+        }
     };
 }
