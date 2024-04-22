@@ -91,8 +91,8 @@ void superMaths::loadProblemsAndSymbols(string& problemFile, string& symbolFile)
                 }
             }
             if (IsKeyPressed(KEY_ENTER)) {
-                if (playerInput == selectedSymbols[0] + selectedSymbols[1] + selectedSymbols[2] && mathSymbolCount[0] > 0 && mathSymbolCount[1] > 0 && mathSymbolCount[2] > 0 && mathSymbolCount[3] > 0) {
-                    cout << "Congratulations! You solved the problem!" << endl;
+                if (playerInput == selectedSymbols[0] + selectedSymbols[1] + selectedSymbols[2] && mathSymbolCount[0] > 0 && mathSymbolCount[1] > 0 && mathSymbolCount[2] > 0 && mathSymbolCount[3] > 0) {                    
+                    endScreen.printMessage("Congrats! You solved the problem!");
                     break;
                 }
                 else {                    
@@ -114,22 +114,28 @@ void superMaths::levelBuilder() {
     backgroundLeft = LoadTexture("../assets/superMath/superMathBgLeft.png");
     backgroundRight = LoadTexture("../assets/superMath/superMathBgRight.png");
 
-    playerStill = LoadTexture("../assets/player/boyPlayerDown.png");
-    for (int i = 0; i < 4; i++) {
-        string leftFilename = "../assets/player/boyPlayerLeft" + to_string(i) + ".png";
-        string rightFilename = "../assets/player/boyPlayerRight" + to_string(i) + ".png";        
-        playerLeft[i] = LoadTexture(leftFilename.c_str());
-        playerRight[i] = LoadTexture(rightFilename.c_str());
+    ifstream inFile("../assets/config.txt");
+    if (inFile.is_open()) {
+        inFile >> choice;
+        inFile.close();
     }
-    playerUp = LoadTexture("../assets/player/boyPlayerUp.png");
-    playerDown = LoadTexture("../assets/player/boyPlayerDown.png");
 
-    colImg = LoadImage("../assets/collision/col_superMath1.png");
+    playerStill = LoadTexture(("../assets/player/" + to_string(choice) + "PlayerDown.png").c_str());
+    for (int i = 0; i < 4; i++) {
+        string left = "../assets/player/" + to_string(choice) + "PlayerLeft" + to_string(i) + ".png";
+        string right = "../assets/player/" + to_string(choice) + "PlayerRight" + to_string(i) + ".png";
+        playerLeft[i] = LoadTexture(left.c_str());
+        playerRight[i] = LoadTexture(right.c_str());
+    }
+    playerUp = LoadTexture(("../assets/player/" + to_string(choice) + "PlayerUp.png").c_str());
+    playerDown = LoadTexture(("../assets/player/" + to_string(choice) + "PlayerDown.png").c_str());
+
+    colImg = LoadImage("../assets/collision/col_superMath.png");
     walls = map.groupWhitePixelsIntoRectangles(colImg, colImg.width, colImg.height, background.width, background.height);
     exit = map.groupGreenPixelsIntoRectangles(colImg, colImg.width, colImg.height, background.width, background.height);
     boxes = map.groupRedPixelsIntoRectangles(colImg, colImg.width, colImg.height, background.width, background.height);
     playerPos = map.getYellowPixelPositions(colImg, colImg.width, colImg.height, background.width, background.height);
-    Vector2 startingPos = playerPos;
+    startingPos = playerPos;
     UnloadImage(colImg);    
     
     camera.target = { (float)background.width / 2, (float)background.height / 2 };

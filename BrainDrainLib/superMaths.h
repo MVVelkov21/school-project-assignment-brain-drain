@@ -1,9 +1,14 @@
 #pragma once
 #include "precompiledHeader.h"
+#include "riddleRoute.h"
 #include "mapBuilder.h"
 
 class superMaths {
 private:
+	riddleRoute endScreen;
+
+	int choice = 0;
+
 	vector<string> problems;
 	string line;
 	vector<vector<string>> symbolsByProblem;
@@ -40,6 +45,7 @@ private:
 	vector<Rectangle> exit;
 	vector<Rectangle> boxes;
 	Vector2 playerPos;
+	Vector2 startingPos;
 
 	float playerSpeed = 5.0f;
 	float playerScale = 0.065f;

@@ -5,9 +5,8 @@
 class riddleRoute {
 private:
 	mapBuilder map;
-
-	string levelPath;
-	const char* finalLevelPath;
+	
+	int choice = 0;
 
 	Texture2D background;
 	Texture2D playerStill;
@@ -45,7 +44,7 @@ private:
 
 	Camera2D camera = { 0 };
 
-	void printMessage(const char* msg);	
 public:
-	void levelBuilder(int level);
+	void printMessage(const char* msg);
+	void levelBuilder();
 };

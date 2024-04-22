@@ -12,27 +12,29 @@ void riddleRoute::printMessage(const char* msg) {
     }
 }
 
-void riddleRoute::levelBuilder(int level) {
+void riddleRoute::levelBuilder() {
     remainingGuesses = 3;
     wrongGuesses = 0;
-    levelPath = "../assets/riddleRoute/level";
-    levelPath += to_string(level) + ".png";
-    finalLevelPath = levelPath.c_str();
-    background = LoadTexture(finalLevelPath);
 
-    playerStill = LoadTexture("../assets/player/boyPlayerDown.png");
-    for (int i = 0; i < 4; i++) {
-        string leftFilename = "../assets/player/boyPlayerLeft" + to_string(i) + ".png";
-        string rightFilename = "../assets/player/boyPlayerRight" + to_string(i) + ".png";
-        playerLeft[i] = LoadTexture(leftFilename.c_str());
-        playerRight[i] = LoadTexture(rightFilename.c_str());
+    background = LoadTexture("../assets/riddleRoute/level.png");
+
+    ifstream inFile("../assets/config.txt");
+    if (inFile.is_open()) {
+        inFile >> choice;
+        inFile.close();
     }
-    playerUp = LoadTexture("../assets/player/boyPlayerUp.png");
-    playerDown = LoadTexture("../assets/player/boyPlayerDown.png");    
 
+    playerStill = LoadTexture(("../assets/player/" + to_string(choice) + "PlayerDown.png").c_str());
+    for (int i = 0; i < 4; i++) {
+        string left = "../assets/player/" + to_string(choice) + "PlayerLeft" + to_string(i) + ".png";
+        string right = "../assets/player/" + to_string(choice) + "PlayerRight" + to_string(i) + ".png";
+        playerLeft[i] = LoadTexture(left.c_str());
+        playerRight[i] = LoadTexture(right.c_str());
+    }
+    playerUp = LoadTexture(("../assets/player/" + to_string(choice) + "PlayerUp.png").c_str());
+    playerDown = LoadTexture(("../assets/player/" + to_string(choice) + "PlayerDown.png").c_str());
 
-
-    colImg = LoadImage("../assets/collision/col_level1.png");
+    colImg = LoadImage("../assets/collision/col_level.png");
     wallRectangles = map.groupWhitePixelsIntoRectangles(colImg, colImg.width, colImg.height, background.width, background.height);
     exitRectangles = map.groupGreenPixelsIntoRectangles(colImg, colImg.width, colImg.height, background.width, background.height);
     wordsPos = map.getRedPixelPositions(colImg, colImg.width, colImg.height, background.width, background.height);

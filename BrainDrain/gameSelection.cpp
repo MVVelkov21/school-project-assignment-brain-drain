@@ -20,7 +20,7 @@ void gameSelection::modeSelection() {
 
             if (CheckCollisionPointRec(mousePosition, { enButtonPos.x, enButtonPos.y, buttonSize.x, buttonSize.y })) {
                 printf("English button clicked!\n");
-                english.levelBuilder(0);
+                english.levelBuilder();
             }
             else if (CheckCollisionPointRec(mousePosition, { mathButtonPos.x, mathButtonPos.y, buttonSize.x, buttonSize.y })) {
                 printf("Maths button clicked!\n");
