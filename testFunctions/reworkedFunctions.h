@@ -38,7 +38,8 @@ void reworkedDragDrop(bool& isDragged, bool isMouseButtonPressed, bool isMouseOv
     }
 }
 
-void reworkedResetElement(bool& isCollision1, bool& isCollision2, bool& isDragged1, bool& isDragged2, int& el1X, int& el1Y, int& el2X, int& el2Y) {
+void reworkedResetElement(bool& isCollision1, bool& isCollision2, bool& isDragged1, bool& isDragged2, int& el1X, int& el1Y, int& el2X, int& el2Y) 
+{
     if (!isCollision1 && !isDragged1)
     {
         el1X = 170;
@@ -48,5 +49,17 @@ void reworkedResetElement(bool& isCollision1, bool& isCollision2, bool& isDragge
     {
         el2X = 260;
         el2Y = 80;
+    }
+}
+
+void reworkedFillTube(bool isCollision1, bool isCollision2, bool isDragged1, bool isDragged2, int& counter) 
+{
+    if (isCollision1 && !isDragged1) 
+    {
+        counter++;
+    }
+    if (isCollision2 && !isDragged2) 
+    {
+        counter++;
     }
 }
