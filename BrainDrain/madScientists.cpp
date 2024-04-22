@@ -22,6 +22,7 @@ void madScientists::dragDrop(Rectangle& rect, bool& isDragged, float& CordX, flo
 }
 
 void madScientists::resetElement(Rectangle& el1, Rectangle& final, bool& drag1, float& CordX, float& CordY, int cordTX, int cordTY) {
+    //Check whether the element is dropped in blank space
     if (!(CheckCollisionRecs(el1, final)) && drag1 == false) {
         el1.x = cordTX;
         el1.y = cordTY;
@@ -31,6 +32,7 @@ void madScientists::resetElement(Rectangle& el1, Rectangle& final, bool& drag1, 
 }
 
 void madScientists::fillTube(Rectangle& el1, Rectangle& final, bool& drag1, bool& flag ,int& c, int cordTX, int cordTY) {
+    //Check whether the element is dropped in the tube
     if (CheckCollisionRecs(el1, final) && drag1 == false) {
         c++;
         el1.x = cordTX;
@@ -40,18 +42,21 @@ void madScientists::fillTube(Rectangle& el1, Rectangle& final, bool& drag1, bool
 }
 
 void madScientists::finish(const char* name) {
+    //Draw the name of the product
     DrawText(name, 500, 200, 24, BLACK); //Water
     isDraggedEl1 = false, isDraggedEl2 = false, isDraggedEl3 = false, isDraggedEl4 = false;
     DrawTexture(board, 0, 20, RAYWHITE);
 }
 
 void drawWords(vector <string> info) {
+    //Output the info about the product
     for (size_t i = 0; i < info.size(); i++) {
         DrawText(info[i].c_str(), 12, 40 + i * 20, 17, BLACK);
     }
 }
 
 void madScientists::levelBuilder() {
+    //Load all the textures
     background = LoadTexture("../assets/madScientists/madScientists2.png");
     tube = LoadTexture("../assets/madScientists/testTube.png");
     tubeHalf = LoadTexture("../assets/madScientists/tubeStage2.png");
@@ -92,15 +97,16 @@ void madScientists::levelBuilder() {
         dragDrop(Element3, isDraggedEl3, x3, y3);
         dragDrop(Element4, isDraggedEl4, x4, y4);
 
+        //Limit how many times the tube can be filled
         if (fillCounter > 2) {
             fillCounter = 2;
         }
 
         BeginDrawing();
         ClearBackground(RAYWHITE);
-
+        
+        //Draw textures
         DrawTexture(background, 0, 0, WHITE);
-
         DrawTexture(H, x1, y1, RAYWHITE);
         DrawTexture(C, x2, y2, RAYWHITE);
         DrawTexture(S, x3, y3, RAYWHITE);
@@ -108,6 +114,7 @@ void madScientists::levelBuilder() {
 
         DrawText("Press ESC to leave", 550, 420, 20, BLACK);
 
+        //Draw tube's stages
         if (fillCounter == 0)
             DrawTextureV(tube, tubePos, RAYWHITE);
         else if (fillCounter == 1) {
@@ -115,10 +122,13 @@ void madScientists::levelBuilder() {
         }
         else if (fillCounter == 2) {
             DrawTextureV(tubeFull, tubePos, RAYWHITE);
+            //Draw a reset button
             DrawRectangleRec(ResetButton, RED);
             DrawText("Reset", 344, 360, 32, BLACK);
+            //if element 1 and elements 2 have been put in the tube
             if (el1Tube && el4Tube) {
                 finish("H2O");
+                //information about the product
                 vector <string> info = {
                     {"Water is an inorganic compound with"},
                     {"the chemical formula H2O and it's a"},
@@ -197,6 +207,7 @@ void madScientists::levelBuilder() {
         }
         EndDrawing();
     }
+    //Unload all textures
     UnloadTexture(background);
     UnloadTexture(tube);
     UnloadTexture(tubeHalf);
