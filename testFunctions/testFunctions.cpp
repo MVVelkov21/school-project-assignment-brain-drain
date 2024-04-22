@@ -90,4 +90,21 @@ namespace testFunctions
             Assert::AreEqual(1, counter); 
         }
     };
+    TEST_CLASS(TestSuperMathsSimpleFunctions)
+    {
+    public:
+
+        
+        TEST_METHOD(reworkedLoadProblemsAndSymbolsTest)
+        {
+            
+            vector<string> problems;
+            vector<vector<string>> symbolsByProblem;
+
+            reworkedLoadProblemsAndSymbols(problems, symbolsByProblem);
+
+            Assert::AreEqual(static_cast<size_t>(3), problems.size()); 
+            Assert::AreEqual(static_cast<size_t>(3), symbolsByProblem.size()); 
+        }
+    };
 }
