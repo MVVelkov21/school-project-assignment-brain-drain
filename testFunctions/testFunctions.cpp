@@ -15,7 +15,7 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace testFunctions
 {
-    TEST_CLASS(testrReworkedPrintMessageTest)
+    TEST_CLASS(testReworkedPrintMessageTest)
     {
     public:
 
@@ -30,12 +30,12 @@ namespace testFunctions
 
         }
     };
-    TEST_CLASS(TestReworkedModeSelection)
+    TEST_CLASS(testReworkedModeSelection)
     {
     public:
 
 
-        TEST_METHOD(ReworkedModeSelectionTest)
+        TEST_METHOD(reworkedModeSelectionTest)
         {
 
             reworkedModeSelection();
@@ -43,7 +43,7 @@ namespace testFunctions
 
         }
     };
-    TEST_CLASS(TestMadScientistsreworkedFunctions)
+    TEST_CLASS(testMadScientistsreworkedFunctions)
     {
     public:
 
@@ -56,6 +56,25 @@ namespace testFunctions
             bool isDragged = false;
             reworkedDragDrop(isDragged, isMouseButtonPressed, isMouseOver);
             Assert::IsTrue(isDragged);
+        }
+        TEST_METHOD(reworkedResetElementTest)
+        {
+           
+            bool isCollision1 = false;
+            bool isCollision2 = true; 
+            bool isDragged1 = false;
+            bool isDragged2 = false;
+            int el1X = 200;
+            int el1Y = 150;
+            int el2X = 300;
+            int el2Y = 150;
+
+            reworkedResetElement(isCollision1, isCollision2, isDragged1, isDragged2, el1X, el1Y, el2X, el2Y);
+
+            Assert::AreEqual(170, el1X); 
+            Assert::AreEqual(80, el1Y); 
+            Assert::AreEqual(300, el2X); 
+            Assert::AreEqual(150, el2Y); 
         }
     };
 }
