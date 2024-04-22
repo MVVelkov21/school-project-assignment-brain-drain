@@ -7,7 +7,10 @@ private:
     Texture2D girl;
     Texture2D boy;
 
+    bool boyHovered = false;
+    bool girlHovered = false;
+
     int choice = -1;
 public:
-	void characterSelect();
+    void characterSelect();
 };
