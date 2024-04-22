@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BrainDrain", "BrainDrain\Br
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BrainDrainLib", "BrainDrainLib\BrainDrainLib.vcxproj", "{0C43C54C-34D9-4312-BFE5-D25978C5650D}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testFunctions", "testFunctions\testFunctions.vcxproj", "{E6796CF2-3314-4BDC-8FAB-5992BF03223B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +33,14 @@ Global
 		{0C43C54C-34D9-4312-BFE5-D25978C5650D}.Release|x64.Build.0 = Release|x64
 		{0C43C54C-34D9-4312-BFE5-D25978C5650D}.Release|x86.ActiveCfg = Release|Win32
 		{0C43C54C-34D9-4312-BFE5-D25978C5650D}.Release|x86.Build.0 = Release|Win32
+		{E6796CF2-3314-4BDC-8FAB-5992BF03223B}.Debug|x64.ActiveCfg = Debug|x64
+		{E6796CF2-3314-4BDC-8FAB-5992BF03223B}.Debug|x64.Build.0 = Debug|x64
+		{E6796CF2-3314-4BDC-8FAB-5992BF03223B}.Debug|x86.ActiveCfg = Debug|Win32
+		{E6796CF2-3314-4BDC-8FAB-5992BF03223B}.Debug|x86.Build.0 = Debug|Win32
+		{E6796CF2-3314-4BDC-8FAB-5992BF03223B}.Release|x64.ActiveCfg = Release|x64
+		{E6796CF2-3314-4BDC-8FAB-5992BF03223B}.Release|x64.Build.0 = Release|x64
+		{E6796CF2-3314-4BDC-8FAB-5992BF03223B}.Release|x86.ActiveCfg = Release|Win32
+		{E6796CF2-3314-4BDC-8FAB-5992BF03223B}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

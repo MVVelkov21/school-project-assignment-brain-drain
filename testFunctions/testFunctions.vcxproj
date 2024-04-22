@@ -166,6 +166,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
+    <ClInclude Include="reworkedFunctions.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BrainDrain\BrainDrain.vcxproj">
+      <Project>{2b4aca31-3df2-4ae9-addc-0c63043e6c64}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
