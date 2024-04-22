@@ -43,4 +43,19 @@ namespace testFunctions
 
         }
     };
+    TEST_CLASS(TestMadScientistsreworkedFunctions)
+    {
+    public:
+
+
+        TEST_METHOD(reworkedDragDropTest)
+        {
+
+            bool isMouseButtonPressed = true;
+            bool isMouseOver = true;
+            bool isDragged = false;
+            reworkedDragDrop(isDragged, isMouseButtonPressed, isMouseOver);
+            Assert::IsTrue(isDragged);
+        }
+    };
 }
