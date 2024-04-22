@@ -63,3 +63,9 @@ void reworkedFillTube(bool isCollision1, bool isCollision2, bool isDragged1, boo
         counter++;
     }
 }
+
+void reworkedLoadProblemsAndSymbols(vector<string>& problems, vector<vector<string>>& symbolsByProblem)
+{
+    problems = { "problem1", "problem2", "problem3" };
+    symbolsByProblem = { {"symbol1", "symbol2", "symbol3"}, {"symbol4", "symbol5", "symbol6"}, {"symbol7", "symbol8", "symbol9"} };
+}
