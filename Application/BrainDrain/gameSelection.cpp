@@ -2,6 +2,8 @@
 
 void gameSelection::modeSelection() {
     background = LoadTexture("../assets/gameSelectionMenu/gameSelectionMenu.png");
+    font = LoadFont("../assets/font/Silkscreen.ttf");
+
 
     buttonSize = { 162, 216 };
     enButtonPos = { 38, 225};
@@ -41,17 +43,17 @@ void gameSelection::modeSelection() {
 
         /*if (enHovered) DrawRectangleRec(enButtonRect, RED);
         else DrawRectangleLines(enButtonRect.x, enButtonRect.y, enButtonRect.width, enButtonRect.height, WHITE);*/
-        DrawText("English", enButtonPos.x + buttonSize.x / 2 - MeasureText("English", 20) / 2, enButtonPos.y + buttonSize.y / 2 + 20, 20, BLACK);
+        DrawTextEx(font, "English", { enButtonPos.x + buttonSize.x / 2 - MeasureText("English", 20) / 2 - 10, enButtonPos.y + buttonSize.y / 2 + 20 }, 20, 1, BLACK);
 
         /*if (mathHovered) DrawRectangleRec(mathButtonRect, RED);
         else DrawRectangleLines(mathButtonRect.x, mathButtonRect.y, mathButtonRect.width, mathButtonRect.height, WHITE);*/
-        DrawText("Maths", mathButtonPos.x + buttonSize.x / 2 - MeasureText("Maths", 20) / 2, mathButtonPos.y + buttonSize.y / 2 + 20, 20, BLACK);
+        DrawTextEx(font, "Maths", { mathButtonPos.x + buttonSize.x / 2 - MeasureText("Maths", 20) / 2 - 4, mathButtonPos.y + buttonSize.y / 2 + 20 }, 20, 1, BLACK);
 
         /*if (chemHovered) DrawRectangleRec(chemButtonRect, RED);
         else DrawRectangleLines(chemButtonRect.x, chemButtonRect.y, chemButtonRect.width, chemButtonRect.height, WHITE);*/
-        DrawText("Chemistry", chemButtonPos.x + buttonSize.x / 2 - MeasureText("Chemistry", 18) / 2, chemButtonPos.y + buttonSize.y / 2 + 20, 19, BLACK);
+        DrawTextEx(font, "Chemistry", { chemButtonPos.x + buttonSize.x / 2 - MeasureText("Chemistry", 18) / 2 - 10, chemButtonPos.y + buttonSize.y / 2 + 20 }, 17, 1, BLACK);
 
-        DrawText("Choose a subject", (screenWidth - MeasureText("Choose a subject", 40)) / 2, screenHeight / 3.5, 40, BLACK);
+        DrawText("Choose a subject", (screenWidth - MeasureText("Choose a subject", 40)) / 2, screenHeight / 3.5 , 40, BLACK);
 
         EndDrawing();
 
