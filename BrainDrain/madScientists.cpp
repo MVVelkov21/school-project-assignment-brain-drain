@@ -42,8 +42,15 @@ void madScientists::fillTube(Rectangle& el1, Rectangle& final, bool& drag1, bool
 void madScientists::finish(const char* name) {
     DrawText(name, 500, 200, 24, BLACK); //Water
     isDraggedEl1 = false, isDraggedEl2 = false, isDraggedEl3 = false, isDraggedEl4 = false;
-    DrawTexture(board, 75, 20, RAYWHITE);
+    DrawTexture(board, 0, 20, RAYWHITE);
 }
+
+void drawWords(vector <string> info) {
+    for (size_t i = 0; i < info.size(); i++) {
+        DrawText(info[i].c_str(), 12, 40 + i * 20, 17, BLACK);
+    }
+}
+
 void madScientists::levelBuilder() {
     background = LoadTexture("../assets/madScientists/madScientists2.png");
     tube = LoadTexture("../assets/madScientists/testTube.png");
@@ -54,6 +61,7 @@ void madScientists::levelBuilder() {
     C = LoadTexture("../assets/madScientists/C.png");
     S = LoadTexture("../assets/madScientists/S.png");
     O = LoadTexture("../assets/madScientists/O.png");
+    Wrong = LoadTexture("../assets/madScientists/X.png");
 
     x1 = 350, y1 = 50, x2 = 450, y2 = 50, x3 = 545, y3 = 50, x4 = 642, y4 = 50;
     isDraggedEl1 = false, isDraggedEl2 = false, isDraggedEl3 = false, isDraggedEl4 = false;
@@ -65,7 +73,7 @@ void madScientists::levelBuilder() {
     Element2 = { x2, y2, 80, 80 };
     Element3 = { x3, y3, 80, 80 };
     Element4 = { x4, y4, 80, 80 };
-    ResetButton = { 340, 340, 120, 80 };
+    ResetButton = { 330, 345, 115, 60 };
 
     SetTargetFPS(60);
 
@@ -98,6 +106,8 @@ void madScientists::levelBuilder() {
         DrawTexture(S, x3, y3, RAYWHITE);
         DrawTexture(O, x4, y4, RAYWHITE);
 
+        DrawText("Press ESC to leave", 550, 420, 20, BLACK);
+
         if (fillCounter == 0)
             DrawTextureV(tube, tubePos, RAYWHITE);
         else if (fillCounter == 1) {
@@ -106,24 +116,78 @@ void madScientists::levelBuilder() {
         else if (fillCounter == 2) {
             DrawTextureV(tubeFull, tubePos, RAYWHITE);
             DrawRectangleRec(ResetButton, RED);
-            DrawText("Reset", 355, 360, 32, BLACK);
+            DrawText("Reset", 344, 360, 32, BLACK);
             if (el1Tube && el4Tube) {
                 finish("H2O");
+                vector <string> info = {
+                    {"Water is an inorganic compound with"},
+                    {"the chemical formula H2O and it's a"},
+                    {"transparent, tasteless, odorless, "},
+                    {"and nearly colorless chemical "},
+                    {"substance, it is the main constituent "},
+                    {"of Earth's hydrosphere and the  "},
+                    {"fluids of all known living organisms."}
+                };
+                drawWords(info);
             }
             else if (el1Tube && el2Tube) {
                 finish("CH4");
+                vector <string> info = {
+                    {"Methane is a chemical compound with"},
+                    {"the chemical formula CH4. It is a"},
+                    {"group-14 hydride, the simplest alkane,"},
+                    {"and the main constituent of natural"},
+                    {" gas. The abundance of methane on"},
+                    {"Earth makes it an economically"},
+                    {"attractive fuel, although capturing"},
+                    {"it is hard."}
+                };
+                drawWords(info);
             }
             else if (el1Tube && el3Tube) {
                 finish("H2S");
+                vector <string> info = {
+                    {"Hydrogen sulfide is a chemical"},
+                    {"compound with the formula H2S. It"},
+                    {"is a colorless chalcogen-hydride gas"},
+                    {"and is poisonous, corrosive, and"},
+                    {"flammable, with trace amounts in"},
+                    {"ambient atmosphere having a"},
+                    {"characteristic foul odor of"},
+                    {"rotten eggs."}
+                };
+                drawWords(info);
             }
             else if (el2Tube && el4Tube) {
                 finish("CO2");
+                vector <string> info = {
+                    {"Carbon dioxide is a chemical"},
+                    {"compound with the chemical formula"},
+                    {"CO2. It is found as the source"},
+                    {"of available carbon in the carbon"},
+                    {"cycle, atmospheric CO2 is the"},
+                    {"primary carbon source for life on"},
+                    {"Earth. In the air, carbon dioxide"},
+                    {"is transparent to visible light."}
+                };
+                drawWords(info);
             }
             else if (el3Tube && el4Tube) {
                 finish("SO2");
+                vector <string> info = {
+                    {"Sulfur dioxide is the chemical"},
+                    {"compound with the formula SO2. It"},
+                    {"is a toxic gas responsible for the"},
+                    {"odor of burnt matches. It is"},
+                    {"released by volcanic activity and"},
+                    {"is produced as a by-product of"},
+                    {"copper extraction and the burning"},
+                    {"of sulfur-bearing fossil fuels."}
+                };
+                drawWords(info);
             }
             else {
-                finish("BOOM");
+                DrawTextureV(Wrong, tubePos, RAYWHITE);
             }
             if (CheckCollisionPointRec(GetMousePosition(), ResetButton) && IsMouseButtonPressed(MOUSE_BUTTON_LEFT)) {
                 fillCounter = 0;
@@ -137,6 +201,8 @@ void madScientists::levelBuilder() {
     UnloadTexture(tube);
     UnloadTexture(tubeHalf);
     UnloadTexture(tubeFull);
+    UnloadTexture(Wrong);
+    UnloadTexture(board);
     UnloadTexture(H);
     UnloadTexture(S);
     UnloadTexture(O);

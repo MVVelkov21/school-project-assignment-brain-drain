@@ -8,7 +8,7 @@ class madScientists {
 		int fillCounter;
 		float x1, y1, x2, y2, x3, y3, x4, y4;
 		Texture2D tube, tubeHalf, tubeFull, board;
-		Texture2D background, H, C, S, O;
+		Texture2D background, H, C, S, O, Wrong;
 		Rectangle Element1, Element2, Element3, Element4, tubeHitBox, ResetButton;
 		Vector2 tubePos;
 	public: 
