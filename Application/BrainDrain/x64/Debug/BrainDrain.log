@@ -1,4 +1,0 @@
-﻿  gameSelection.cpp
-C:\Users\asivanov22\source\repos\school-project-assignment-brain-drain\Application\BrainDrain\gameSelection.cpp(56,108): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\asivanov22\source\repos\school-project-assignment-brain-drain\Application\BrainDrain\gameSelection.cpp(56,90): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  BrainDrain.vcxproj -> C:\Users\asivanov22\source\repos\school-project-assignment-brain-drain\Application\x64\Debug\BrainDrain.exe
