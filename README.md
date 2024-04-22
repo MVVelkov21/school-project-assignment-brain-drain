@@ -1,20 +1,19 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/j7IzDSQi)
-<h1 align="center">🧠 BRAIN DRAIN 🧠</h1>
-
-<p align = "center">
-    <img alt="GitHub milestones" src="https://img.shields.io/github/milestones/all/codingburgas/school-project-assignment-brain-drain?style=for-the-badge">
-    <img alt="GitHub top language" src ="https://img.shields.io/github/languages/top/codingburgas/school-project-assignment-brain-drain?style=for-the-badge">
-    <img alt="GitHub contributors" src="https://img.shields.io/github/contributors/codingburgas/school-project-assignment-brain-drain?style=for-the-badge">
-    <img alt="Github languages count" src="https://img.shields.io/github/languages/count/codingburgas/school-project-assignment-brain-drain?style=for-the-badge">
-    <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/codingburgas/school-project-assignment-brain-drain?style=for-the-badge">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/codingburgas/school-project-assignment-brain-drain?style=for-the-badge">
-</p>
-
-<img align="right" src="./assets/logo/logoTransparent.png">
 <br>
-
-<h2 align="left">📋 Description </h2>
-  <p>Hello, we are Brain Drain!</p>
+<br>
+<img align="right" src="./assets/logo/logoTransparent.png">
+<h1 align="center">🧠 BRAIN DRAIN 🧠</h1>
+ 
+<p align = "center">
+<img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/codingburgas/school-project-assignment-brain-drain?style=for-the-badge">
+<img alt="GitHub contributors" src="https://img.shields.io/github/contributors/codingburgas/school-project-assignment-brain-drain?style=for-the-badge">
+<img alt="Github languages count" src="https://img.shields.io/github/languages/count/codingburgas/school-project-assignment-brain-drain?style=for-the-badge">
+<img alt="GitHub milestones" src="https://img.shields.io/github/milestones/all/codingburgas/school-project-assignment-brain-drain?style=for-the-badge">
+<img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/codingburgas/school-project-assignment-brain-drain?style=for-the-badge">
+</p>
+<br>
+<p>Hello, we are Brain Drain!</p>
+<p>Our idea is to teach kids how to do basic math, chemistry, and English. We want to give them the opportunity to learn, but also make it interesting for them and show them that studying can be done in a fun and innovative way. We are able to do that by combining games from our childhood like Super Mario and math, maze games with English, as well as drag and drop and chemistry. We wish for our application to be used by schools and teachers worldwide, to show children new ways of learning.</p>
 <br>
 
 <h2 align="left">🚀 Languages and Libraries </h2>
@@ -38,7 +37,7 @@
 <h2 align="left">📄 Documents</h2><br>
   <ul>
     <li>Documentation</li>
-    <li>Presentation</li>
+    <li><a href="https://codingburgas-my.sharepoint.com/:p:/g/personal/zvyankova22_codingburgas_bg/ERIYdUSAkFJDkf2GQv517ZsBHCTdaYc3guTktkmcXXsnAA?e=Y6Vcp6">Presentation</a></li>
     <li>QA Table</li>    
     <li>Test Plan</li>
   </ul>  
