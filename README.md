@@ -38,7 +38,7 @@
   <ul>
     <li>Documentation</li>
     <li><a href="https://codingburgas-my.sharepoint.com/:p:/g/personal/zvyankova22_codingburgas_bg/ERIYdUSAkFJDkf2GQv517ZsBHCTdaYc3guTktkmcXXsnAA?e=Y6Vcp6">Presentation</a></li>
-    <li>QA Table</li>    
+    <li><a href="https://codingburgas-my.sharepoint.com/:w:/g/personal/asivanov22_codingburgas_bg/ESDROzfisTlFmCKDooubimMB19TzstGR6z6rgoJ1HIsFcQ?e=pEAXOa">QA Table</a></li>    
     <li>Test Plan</li>
   </ul>  
 
