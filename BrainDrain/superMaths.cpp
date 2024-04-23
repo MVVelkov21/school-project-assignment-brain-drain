@@ -1,6 +1,7 @@
 #include "../BrainDrainLib/superMaths.h"
 
 void superMaths::loadProblemsAndSymbols(string& problemFile, string& symbolFile) {
+    playerInput = "";
     ifstream problemStream(problemFile);
     ifstream symbolStream(symbolFile);    
 
